@@ -1,6 +1,6 @@
 /*!
-Waypoints Debug - 3.0.0
-Copyright © 2011-2014 Caleb Troughton
+Waypoints Debug - 3.1.1
+Copyright © 2011-2015 Caleb Troughton
 Licensed under the MIT license.
 https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
 */
@@ -24,7 +24,11 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
     window.Waypoint.Context.prototype.refresh = function() {
       for (var axis in this.waypoints) {
         for (var key in this.waypoints[axis]) {
-          var style = this.waypoints[axis][key].element.style
+          var waypoint = this.waypoints[axis][key]
+          var style = window.getComputedStyle(waypoint.element)
+          if (!waypoint.enabled) {
+            continue
+          }
           if (style && style.display === 'none') {
             console.error(displayNoneMessage)
           }

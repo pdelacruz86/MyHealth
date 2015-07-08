@@ -22,7 +22,8 @@ $( document ).ready(function() {
 					[].slice.call( closeCtrls ).forEach( function( ctrl ) {
 						ctrl.addEventListener( 'click', function() {
 							classie.remove( el, 'checkout--active' );
-						} );
-					} );
-				} );
+                        } );
+                    } );
+    } );
+    $('select').select2();
 });

@@ -69,7 +69,7 @@ $( document ).ready(function() {
 
         var target = this.hash;
         var $target = $(target);
-        var scrollTo = $target.offset().top - 89
+        var scrollTo = $target.offset().top - 80
 
         $('html, body').stop().animate({
             'scrollTop': scrollTo
