@@ -184,16 +184,13 @@ Main Components
 
 .cd-dots {
   /* not visible in the html document - created using jQuery */
-  position: absolute;
-  bottom: 95px;
-  left: 50%;
+  margin-left: 50%;
   right: auto;
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
   transform: translateX(-50%);
-  padding: .2em;
 }
 .cd-dots::after {
   clear: both;
@@ -242,9 +239,8 @@ Main Components
 }
 
 .cd-item-info {
-  height: 90px;
-  line-height: 90px;
-  padding: 0 2em;
+  padding: 2em;
+  border-bottom: 1px solid #f1f1f1;
 }
 .cd-item-info::after {
   clear: both;
@@ -256,19 +252,21 @@ Main Components
   font-size: 14px;
 }
 .cd-item-info b {
-  float: left;
+    margin-bottom: 5px;
+    display: block;
+    
 }
 .cd-item-info b a {
   color: #2f2933;
-}
-.cd-item-info .cd-price, .cd-item-info .cd-new-price {
-  /* .cd-new-price not visible in the html document - created using jQuery */
-  float: right;
+  display: block;
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .cd-item-info .cd-price {
   color: #22BAA0;
   position: relative;
-  margin-left: 10px;
   -webkit-transition: color 0.2s;
   -moz-transition: color 0.2s;
   transition: color 0.2s;
@@ -340,4 +338,33 @@ xcredits
 
 .no-touch .credits a:hover {
   text-decoration: underline;
+}
+
+
+
+.cd-item-details a {
+    color: #333;
+    margin: 1em 2em;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.cd-item-details a:hover {
+    color: #22BAA0;
+}
+
+.cd-item-details a i {
+    margin-right: 5px;
+}
+
+.cd-sale {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 2px;
+    padding: 3px 10px;
+    color: #fff;
+    z-index: 9;
+    font-size: 11px;
 }

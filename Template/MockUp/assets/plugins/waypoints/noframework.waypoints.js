@@ -1,6 +1,6 @@
 /*!
-Waypoints - 3.0.0
-Copyright © 2011-2014 Caleb Troughton
+Waypoints - 3.1.1
+Copyright © 2011-2015 Caleb Troughton
 Licensed under the MIT license.
 https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
 */
@@ -95,16 +95,33 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
     return this.group.previous(this)
   }
 
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/destroy-all */
-  Waypoint.destroyAll = function() {
+  /* Private */
+  Waypoint.invokeAll = function(method) {
     var allWaypointsArray = []
     for (var waypointKey in allWaypoints) {
       allWaypointsArray.push(allWaypoints[waypointKey])
     }
     for (var i = 0, end = allWaypointsArray.length; i < end; i++) {
-      allWaypointsArray[i].destroy()
+      allWaypointsArray[i][method]()
     }
+  }
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/destroy-all */
+  Waypoint.destroyAll = function() {
+    Waypoint.invokeAll('destroy')
+  }
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/disable-all */
+  Waypoint.disableAll = function() {
+    Waypoint.invokeAll('disable')
+  }
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/enable-all */
+  Waypoint.enableAll = function() {
+    Waypoint.invokeAll('enable')
   }
 
   /* Public */
@@ -157,10 +174,6 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
   var keyCounter = 0
   var contexts = {}
   var Waypoint = window.Waypoint
-  var requestAnimationFrame = window.requestAnimationFrame ||
-    window.mozRequestAnimationFrame ||
-    window.webkitRequestAnimationFrame ||
-    requestAnimationFrameShim
   var oldWindowLoad = window.onload
 
   /* http://imakewebthings.com/waypoints/api/context */
@@ -217,7 +230,7 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
     this.adapter.on('resize.waypoints', function() {
       if (!self.didResize) {
         self.didResize = true
-        requestAnimationFrame(resizeHandler)
+        Waypoint.requestAnimationFrame(resizeHandler)
       }
     })
   }
@@ -233,7 +246,7 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
     this.adapter.on('scroll.waypoints', function() {
       if (!self.didScroll || Waypoint.isTouch) {
         self.didScroll = true
-        requestAnimationFrame(scrollHandler)
+        Waypoint.requestAnimationFrame(scrollHandler)
       }
     })
   }
@@ -291,9 +304,11 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
 
   /* Private */
   Context.prototype.innerHeight = function() {
-    if (this.element === this.element.window) {
+    /*eslint-disable eqeqeq */
+    if (this.element == this.element.window) {
       return Waypoint.viewportHeight()
     }
+    /*eslint-enable eqeqeq */
     return this.adapter.innerHeight()
   }
 
@@ -305,9 +320,11 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
 
   /* Private */
   Context.prototype.innerWidth = function() {
-    if (this.element === this.element.window) {
+    /*eslint-disable eqeqeq */
+    if (this.element == this.element.window) {
       return Waypoint.viewportWidth()
     }
+    /*eslint-enable eqeqeq */
     return this.adapter.innerWidth()
   }
 
@@ -328,7 +345,9 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
   /* Public */
   /* http://imakewebthings.com/waypoints/api/context-refresh */
   Context.prototype.refresh = function() {
-    var isWindow = this.element === this.element.window
+    /*eslint-disable eqeqeq */
+    var isWindow = this.element == this.element.window
+    /*eslint-enable eqeqeq */
     var contextOffset = this.adapter.offset()
     var triggeredGroups = {}
     var axes
@@ -432,6 +451,14 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
       oldWindowLoad()
     }
     Context.refreshAll()
+  }
+
+  Waypoint.requestAnimationFrame = function(callback) {
+    var requestFn = window.requestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      requestAnimationFrameShim
+    requestFn.call(window, callback)
   }
   Waypoint.Context = Context
 }())
