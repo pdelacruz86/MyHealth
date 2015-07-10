@@ -6,7 +6,6 @@
 meteor-platform
 less
 underscore
-accounts-password
 aldeed:collection2
 iron:router
 raix:handlebar-helpers
@@ -16,7 +15,6 @@ fastclick
 zimme:iron-router-active
 manuelschoebel:ms-seo
 browser-policy
-useraccounts:semantic-ui
 natestrauser:animate-css
 dburles:collection-helpers
 meteorhacks:fast-render
@@ -30,3 +28,8 @@ siyfion:snap
 abpetkov:switchery
 mrt:modernizr-meteor
 fortawesome:fontawesome
+accounts-base
+accounts-password
+accounts-google
+service-configuration
+accounts-twitter

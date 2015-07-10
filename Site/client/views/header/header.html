@@ -239,11 +239,13 @@
                                 <li role="presentation"><a href="login.html"><i class="fa fa-sign-out m-r-xs"></i>Log out</a></li>
                             </ul>
                         </li>
+                        {{#if currentUser}}
                         <li>
-                            <a href="login.html" class="log-out waves-effect waves-button waves-classic">
+                            <a href="#" id="logout" class="log-out waves-effect waves-button waves-classic">
                                 <span><i class="fa fa-sign-out m-r-xs"></i>Log out</span>
                             </a>
                         </li>
+                        {{/if}}
                         <li>
                             <a href="javascript:void(0);" class="waves-effect waves-button waves-classic" id="showRight">
                                 <i class="fa fa-comments"></i>

@@ -1,5 +1,11 @@
 <template name="slimLayout">
-    <div id="main" class="site-wrapper">
-        {{> yield}}
-    </div>
+<main class="page-content">
+    <div class="page-inner" style="min-height:nullpx !important">
+        <div id="main-wrapper">
+            <div class="row">
+                {{> yield}}
+            </div><!-- Row -->
+        </div><!-- Main Wrapper -->
+    </div><!-- Page Inner -->
+</main>
 </template>
