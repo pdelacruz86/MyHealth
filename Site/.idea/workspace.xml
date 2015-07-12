@@ -1,225 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="10050413-bbd4-4d51-a8bf-b89384f2fd91" name="Default" comment="Initial Commit">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/compatibility/js/custom.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/compatibility/js/modern.min.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/switchery/switchery.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/switchery/switchery.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/switchery/switchery.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/switchery/switchery.min.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/3d-bold-navigation/css/reset.css" afterPath="$PROJECT_DIR$/client/lib/plugins/vertical-timeline/css/reset.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/3d-bold-navigation/css/style.css" afterPath="$PROJECT_DIR$/client/lib/plugins/3d-bold-navigation/css/style.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/3d-bold-navigation/js/jquery-2.1.1.js" afterPath="$PROJECT_DIR$/client/lib/plugins/pricing-tables/js/jquery-2.1.1.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/3d-bold-navigation/js/main.js" afterPath="$PROJECT_DIR$/client/lib/plugins/3d-bold-navigation/js/main.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/3d-bold-navigation/js/modernizr.js" afterPath="$PROJECT_DIR$/client/lib/plugins/product-preview-slider/js/modernizr.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/3d-bold-navigation/partials/_layout.scss" afterPath="$PROJECT_DIR$/client/lib/plugins/3d-bold-navigation/partials/_layout.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/3d-bold-navigation/partials/_mixins.scss" afterPath="$PROJECT_DIR$/client/lib/plugins/3d-bold-navigation/partials/_mixins.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/3d-bold-navigation/partials/_variables.scss" afterPath="$PROJECT_DIR$/client/lib/plugins/3d-bold-navigation/partials/_variables.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/3d-bold-navigation/scss/style.scss" afterPath="$PROJECT_DIR$/client/lib/plugins/3d-bold-navigation/scss/style.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/checkoutconcepts/css/checkout-boxes.css" afterPath="$PROJECT_DIR$/client/lib/plugins/checkoutconcepts/css/checkout-boxes.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/checkoutconcepts/css/checkout-cornerflat.css" afterPath="$PROJECT_DIR$/client/lib/plugins/checkoutconcepts/css/checkout-cornerflat.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/checkoutconcepts/css/checkout-rounded.css" afterPath="$PROJECT_DIR$/client/lib/plugins/checkoutconcepts/css/checkout-rounded.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/checkoutconcepts/css/checkout-sidebar.css" afterPath="$PROJECT_DIR$/client/lib/plugins/checkoutconcepts/css/checkout-sidebar.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/checkoutconcepts/css/demo.css" afterPath="$PROJECT_DIR$/client/lib/plugins/checkoutconcepts/css/demo.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/checkoutconcepts/css/normalize.css" afterPath="$PROJECT_DIR$/client/lib/plugins/checkoutconcepts/css/normalize.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/checkoutconcepts/js/classie.js" afterPath="$PROJECT_DIR$/client/lib/plugins/gridgallery/js/classie.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/datatables/css/jquery.datatables.css" afterPath="$PROJECT_DIR$/client/lib/plugins/datatables/css/jquery.datatables.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/datatables/css/jquery.datatables.min.css" afterPath="$PROJECT_DIR$/client/lib/plugins/datatables/css/jquery.datatables.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/datatables/css/jquery.datatables_themeroller.css" afterPath="$PROJECT_DIR$/client/lib/plugins/datatables/css/jquery.datatables_themeroller.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/datatables/images/Sorting icons.psd" afterPath="$PROJECT_DIR$/client/lib/plugins/datatables/images/Sorting icons.psd" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/datatables/images/favicon.ico" afterPath="$PROJECT_DIR$/client/lib/plugins/datatables/images/favicon.ico" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/datatables/images/sort_asc.png" afterPath="$PROJECT_DIR$/client/lib/plugins/datatables/images/sort_asc.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/datatables/images/sort_asc_disabled.png" afterPath="$PROJECT_DIR$/client/lib/plugins/datatables/images/sort_asc_disabled.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/datatables/images/sort_both.png" afterPath="$PROJECT_DIR$/client/lib/plugins/datatables/images/sort_both.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/datatables/images/sort_desc.png" afterPath="$PROJECT_DIR$/client/lib/plugins/datatables/images/sort_desc.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/datatables/images/sort_desc_disabled.png" afterPath="$PROJECT_DIR$/client/lib/plugins/datatables/images/sort_desc_disabled.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/datatables/js/jquery.datatables.js" afterPath="$PROJECT_DIR$/client/lib/plugins/datatables/js/jquery.datatables.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/datatables/js/jquery.datatables.min.js" afterPath="$PROJECT_DIR$/client/lib/plugins/datatables/js/jquery.datatables.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/dropzone/basic.min.css" afterPath="$PROJECT_DIR$/client/lib/plugins/dropzone/basic.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/dropzone/dropzone-amd-module.min.js" afterPath="$PROJECT_DIR$/client/lib/plugins/dropzone/dropzone-amd-module.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/dropzone/dropzone.min.css" afterPath="$PROJECT_DIR$/client/lib/plugins/dropzone/dropzone.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/dropzone/dropzone.min.js" afterPath="$PROJECT_DIR$/client/lib/plugins/dropzone/dropzone.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/fullcalendar/fullcalendar.css" afterPath="$PROJECT_DIR$/client/lib/plugins/fullcalendar/fullcalendar.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/fullcalendar/fullcalendar.js" afterPath="$PROJECT_DIR$/client/lib/plugins/fullcalendar/fullcalendar.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/fullcalendar/fullcalendar.min.css" afterPath="$PROJECT_DIR$/client/lib/plugins/fullcalendar/fullcalendar.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/fullcalendar/fullcalendar.min.js" afterPath="$PROJECT_DIR$/client/lib/plugins/fullcalendar/fullcalendar.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/fullcalendar/fullcalendar.print.css" afterPath="$PROJECT_DIR$/client/lib/plugins/fullcalendar/fullcalendar.print.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/fullcalendar/gcal.js" afterPath="$PROJECT_DIR$/client/lib/plugins/fullcalendar/gcal.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/fullcalendar/lang-all.js" afterPath="$PROJECT_DIR$/client/lib/plugins/fullcalendar/lang-all.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/fullcalendar/lib/cupertino/images/animated-overlay.gif" afterPath="$PROJECT_DIR$/client/lib/plugins/fullcalendar/lib/cupertino/images/animated-overlay.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/fullcalendar/lib/cupertino/images/ui-bg_diagonals-thick_90_eeeeee_40x40.png" afterPath="$PROJECT_DIR$/client/lib/plugins/fullcalendar/lib/cupertino/images/ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/fullcalendar/lib/cupertino/images/ui-bg_flat_15_cd0a0a_40x100.png" afterPath="$PROJECT_DIR$/client/lib/plugins/fullcalendar/lib/cupertino/images/ui-bg_flat_15_cd0a0a_40x100.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/fullcalendar/lib/cupertino/images/ui-bg_glass_100_e4f1fb_1x400.png" afterPath="$PROJECT_DIR$/client/lib/plugins/fullcalendar/lib/cupertino/images/ui-bg_glass_100_e4f1fb_1x400.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/fullcalendar/lib/cupertino/images/ui-bg_glass_50_3baae3_1x400.png" afterPath="$PROJECT_DIR$/client/lib/plugins/fullcalendar/lib/cupertino/images/ui-bg_glass_50_3baae3_1x400.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/fullcalendar/lib/cupertino/images/ui-bg_glass_80_d7ebf9_1x400.png" afterPath="$PROJECT_DIR$/client/lib/plugins/fullcalendar/lib/cupertino/images/ui-bg_glass_80_d7ebf9_1x400.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/fullcalendar/lib/cupertino/images/ui-bg_highlight-hard_100_f2f5f7_1x100.png" afterPath="$PROJECT_DIR$/client/lib/plugins/fullcalendar/lib/cupertino/images/ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/fullcalendar/lib/cupertino/images/ui-bg_highlight-hard_70_000000_1x100.png" afterPath="$PROJECT_DIR$/client/lib/plugins/fullcalendar/lib/cupertino/images/ui-bg_highlight-hard_70_000000_1x100.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/fullcalendar/lib/cupertino/images/ui-bg_highlight-soft_100_deedf7_1x100.png" afterPath="$PROJECT_DIR$/client/lib/plugins/fullcalendar/lib/cupertino/images/ui-bg_highlight-soft_100_deedf7_1x100.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/fullcalendar/lib/cupertino/images/ui-bg_highlight-soft_25_ffef8f_1x100.png" afterPath="$PROJECT_DIR$/client/lib/plugins/fullcalendar/lib/cupertino/images/ui-bg_highlight-soft_25_ffef8f_1x100.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/fullcalendar/lib/cupertino/images/ui-icons_2694e8_256x240.png" afterPath="$PROJECT_DIR$/client/lib/plugins/fullcalendar/lib/cupertino/images/ui-icons_2694e8_256x240.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/fullcalendar/lib/cupertino/images/ui-icons_2e83ff_256x240.png" afterPath="$PROJECT_DIR$/client/lib/plugins/fullcalendar/lib/cupertino/images/ui-icons_2e83ff_256x240.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/fullcalendar/lib/cupertino/images/ui-icons_3d80b3_256x240.png" afterPath="$PROJECT_DIR$/client/lib/plugins/fullcalendar/lib/cupertino/images/ui-icons_3d80b3_256x240.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/fullcalendar/lib/cupertino/images/ui-icons_72a7cf_256x240.png" afterPath="$PROJECT_DIR$/client/lib/plugins/fullcalendar/lib/cupertino/images/ui-icons_72a7cf_256x240.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/fullcalendar/lib/cupertino/images/ui-icons_ffffff_256x240.png" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-ui/images/ui-icons_ffffff_256x240.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/fullcalendar/lib/cupertino/jquery-ui.min.css" afterPath="$PROJECT_DIR$/client/lib/plugins/fullcalendar/lib/cupertino/jquery-ui.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/fullcalendar/lib/jquery-ui.custom.min.js" afterPath="$PROJECT_DIR$/client/lib/plugins/fullcalendar/lib/jquery-ui.custom.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/fullcalendar/lib/jquery.min.js" afterPath="$PROJECT_DIR$/client/lib/plugins/fullcalendar/lib/jquery.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/fullcalendar/lib/moment.min.js" afterPath="$PROJECT_DIR$/client/lib/plugins/fullcalendar/lib/moment.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/gridgallery/css/component.css" afterPath="$PROJECT_DIR$/client/lib/plugins/gridgallery/css/component.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/gridgallery/css/demo.css" afterPath="$PROJECT_DIR$/client/lib/plugins/gridgallery/css/demo.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/gridgallery/img/large/1.png" afterPath="$PROJECT_DIR$/client/lib/plugins/gridgallery/img/large/1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/gridgallery/img/large/2.png" afterPath="$PROJECT_DIR$/client/lib/plugins/gridgallery/img/large/2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/gridgallery/img/large/3.png" afterPath="$PROJECT_DIR$/client/lib/plugins/gridgallery/img/large/3.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/gridgallery/img/large/4.png" afterPath="$PROJECT_DIR$/client/lib/plugins/gridgallery/img/large/4.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/gridgallery/img/large/5.png" afterPath="$PROJECT_DIR$/client/lib/plugins/gridgallery/img/large/5.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/gridgallery/img/large/6.png" afterPath="$PROJECT_DIR$/client/lib/plugins/gridgallery/img/large/6.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/gridgallery/img/thumb/1.png" afterPath="$PROJECT_DIR$/client/lib/plugins/gridgallery/img/thumb/1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/gridgallery/img/thumb/2.png" afterPath="$PROJECT_DIR$/client/lib/plugins/gridgallery/img/thumb/2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/gridgallery/img/thumb/3.png" afterPath="$PROJECT_DIR$/client/lib/plugins/gridgallery/img/thumb/3.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/gridgallery/img/thumb/4.png" afterPath="$PROJECT_DIR$/client/lib/plugins/gridgallery/img/thumb/4.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/gridgallery/img/thumb/5.png" afterPath="$PROJECT_DIR$/client/lib/plugins/gridgallery/img/thumb/5.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/gridgallery/img/thumb/6.png" afterPath="$PROJECT_DIR$/client/lib/plugins/gridgallery/img/thumb/6.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/gridgallery/js/cbpgridgallery.js" afterPath="$PROJECT_DIR$/client/lib/plugins/gridgallery/js/cbpgridgallery.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/gridgallery/js/classie.js" afterPath="$PROJECT_DIR$/client/lib/plugins/checkoutconcepts/js/classie.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/gridgallery/js/imagesloaded.pkgd.min.js" afterPath="$PROJECT_DIR$/client/lib/plugins/gridgallery/js/imagesloaded.pkgd.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/gridgallery/js/masonry.pkgd.min.js" afterPath="$PROJECT_DIR$/client/lib/plugins/gridgallery/js/masonry.pkgd.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/gridgallery/js/modernizr.custom.js" afterPath="$PROJECT_DIR$/client/lib/plugins/gridgallery/js/modernizr.custom.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/image-cropper/cropper.css" afterPath="$PROJECT_DIR$/client/lib/plugins/image-cropper/cropper.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/image-cropper/cropper.js" afterPath="$PROJECT_DIR$/client/lib/plugins/image-cropper/cropper.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/image-cropper/cropper.min.css" afterPath="$PROJECT_DIR$/client/lib/plugins/image-cropper/cropper.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/image-cropper/cropper.min.js" afterPath="$PROJECT_DIR$/client/lib/plugins/image-cropper/cropper.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-countdown/jquery.countdown.js" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-countdown/jquery.countdown.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-countdown/jquery.countdown.min.js" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-countdown/jquery.countdown.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-counterup/LICENSE" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-counterup/LICENSE" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-counterup/README.md" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-counterup/README.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-counterup/counterup.jquery.json" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-counterup/counterup.jquery.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-counterup/jquery.counterup.js" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-counterup/jquery.counterup.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-counterup/jquery.counterup.min.js" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-counterup/jquery.counterup.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-mockjax-master/jquery.mockjax.js" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-mockjax-master/jquery.mockjax.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-slimscroll/README.md" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-slimscroll/README.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-slimscroll/jquery.slimscroll.js" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-slimscroll/jquery.slimscroll.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-slimscroll/jquery.slimscroll.min.js" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-slimscroll/jquery.slimscroll.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-slimscroll/slimScroll.jquery.json" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-slimscroll/slimScroll.jquery.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-sparkline/jquery.sparkline.min.js" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-sparkline/jquery.sparkline.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-ui/external/jquery/jquery.js" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-ui/external/jquery/jquery.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-ui/images/ui-bg_diagonals-thick_18_b81900_40x40.png" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-ui/images/ui-bg_diagonals-thick_18_b81900_40x40.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-ui/images/ui-bg_diagonals-thick_20_666666_40x40.png" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-ui/images/ui-bg_diagonals-thick_20_666666_40x40.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-ui/images/ui-bg_flat_10_000000_40x100.png" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-ui/images/ui-bg_flat_10_000000_40x100.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-ui/images/ui-bg_glass_100_f6f6f6_1x400.png" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-ui/images/ui-bg_glass_100_f6f6f6_1x400.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-ui/images/ui-bg_glass_100_fdf5ce_1x400.png" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-ui/images/ui-bg_glass_100_fdf5ce_1x400.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-ui/images/ui-bg_glass_65_ffffff_1x400.png" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-ui/images/ui-bg_glass_65_ffffff_1x400.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-ui/images/ui-bg_gloss-wave_35_f6a828_500x100.png" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-ui/images/ui-bg_gloss-wave_35_f6a828_500x100.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-ui/images/ui-bg_highlight-soft_100_eeeeee_1x100.png" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-ui/images/ui-bg_highlight-soft_100_eeeeee_1x100.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-ui/images/ui-bg_highlight-soft_75_ffe45c_1x100.png" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-ui/images/ui-bg_highlight-soft_75_ffe45c_1x100.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-ui/images/ui-icons_222222_256x240.png" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-ui/images/ui-icons_222222_256x240.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-ui/images/ui-icons_228ef1_256x240.png" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-ui/images/ui-icons_228ef1_256x240.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-ui/images/ui-icons_ef8c08_256x240.png" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-ui/images/ui-icons_ef8c08_256x240.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-ui/images/ui-icons_ffd27a_256x240.png" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-ui/images/ui-icons_ffd27a_256x240.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-ui/images/ui-icons_ffffff_256x240.png" afterPath="$PROJECT_DIR$/client/lib/plugins/fullcalendar/lib/cupertino/images/ui-icons_ffffff_256x240.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-ui/jquery-ui.css" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-ui/jquery-ui.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-ui/jquery-ui.js" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-ui/jquery-ui.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-ui/jquery-ui.min.css" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-ui/jquery-ui.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-ui/jquery-ui.min.js" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-ui/jquery-ui.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-ui/jquery-ui.structure.css" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-ui/jquery-ui.structure.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-ui/jquery-ui.structure.min.css" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-ui/jquery-ui.structure.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-ui/jquery-ui.theme.css" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-ui/jquery-ui.theme.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-ui/jquery-ui.theme.min.css" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-ui/jquery-ui.theme.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-validation/jquery.validate.js" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-validation/jquery.validate.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jquery-validation/jquery.validate.min.js" afterPath="$PROJECT_DIR$/client/lib/plugins/jquery-validation/jquery.validate.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jstree/jstree.js" afterPath="$PROJECT_DIR$/client/lib/plugins/jstree/jstree.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jstree/jstree.min.js" afterPath="$PROJECT_DIR$/client/lib/plugins/jstree/jstree.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jstree/themes/default-dark/32px.png" afterPath="$PROJECT_DIR$/client/lib/plugins/jstree/themes/default-dark/32px.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jstree/themes/default-dark/40px.png" afterPath="$PROJECT_DIR$/client/lib/plugins/jstree/themes/default-dark/40px.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jstree/themes/default-dark/style.css" afterPath="$PROJECT_DIR$/client/lib/plugins/jstree/themes/default-dark/style.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jstree/themes/default-dark/style.min.css" afterPath="$PROJECT_DIR$/client/lib/plugins/jstree/themes/default-dark/style.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jstree/themes/default-dark/throbber.gif" afterPath="$PROJECT_DIR$/client/lib/plugins/jstree/themes/default-dark/throbber.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jstree/themes/default/32px.png" afterPath="$PROJECT_DIR$/client/lib/plugins/jstree/themes/default/32px.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jstree/themes/default/40px.png" afterPath="$PROJECT_DIR$/client/lib/plugins/jstree/themes/default/40px.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jstree/themes/default/style.css" afterPath="$PROJECT_DIR$/client/lib/plugins/jstree/themes/default/style.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jstree/themes/default/style.min.css" afterPath="$PROJECT_DIR$/client/lib/plugins/jstree/themes/default/style.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/jstree/themes/default/throbber.gif" afterPath="$PROJECT_DIR$/client/lib/plugins/jstree/themes/default/throbber.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/metrojs/MetroJs.css" afterPath="$PROJECT_DIR$/client/lib/plugins/metrojs/MetroJs.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/metrojs/MetroJs.js" afterPath="$PROJECT_DIR$/client/lib/plugins/metrojs/MetroJs.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/metrojs/MetroJs.min.css" afterPath="$PROJECT_DIR$/client/lib/plugins/metrojs/MetroJs.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/metrojs/MetroJs.min.js" afterPath="$PROJECT_DIR$/client/lib/plugins/metrojs/MetroJs.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/metrojs/images/1pixel.gif" afterPath="$PROJECT_DIR$/client/lib/plugins/metrojs/images/1pixel.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/metrojs/images/metroIcons.jpg" afterPath="$PROJECT_DIR$/client/lib/plugins/metrojs/images/metroIcons.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/metrojs/images/metroIcons_light.jpg" afterPath="$PROJECT_DIR$/client/lib/plugins/metrojs/images/metroIcons_light.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/moment/moment.js" afterPath="$PROJECT_DIR$/client/lib/plugins/moment/moment.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/morris/morris.css" afterPath="$PROJECT_DIR$/client/lib/plugins/morris/morris.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/morris/morris.js" afterPath="$PROJECT_DIR$/client/lib/plugins/morris/morris.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/morris/morris.min.js" afterPath="$PROJECT_DIR$/client/lib/plugins/morris/morris.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/morris/raphael.min.js" afterPath="$PROJECT_DIR$/client/lib/plugins/morris/raphael.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/nestable/jquery.nestable.js" afterPath="$PROJECT_DIR$/client/lib/plugins/nestable/jquery.nestable.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/nestable/nestable.css" afterPath="$PROJECT_DIR$/client/lib/plugins/nestable/nestable.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/pricing-tables/css/reset.css" afterPath="$PROJECT_DIR$/client/lib/plugins/product-preview-slider/css/reset.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/pricing-tables/css/style.css" afterPath="$PROJECT_DIR$/client/lib/plugins/pricing-tables/css/style.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/pricing-tables/img/cd-icon-small-arrow.svg" afterPath="$PROJECT_DIR$/client/lib/plugins/pricing-tables/img/cd-icon-small-arrow.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/pricing-tables/js/jquery-2.1.1.js" afterPath="$PROJECT_DIR$/client/lib/plugins/3d-bold-navigation/js/jquery-2.1.1.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/pricing-tables/js/main.js" afterPath="$PROJECT_DIR$/client/lib/plugins/pricing-tables/js/main.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/pricing-tables/js/modernizr.js" afterPath="$PROJECT_DIR$/client/lib/plugins/pricing-tables/js/modernizr.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/pricing-tables/partials/_layout.scss" afterPath="$PROJECT_DIR$/client/lib/plugins/pricing-tables/partials/_layout.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/pricing-tables/partials/_mixins.scss" afterPath="$PROJECT_DIR$/client/lib/plugins/pricing-tables/partials/_mixins.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/pricing-tables/partials/_variables.scss" afterPath="$PROJECT_DIR$/client/lib/plugins/pricing-tables/partials/_variables.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/pricing-tables/scss/style.scss" afterPath="$PROJECT_DIR$/client/lib/plugins/pricing-tables/scss/style.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/product-preview-slider/css/reset.css" afterPath="$PROJECT_DIR$/client/lib/plugins/pricing-tables/css/reset.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/product-preview-slider/css/style.css" afterPath="$PROJECT_DIR$/client/lib/plugins/product-preview-slider/css/style.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/product-preview-slider/img/ugmonk-bag-1.jpg" afterPath="$PROJECT_DIR$/client/lib/plugins/product-preview-slider/img/ugmonk-bag-1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/product-preview-slider/img/ugmonk-bag-2.jpg" afterPath="$PROJECT_DIR$/client/lib/plugins/product-preview-slider/img/ugmonk-bag-2.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/product-preview-slider/img/ugmonk-bag-3.jpg" afterPath="$PROJECT_DIR$/client/lib/plugins/product-preview-slider/img/ugmonk-bag-3.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/product-preview-slider/img/ugmonk-cap-1.jpg" afterPath="$PROJECT_DIR$/client/lib/plugins/product-preview-slider/img/ugmonk-cap-1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/product-preview-slider/img/ugmonk-cap-2.jpg" afterPath="$PROJECT_DIR$/client/lib/plugins/product-preview-slider/img/ugmonk-cap-2.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/product-preview-slider/img/ugmonk-cap-3.jpg" afterPath="$PROJECT_DIR$/client/lib/plugins/product-preview-slider/img/ugmonk-cap-3.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/product-preview-slider/img/ugmonk-tshirt-1.jpg" afterPath="$PROJECT_DIR$/client/lib/plugins/product-preview-slider/img/ugmonk-tshirt-1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/product-preview-slider/img/ugmonk-tshirt-2.jpg" afterPath="$PROJECT_DIR$/client/lib/plugins/product-preview-slider/img/ugmonk-tshirt-2.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/product-preview-slider/img/ugmonk-tshirt-3.jpg" afterPath="$PROJECT_DIR$/client/lib/plugins/product-preview-slider/img/ugmonk-tshirt-3.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/product-preview-slider/js/jquery.mobile.min.js" afterPath="$PROJECT_DIR$/client/lib/plugins/product-preview-slider/js/jquery.mobile.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/product-preview-slider/js/main.js" afterPath="$PROJECT_DIR$/client/lib/plugins/product-preview-slider/js/main.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/product-preview-slider/js/modernizr.js" afterPath="$PROJECT_DIR$/client/lib/plugins/3d-bold-navigation/js/modernizr.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/product-preview-slider/partials/_layout.scss" afterPath="$PROJECT_DIR$/client/lib/plugins/product-preview-slider/partials/_layout.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/product-preview-slider/partials/_mixins.scss" afterPath="$PROJECT_DIR$/client/lib/plugins/product-preview-slider/partials/_mixins.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/product-preview-slider/partials/_variables.scss" afterPath="$PROJECT_DIR$/client/lib/plugins/product-preview-slider/partials/_variables.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/product-preview-slider/scss/style.scss" afterPath="$PROJECT_DIR$/client/lib/plugins/product-preview-slider/scss/style.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/slidepushmenus/css/component.css" afterPath="$PROJECT_DIR$/client/lib/plugins/slidepushmenus/css/component.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/slidepushmenus/css/default.css" afterPath="$PROJECT_DIR$/client/lib/plugins/slidepushmenus/css/default.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/slidepushmenus/js/classie.js" afterPath="$PROJECT_DIR$/client/lib/plugins/slidepushmenus/js/classie.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/slidepushmenus/js/modernizr.custom.js" afterPath="$PROJECT_DIR$/client/lib/plugins/slidepushmenus/js/modernizr.custom.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/summernote-master/summernote-bs2.css" afterPath="$PROJECT_DIR$/client/lib/plugins/summernote-master/summernote-bs2.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/summernote-master/summernote-bs3.css" afterPath="$PROJECT_DIR$/client/lib/plugins/summernote-master/summernote-bs3.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/summernote-master/summernote.css" afterPath="$PROJECT_DIR$/client/lib/plugins/summernote-master/summernote.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/summernote-master/summernote.js" afterPath="$PROJECT_DIR$/client/lib/plugins/summernote-master/summernote.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/summernote-master/summernote.min.js" afterPath="$PROJECT_DIR$/client/lib/plugins/summernote-master/summernote.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/toastr/toastr.js.map" afterPath="$PROJECT_DIR$/client/lib/plugins/toastr/toastr.js.map" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/toastr/toastr.min.css" afterPath="$PROJECT_DIR$/client/lib/plugins/toastr/toastr.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/toastr/toastr.min.js" afterPath="$PROJECT_DIR$/client/lib/plugins/toastr/toastr.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/twitter-bootstrap-wizard/jquery.bootstrap.wizard.js" afterPath="$PROJECT_DIR$/client/lib/plugins/twitter-bootstrap-wizard/jquery.bootstrap.wizard.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js" afterPath="$PROJECT_DIR$/client/lib/plugins/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/uniform/css/uniform.default.css" afterPath="$PROJECT_DIR$/client/lib/plugins/uniform/css/uniform.default.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/uniform/css/uniform.default.min.css" afterPath="$PROJECT_DIR$/client/lib/plugins/uniform/css/uniform.default.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/uniform/css/uniform.default.scss" afterPath="$PROJECT_DIR$/client/lib/plugins/uniform/css/uniform.default.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/uniform/images/bg-input-focus.png" afterPath="$PROJECT_DIR$/client/lib/plugins/uniform/images/bg-input-focus.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/uniform/images/bg-input.png" afterPath="$PROJECT_DIR$/client/lib/plugins/uniform/images/bg-input.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/uniform/images/sprite.png" afterPath="$PROJECT_DIR$/client/lib/plugins/uniform/images/sprite.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/uniform/jquery.uniform.js" afterPath="$PROJECT_DIR$/client/lib/plugins/uniform/jquery.uniform.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/uniform/jquery.uniform.min.js" afterPath="$PROJECT_DIR$/client/lib/plugins/uniform/jquery.uniform.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/vertical-timeline/css/reset.css" afterPath="$PROJECT_DIR$/client/lib/plugins/3d-bold-navigation/css/reset.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/vertical-timeline/css/style.css" afterPath="$PROJECT_DIR$/client/lib/plugins/vertical-timeline/css/style.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/vertical-timeline/js/main.js" afterPath="$PROJECT_DIR$/client/lib/plugins/vertical-timeline/js/main.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/vertical-timeline/js/modernizr.js" afterPath="$PROJECT_DIR$/client/lib/plugins/vertical-timeline/js/modernizr.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/vertical-timeline/partials/_layout.scss" afterPath="$PROJECT_DIR$/client/lib/plugins/vertical-timeline/partials/_layout.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/vertical-timeline/partials/_mixins.scss" afterPath="$PROJECT_DIR$/client/lib/plugins/vertical-timeline/partials/_mixins.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/vertical-timeline/partials/_variables.scss" afterPath="$PROJECT_DIR$/client/lib/plugins/vertical-timeline/partials/_variables.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/vertical-timeline/scss/style.scss" afterPath="$PROJECT_DIR$/client/lib/plugins/vertical-timeline/scss/style.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/waves/waves.css" afterPath="$PROJECT_DIR$/client/lib/plugins/waves/waves.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/waves/waves.js" afterPath="$PROJECT_DIR$/client/lib/plugins/waves/waves.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/waves/waves.min.css" afterPath="$PROJECT_DIR$/client/lib/plugins/waves/waves.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/waves/waves.min.js" afterPath="$PROJECT_DIR$/client/lib/plugins/waves/waves.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/compatibility/plugins/waves/waves.min.js.map" afterPath="$PROJECT_DIR$/client/lib/plugins/waves/waves.min.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/views/layouts/basic.html" afterPath="$PROJECT_DIR$/client/views/layouts/basic.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.meteor/packages" afterPath="$PROJECT_DIR$/.meteor/packages" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.meteor/versions" afterPath="$PROJECT_DIR$/.meteor/versions" />
-    </list>
+    <list default="true" id="10050413-bbd4-4d51-a8bf-b89384f2fd91" name="Default" comment="Initial Commit" />
     <ignored path="MyHealth.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -242,16 +24,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="layout-blank.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Template-Modern-Redacta/Source/admin1/layout-blank.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.75" vertical-offset="585" max-vertical-offset="8775">
-              <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="modern.min.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/compatibility/js/modern.min.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -275,7 +47,7 @@
       <file leaf-file-name="default.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/compatibility/default.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
+            <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="150">
               <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -287,7 +59,7 @@
       <file leaf-file-name="basic.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/views/layouts/basic.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.42" vertical-offset="839" max-vertical-offset="2520">
+            <state vertical-scroll-proportion="0.0" vertical-offset="839" max-vertical-offset="2520">
               <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
               <folding />
             </state>
@@ -407,37 +179,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyHealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyHealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyHealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyHealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Meteor/spreadjs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="enabled" />
     <property name="js.meteor.project" value="true" />
@@ -478,14 +226,10 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
-      <method />
-    </configuration>
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <method />
     </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
-      <envs />
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
     </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
@@ -493,6 +237,10 @@
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="Chrome" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -574,24 +322,24 @@
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32892805" sideWeight="0.49960285" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34361234" sideWeight="0.49960285" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34361234" sideWeight="0.49960285" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32892805" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2494043" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25416997" sideWeight="0.4992658" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25416997" sideWeight="0.4992658" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25416997" sideWeight="0.5007342" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35095447" sideWeight="0.50039715" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32892805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32892805" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32892805" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -618,17 +366,84 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/client/compatibility/js/modern.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/compatibility/js/custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/compatibility/default.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="150">
+          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/views/layouts/basic.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="839" max-vertical-offset="2520">
+          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/stylesheets/assets/js/modern.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7665">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/stylesheets/assets/js/modern.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/lib/normalize.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6435">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/lib/spacebarHelpers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/lib/constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/views/notFound/notFound.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="641">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Template-Modern-Redacta/Source/admin1/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.048622366" vertical-offset="0" max-vertical-offset="14595">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="44" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -695,20 +510,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/views/Dashboard/Dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07154213" vertical-offset="0" max-vertical-offset="629">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/views/blank/blank.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.023847377" vertical-offset="0" max-vertical-offset="629">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/views/common/footer.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.023847377" vertical-offset="0" max-vertical-offset="629">
@@ -749,13 +550,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/offcanvasmenueffects/js/main2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1620">
-          <caret line="38" column="15" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.meteor/packages">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.0" vertical-offset="45" max-vertical-offset="525">
@@ -770,25 +564,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/offcanvasmenueffects/js/snap.svg-min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="655">
-          <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/offcanvasmenueffects/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="825">
-          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/lib/plugins/jquery-validation/jquery.validate.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="24.657005" vertical-offset="6112" max-vertical-offset="20445">
           <caret line="1095" column="12" selection-start-line="1095" selection-start-column="12" selection-end-line="1095" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -803,7 +582,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="24.983091" vertical-offset="30487" max-vertical-offset="248760">
           <caret line="2725" column="11" selection-start-line="2725" selection-start-column="11" selection-end-line="2725" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -814,23 +592,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/offcanvasmenueffects/js/main3.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5072464" vertical-offset="0" max-vertical-offset="1080">
-          <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.meteor/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="414">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="641">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
@@ -853,15 +617,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="414">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/offcanvasmenueffects/js/classie.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1170">
-          <caret line="38" column="6" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -879,9 +634,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.8333333" vertical-offset="345" max-vertical-offset="16110">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -889,7 +641,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5580">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -897,7 +648,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="419">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -905,21 +655,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.071599044" vertical-offset="0" max-vertical-offset="419">
           <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/stylesheets/assets/css/modern.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="76485">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/stylesheets/assets/css/modern.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="419">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -941,17 +682,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Template-Modern-Redacta/Source/admin1/layout-blank.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.75" vertical-offset="585" max-vertical-offset="8775">
-          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/views/layouts/basic.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.42" vertical-offset="839" max-vertical-offset="2520">
+        <state vertical-scroll-proportion="0.0" vertical-offset="839" max-vertical-offset="2520">
           <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
           <folding />
         </state>

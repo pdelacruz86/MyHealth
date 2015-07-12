@@ -173,5 +173,9 @@ meteor-boilerplate		# Command line tool
 - [meteor-boilerplate](https://github.com/BeDifferential/meteor-boilerplate) by BeDifferential (CoffeeScript)
 - [em](https://github.com/EventedMind/em) by EventedMind (Boilerplate & Scaffolding)
 
+## tutoriales que se han usados
+- [Login with external Service](http://themeteorchef.com/recipes/roll-your-own-authentication/)
+- [Usual login and register-registering using email](https://scotch.io/tutorials/building-a-slack-clone-in-meteor-js-part-3-authentication-and-security)
+- [another email login reference Used] (https://scotch.io/tutorials/building-a-slack-clone-in-meteor-js-part-3-authentication-and-security)
 ## License
 This boilerplate has an MIT License, see the LICENSE.txt for more information.

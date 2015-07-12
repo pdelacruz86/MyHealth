@@ -23,6 +23,10 @@ console.log('entro', firstname, lastname, email, password);
                 Router.go("home"); // Redirect user if registration succeeds
             }
         });
+    },
+    'click #loginAccount' : function(){
+        event.preventDefault();
+        Router.go("login");
     }
 });
 

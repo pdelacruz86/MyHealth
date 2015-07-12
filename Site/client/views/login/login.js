@@ -16,6 +16,32 @@ Template['login'].events({
                 Router.go("home");
             }
         });
+    },
+    'click #createAccount' : function(){
+        event.preventDefault();
+        Router.go("register");
+    },
+    'click .btn-google': function() {
+        return Meteor.loginWithGoogle({
+            requestPermissions: ['email']
+        }, function (error) {
+            if (error) {
+                return console.log(error.reason);
+            }
+            else{
+                Router.go("home");
+            }
+        });
+    },
+    'click .btn-twitter': function() {
+        return Meteor.loginWithTwitter(function(error){
+            if (error) {
+                return console.log(error.reason);
+            }
+            else{
+                Router.go("home");
+            }
+        });
     }
 });
 
