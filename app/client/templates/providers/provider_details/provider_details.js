@@ -1,23 +1,23 @@
 /*****************************************************************************/
-/* Testing: Event Handlers */
+/* ProviderDetails: Event Handlers */
 /*****************************************************************************/
-Template.Testing.events({
+Template.ProviderDetails.events({
 });
 
 /*****************************************************************************/
-/* Testing: Helpers */
+/* ProviderDetails: Helpers */
 /*****************************************************************************/
-Template.Testing.helpers({
+Template.ProviderDetails.helpers({
 });
 
 /*****************************************************************************/
-/* Testing: Lifecycle Hooks */
+/* ProviderDetails: Lifecycle Hooks */
 /*****************************************************************************/
-Template.Testing.created = function () {
+Template.ProviderDetails.created = function () {
 };
 
-Template.Testing.rendered = function () {
+Template.ProviderDetails.rendered = function () {
 };
 
-Template.Testing.destroyed = function () {
+Template.ProviderDetails.destroyed = function () {
 };

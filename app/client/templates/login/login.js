@@ -30,15 +30,25 @@
                 }
                 else{
                     console.log('entro')
-                    console.log(Meteor.userId());
 
                     var userid = Meteor.userId();
 
-                    Meteor.call("create_profile", userid, function(error, user_id) {
-                        //Session.set("user_id", user_id);
-                    });
+                    var valid = HB_Profiles.find({userId : userid}).fetch().length;
 
-                    Meteor.call("InitializeUserProfile");
+                    if(valid == 0){
+
+                        Meteor.call("create_profile", function(error, user_id) {
+                                console.log(user_id);
+                        });
+                    }
+
+
+                    //
+                    //Meteor.call("create_profile", userid, function(error, user_id) {
+                    //    //Session.set("user_id", user_id);
+                    //});
+                    //
+                    //Meteor.call("InitializeUserProfile");
                     //validate profile exists
 
                     //var profile = HB_Profiles.find({"user_id" : Meteor.userId()});

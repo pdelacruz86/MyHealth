@@ -4,12 +4,12 @@
         {{> header}}
         <div class="page-inner">
             <div class="page-title">
-                <h3>Blank Page</h3>
+                {{> yield "pagetitle"}}
+
                 <div class="page-breadcrumb">
                     <ol class="breadcrumb">
-                        <li><a href="#">Breadcrumb1</a></li>
-                        <li><a href="#">Breadcrumb2</a></li>
-                        <li class="active">Blank Page</li>
+                        <li><a href="#">home</a></li>
+                        {{> yield "breadcrumbs"}}
                     </ol>
                 </div>
             </div>

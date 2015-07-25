@@ -8,7 +8,7 @@ Router.route('/register', {
     action: function () {
         this.layout('slimLayout');
         this.render('register');
-        SEO.set({ title: 'Home - ' + Meteor.App.NAME + ' testing' });
+        //SEO.set({ title: 'Home - ' + Meteor.App.NAME + ' testing' });
     }
 });
 
@@ -17,6 +17,6 @@ Router.route('/login', {
     action: function () {
         this.layout('slimLayout');
         this.render('login');
-        SEO.set({ title: 'Home - ' + Meteor.App.NAME + ' testing' });
+        //SEO.set({ title: 'Home - ' + Meteor.App.NAME + ' testing' });
     }
 });

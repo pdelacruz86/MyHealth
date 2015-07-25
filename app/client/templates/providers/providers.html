@@ -1,145 +1,17 @@
 <template name="providers">
+    {{#contentFor "pagetitle"}}
+        <h3>Providers</h3>
+    {{/contentFor}}
+{{#contentFor "breadcrumbs"}}
+    <li class="active">Providers</li>
+{{/contentFor}}
+
+    {{#if hasProvider}}
+        {{> ProviderDetails}}
+    {{else}}
+        <h1>You dont have active providers</h1>
+        {{> ProviderSetupModal}}
+    {{/if}}
 
 
-    <div class="cd-pricing-container">
-        <div class="cd-pricing-switcher">
-            <p class="fieldset">
-                <input type="radio" class="no-uniform" name="duration-1" value="monthly" id="monthly-1" checked="">
-                <label for="monthly-1">Aetna</label>
-                <input type="radio" class="no-uniform" name="duration-1" value="yearly" id="yearly-1">
-                <label for="yearly-1">Other</label>
-                <span class="cd-switch"></span>
-            </p>
-        </div>
-        <ul class="cd-pricing-list cd-bounce-invert">
-            <li>
-                <ul class="cd-pricing-wrapper">
-                    <li data-type="monthly" class="is-visible is-ended">
-                        <header class="cd-pricing-header">
-                            <h2>Pharmacy</h2>
-                            <div class="cd-price">
-                                <span class="cd-currency">$</span>
-                                <span class="cd-value">0</span>
-                                <span class="cd-duration">mo</span>
-                            </div>
-                        </header>
-                        <div class="cd-pricing-body">
-
-                        </div>
-                        <footer class="cd-pricing-footer">
-                            <a class="cd-select" href="#">load data</a>
-                        </footer>
-                    </li>
-                    <li data-type="yearly" class="is-hidden is-ended">
-                        <header class="cd-pricing-header">
-                            <h2>Farmacy</h2>
-                            <div class="cd-price">
-                                <span class="cd-currency">$</span>
-                                <span class="cd-value">0</span>
-                                <span class="cd-duration">yr</span>
-                            </div>
-                        </header>
-                        <div class="cd-pricing-body">
-
-                        </div>
-                        <footer class="cd-pricing-footer">
-                            <a class="cd-select" href="#">load data</a>
-                        </footer>
-                    </li>
-                </ul>
-            </li>
-            <li class="cd-popular">
-                <ul class="cd-pricing-wrapper">
-                    <li data-type="monthly" class="is-visible is-ended">
-                        <header class="cd-pricing-header">
-                            <h2>Medical</h2>
-                            <div class="cd-price">
-                                <span class="cd-currency">$</span>
-                                <span class="cd-value">0</span>
-                                <span class="cd-duration">mo</span>
-                            </div>
-                        </header>
-                        <div class="cd-pricing-body">
-
-                        </div>
-                        <footer class="cd-pricing-footer">
-                            <a class="cd-select" href="#">Load data</a>
-                        </footer>
-                    </li>
-                    <li data-type="yearly" class="is-hidden is-ended">
-                        <header class="cd-pricing-header">
-                            <h2>Medical</h2>
-                            <div class="cd-price">
-                                <span class="cd-currency">$</span>
-                                <span class="cd-value">0</span>
-                                <span class="cd-duration">yr</span>
-                            </div>
-                        </header>
-                        <div class="cd-pricing-body">
-
-                        </div>
-                        <footer class="cd-pricing-footer">
-                            <a class="cd-select" href="#">Load data</a>
-                        </footer>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <ul class="cd-pricing-wrapper">
-                    <li data-type="monthly" class="is-visible is-ended">
-                        <header class="cd-pricing-header">
-                            <h2>Dental</h2>
-                            <div class="cd-price">
-                                <span class="cd-currency">$</span>
-                                <span class="cd-value">0</span>
-                                <span class="cd-duration">mo</span>
-                            </div>
-                        </header>
-                        <div class="cd-pricing-body">
-
-                        </div>
-                        <footer class="cd-pricing-footer">
-                            <a class="cd-select" href="#">Load data</a>
-                        </footer>
-                    </li>
-                    <li data-type="yearly" class="is-hidden is-ended">
-                        <header class="cd-pricing-header">
-                            <h2>Dental</h2>
-                            <div class="cd-price">
-                                <span class="cd-currency">$</span>
-                                <span class="cd-value">0</span>
-                                <span class="cd-duration">yr</span>
-                            </div>
-                        </header>
-                        <div class="cd-pricing-body">
-
-                        </div>
-                        <footer class="cd-pricing-footer">
-                            <a class="cd-select" href="#">load data</a>
-                        </footer>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button>
-
-    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="mySmallModalLabel">Modal title</h4>
-                </div>
-                <div class="modal-body">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.<br><br>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
 </template>

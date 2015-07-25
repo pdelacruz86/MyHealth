@@ -24,12 +24,3 @@ Router.route('/home', {
     where: 'client'
 });
 
-
-
-Router.route('/providers', {
-    name: 'providers',
-    action: function () {
-        this.render('providers');
-        SEO.set({ title: 'Landing page - ' + Meteor.App.NAME});
-    }
-});

@@ -1,16 +1,4 @@
-HB_Profiles = new Mongo.Collection("hb_profiles");
 
-Meteor.methods({
-  create_profile: function(user_id) {
-    console.log("CREATING profile");
-
-    var profileid = HB_Profiles.insert({"user_id": user_id, "claims" : []});
-    return profileid;
-  },
-  update_profile: function(){
-
-  }
-});
 
 
 function loadUser(user) {

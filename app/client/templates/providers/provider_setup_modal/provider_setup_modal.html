@@ -1,0 +1,143 @@
+<template name="ProviderSetupModal">
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-sm">Setup providers</button>
+
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="mySmallModalLabel">Provider setup</h4>
+                </div>
+                <div class="modal-body">
+
+
+
+
+                    <div id="main-wrapper">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-white">
+                                    <div class="panel-body">
+                                        <div id="rootwizard">
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                <li role="presentation" class="active"><a href="#tab1" data-toggle="tab"><i class="fa fa-user m-r-xs"></i>Providers</a></li>
+                                                <li role="presentation"><a href="#tab2" data-toggle="tab"><i class="fa fa-truck m-r-xs"></i>Login Info</a></li>
+                                                <li role="presentation"><a href="#tab3" data-toggle="tab"><i class="fa fa-truck m-r-xs"></i>Sync data</a></li>
+                                                <li role="presentation"><a href="#tab4" data-toggle="tab"><i class="fa fa-check m-r-xs"></i>Finish</a></li>
+                                            </ul>
+
+
+                                            <div class="progress progress-sm m-t-sm">
+                                                <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                                </div>
+                                            </div>
+                                            <form id="wizardForm">
+                                                <div class="tab-content">
+                                                    <div class="tab-pane active fade in" id="tab1">
+                                                        <div class="row m-b-lg">
+                                                            <div class="col-md-6">
+                                                                <div class="row">
+                                                                    <div class="cd-pricing-switcher">
+                                                                        <p class="fieldset">
+                                                                            <input type="radio" class="no-uniform" name="duration-1" value="monthly" id="monthly-1" checked="">
+                                                                            <label for="monthly-1">Aetna</label>
+                                                                            <input type="radio" class="no-uniform" name="duration-1" value="yearly" id="yearly-1">
+                                                                            <label for="yearly-1">Other</label>
+                                                                            <span class="cd-switch"></span>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <h3>Provider Info</h3>
+                                                                <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="tab2">
+                                                        <div class="row">
+                                                            <div class="col-md-3">
+                                                                <img src="assets/images/envato-logo.png" width="250" alt="">
+                                                                <div class="m-t-md">
+                                                                    <address>
+                                                                        <strong>Aetna, Inc.</strong><br>
+                                                                        795 Folsom Ave, Suite 600<br>
+                                                                        San Francisco, CA 94107<br>
+                                                                        <abbr title="Phone">P:</abbr> (123) 456-7890
+                                                                    </address>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-9">
+                                                                <div class="form-group col-md-12">
+                                                                    <label for="exampleInputProductName">User Name</label>
+                                                                    <input type="text" class="form-control" name="inputProviderUserName" id="inputProviderUserName" placeholder="Enter User Name" >
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <label for="exampleInputProductId">Password</label>
+                                                                    <input type="password" class="form-control" name="inputProviderPassword" id="inputProviderPassword" placeholder="Enter Password">
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <label for="exampleInputProductId">Validate Password</label>
+                                                                    <input type="password" class="form-control" name="inputProviderConfirmPassword" id="inputProviderConfirmPassword" placeholder="Validate Password">
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <input type="button" min="1" max="5" class="btn btn-success" id="btnvalidatecredentials" value="Validate Credentials" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="tab3">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="panel panel-white">
+                                                                    <div class="panel-heading clearfix">
+                                                                        <h4 class="panel-title">Synchronizing Data</h4>
+                                                                    </div>
+                                                                    <div class="panel-body">
+                                                                        <p>current progress...</p>
+                                                                        <div class="progress">
+                                                                            <input type="button" min="1" max="5" class="btn btn-success" id="btnstartsync" value="start sync" />
+
+                                                                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                                                                                <span class="sr-only">60% Complete</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="tab4">
+                                                        <h2 class="no-s">Thank You !</h2>
+                                                        <div class="alert alert-info m-t-sm m-b-lg" role="alert">
+                                                            Congratulations ! You are all set with your provider.
+                                                        </div>
+                                                    </div>
+                                                    <ul class="pager wizard">
+                                                        <li class="previous"><a href="#" class="btn btn-default">Previous</a></li>
+                                                        <li class="next"><a href="#" class="btn btn-default">Next</a></li>
+                                                    </ul>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- Row -->
+                    </div><!-- Main Wrapper -->
+
+
+
+
+
+
+                </div>
+                <!--<div class="modal-footer">-->
+                    <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+                    <!--<button type="button" class="btn btn-success">Save changes</button>-->
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+</template>

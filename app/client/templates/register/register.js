@@ -20,11 +20,6 @@ console.log('entro', firstname, lastname, email, password);
             if(error){
                 console.log(error.reason); // Output error if registration fails
             } else {
-
-                console.log(currentUser);
-                InitializeUserProfile(currentUser);
-
-
                 Router.go("home"); // Redirect user if registration succeeds
             }
         });
