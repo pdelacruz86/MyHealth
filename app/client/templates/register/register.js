@@ -20,6 +20,20 @@ console.log('entro', firstname, lastname, email, password);
             if(error){
                 console.log(error.reason); // Output error if registration fails
             } else {
+
+                console.log('entro')
+
+                var userid = Meteor.userId();
+
+                var valid = HB_Profiles.find({userId : userid}).fetch().length;
+
+                if(valid == 0){
+
+                    Meteor.call("create_profile", function(error, user_id) {
+                        console.log(user_id);
+                    });
+                }
+
                 Router.go("home"); // Redirect user if registration succeeds
             }
         });

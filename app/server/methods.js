@@ -27,10 +27,23 @@ Meteor.methods({
     check(providername, String);
     check(providerusername, String);
     check(providerpassword, String);
+    //
 
     Providers.insert({user_id : this.userId, provider_name : providername, provider_user_name : providerusername,
                       provider_password :  providerpassword, createdAt : new Date()
       });
+
+    console.log('entro');
+  },
+  user_update_provider: function(providername, providerusername, providerpassword){
+
+    check(providername, String);
+    check(providerusername, String);
+    check(providerpassword, String);
+    //
+
+    Providers.update({user_id : this.userId}, {$set : {provider_name : providername, provider_user_name : providerusername,
+      provider_password :  providerpassword}});
 
     console.log('entro');
   }
