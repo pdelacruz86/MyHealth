@@ -3,7 +3,7 @@
     <head>
         
         <!-- Title -->
-        <title>myHealth | Take control of your health!</title>
+        <title>HealthBlend | Take control of your health!</title>
         
         <meta content="width=device-width, initial-scale=1" name="viewport"/>
         <meta charset="UTF-8">
@@ -27,6 +27,7 @@
         <link href="assets/plugins/metrojs/MetroJs.min.css" rel="stylesheet" type="text/css"/>	
         <link href="assets/plugins/toastr/toastr.min.css" rel="stylesheet" type="text/css"/>
         <link href="assets/plugins/morris/morris.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/plugins/fontastic/css/fontastic.css" rel="stylesheet" type="text/css"/>
         	
         <!-- Theme Styles -->
         <link href="assets/css/modern.min.css" rel="stylesheet" type="text/css"/>
@@ -50,7 +51,7 @@
             <div class="navbar">
                 <div class="navbar-inner">
                     <div class="logo-box">
-                        <a href="index.html" class="logo-text"><span>myHealth</span></a>
+                        <a href="index.html" class="logo-text"><span>HealthBlend</span></a>
                     </div><!-- Logo Box -->
                     <div class="topmenu-outer">
                         <div class="top-menu">
@@ -94,7 +95,7 @@
                                 </li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle waves-effect waves-button waves-classic" data-toggle="dropdown">
-                                        <span class="user-name">David<i class="fa fa-angle-down"></i></span>
+                                        <span class="user-name">Abraham Reyes<i class="fa fa-angle-down"></i></span>
                                         <img class="img-circle avatar" src="assets/images/avatar1.png" width="40" height="40" alt="">
                                     </a>
                                     <ul class="dropdown-menu dropdown-list" role="menu">
@@ -108,11 +109,6 @@
                                 <li>
                                     <a href="login.html" class="log-out waves-effect waves-button waves-classic">
                                         <span><i class="fa fa-sign-out m-r-xs"></i>Log out</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class="waves-effect waves-button waves-classic" id="showRight">
-                                        <i class="fa fa-comments"></i>
                                     </a>
                                 </li>
                             </ul><!-- Nav -->
@@ -129,23 +125,19 @@
                                     <img src="assets/images/avatar1.png" class="img-circle img-responsive" alt="">
                                 </div>
                                 <div class="sidebar-profile-details">
-                                    <span>David Green</span>
+                                    <span>Abraham Reyes</span>
                                 </div>
                             </a>
                         </div>
                     </div>
                     <ul class="menu accordion-menu">
-                        <li class="active"><a href="index.html" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-home"></span><p>Dashboard</p></a></li>
-                        <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-envelope"></span><p>Inbox</p><span class="arrow"></span></a>
-                            <ul class="sub-menu">
-                                <li><a href="inbox.html">View Messages</a></li>
-                            </ul>
+                        <li class="active"><a href="index.html" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-dashboard"></span><p>Dashboard</p></a></li>
+                        <li><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-folder-open"></span><p>Claims</p></a>
                         </li>
                         <li><a href="index.html" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-stats"></span><p>Reports</p></a></li>
                         <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-cog"></span><p>Settings</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
                                 <li><a href="#">Profile</a></li>
-                                <li><a href="#">Providers</a></li>
                                 <li><a href="#">Privacy</a></li>
                                 <li><a href="#">Help</a></li>
                             </ul>
@@ -165,104 +157,26 @@
                 </div>
                 <div id="main-wrapper">
                     <div class="row">
-                        <div class="col-lg-3 col-md-6">
-                            <div class="panel info-box panel-white">
-                                <div class="panel-body">
-                                    <div class="info-box-stats">
-                                        <p class="counter">18</p>
-                                        <span class="info-box-title">Claims YTD</span>
-                                    </div>
-                                    <div class="info-box-icon">
-                                        <i class="icon-envelope"></i>
-                                    </div>
-                                    <div class="info-box-progress">
-                                        <div class="progress progress-xs progress-squared bs-n">
-                                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="18" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="panel info-box panel-white">
-                                <div class="panel-body">
-                                    <div class="info-box-stats">
-                                        <p class="counter">0</p>
-                                        <span class="info-box-title">Claims covered by Aetna</span>
-                                    </div>
-                                    <div class="info-box-icon">
-                                        <i class="icon-graph"></i>
-                                    </div>
-                                    <div class="info-box-progress">
-                                        <div class="progress progress-xs progress-squared bs-n">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="18" style="width: 80%">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="panel info-box panel-white">
-                                <div class="panel-body">
-                                    <div class="info-box-stats">
-                                        <p><span class="counter">10</span></p>
-                                        <span class="info-box-title">Claims covered by HSA</span>
-                                    </div>
-                                    <div class="info-box-icon">
-                                        <i class="icon-graph"></i>
-                                    </div>
-                                    <div class="info-box-progress">
-                                        <div class="progress progress-xs progress-squared bs-n">
-                                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="18" style="width: 60%">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="panel info-box panel-white">
-                                <div class="panel-body">
-                                    <div class="info-box-stats">
-                                        <p class="counter">8</p>
-                                        <span class="info-box-title">Claims covered out-of-pocket</span>
-                                    </div>
-                                    <div class="info-box-icon">
-                                        <i class="icon-wallet"></i>
-                                    </div>
-                                    <div class="info-box-progress">
-                                        <div class="progress progress-xs progress-squared bs-n">
-                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="8" aria-valuemin="0" aria-valuemax="18" style="width: 50%">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- Row -->
-                    <div class="row">
-                        <div class="col-lg-3 col-md-3">
+                        <div class="col-lg-12 col-md-12">
                             <div class="panel panel-white">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">Benefits Overview</h4>
-                                    <div class="panel-control">
-                                        <a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Reload" class="panel-reload"><i class="icon-reload"></i></a>
-                                    </div>
                                 </div>
                                 <div class="panel-body">
                                     <div>
                                         <div class="row">
-                                            <div class="col-md-12">
-                                                <ul class="list-unstyled weather-info">
-                                                    <li>Health Savings Account: <span class="pull-right"><b>Covered</b></span></li>
-                                                    <li>Medical: <span class="pull-right"><b>Covered</b></span></li>
-                                                    <li>Dental: <span class="pull-right"><b>Covered</b></span></li>
-                                                    <li>Vision: <span class="pull-right"><b>Covered</b></span></li>
-                                                    <li>Pharmacy: <span class="pull-right"><b>Covered</b></span></li>
-                                                </ul>
-                                                <span class="pull-right"><button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg">View Benefit Details</button></span>
+                                            <div class="col-lg-4 col-md-4">
+                                                <h1 class="m-t-xxs">Medicare - <small>Primary</small></h1>
+                                                <div class="">    
+                                                    <h5>Deductible: <small>Ind.: $1,000.00 </small><small>- Fam.: $1,000.00</small></h5>
+                                                    <ul class="list-unstyled weather-info">
+                                                        <li>Medical: <span class="pull-right"><b>Covered</b></span></li>
+                                                        <li>Dental: <span class="pull-right"><b>Covered</b></span></li>
+                                                        <li>Vision: <span class="pull-right"><b>Not Covered</b></span></li>
+                                                        <li>Pharmacy: <span class="pull-right"><b>Not Covered</b></span></li>
+                                                    </ul>
+                                                    <span class="text-center"><button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg">View Details</button></span>
+                                                </div>
                                                 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog modal-lg">
                                                         <div class="modal-content">
@@ -312,245 +226,146 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="col-lg-4 col-md-4">
+                                                <h1 class="m-t-xxs">Aetna - <small>Secondary</small></h1>
+                                                <div class="">
+                                                <h5>Deductible: <small>Ind.: $1,000.00 </small></h5>
+                                                
+                                                    <ul class="list-unstyled weather-info">
+                                                        <li>Medical: <span class="pull-right"><b>Covered</b></span></li>
+                                                        <li>Dental: <span class="pull-right"><b>Covered</b></span></li>
+                                                        <li>Vision: <span class="pull-right"><b>Covered</b></span></li>
+                                                        <li>Pharmacy: <span class="pull-right"><b>Covered</b></span></li>
+                                                    </ul>
+                                                    <span class="text-center"><button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg">View Details</button></span>
+                                                </div>    
+                                                <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-lg">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                                <h4 class="modal-title" id="myLargeModalLabel">Healthcare Benefits</h4>
+                                                            </div>
+                                                            <div class="modal-body col-md-12">
+                                                                <div class="col-md-4">
+                                                                    <h4 class="modal-title" id="myLargeModalLabel">Medical</h4>
+                                                                    <ul class="list-unstyled weather-info">
+                                                                        <li>Deductible Per Person: <span class="pull-right"><b>$2,500.00</b></span></li>
+                                                                        <li>Monthly Cost: <span class="pull-right"><b>$280.00</b></span></li>
+                                                                        <li>Providers: <span class="pull-right"><b>Aetna</b></span></li>
+                                                                        <li>Plan Name: <span class="pull-right"><b>Balance Plan 2500</b></span></li>
+                                                                        <li>Family Members: <span class="pull-right"><b>4</b></span></li>
+                                                                        <li>Total Deductible: <span class="pull-right"><b>$10,000.00</b></span></li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <h4 class="modal-title" id="myLargeModalLabel">Dental</h4>
+                                                                    <ul class="list-unstyled weather-info">
+                                                                        <li>Deductible per person: <span class="pull-right"><b>$250</b></span></li>
+                                                                        <li>Monthly cost: <span class="pull-right"><b>$15</b></span></li>
+                                                                        <li>Providers: <span class="pull-right"><b>Aetna</b></span></li>
+                                                                        <li>Plan Name: <span class="pull-right"><b>Add on</b></span></li>
+                                                                        <li>Family Members: <span class="pull-right"><b>4</b></span></li>
+                                                                        <li>Total Deductible: <span class="pull-right"><b>$1,000.00</b></span></li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <h4 class="modal-title" id="myLargeModalLabel">Vision</h4>
+                                                                    <ul class="list-unstyled weather-info">
+                                                                        <li>Deductible per person: <span class="pull-right"><b>$250</b></span></li>
+                                                                        <li>Monthly cost: <span class="pull-right"><b>$15</b></span></li>
+                                                                        <li>Providers: <span class="pull-right"><b>Aetna</b></span></li>
+                                                                        <li>Plan Name: <span class="pull-right"><b>Add on</b></span></li>
+                                                                        <li>Family Members: <span class="pull-right"><b>4</b></span></li>
+                                                                        <li>Total Deductible: <span class="pull-right"><b>$1,000.00</b></span></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4">
+                                                <div id="morris4"></div>
+                                            </div>
+                                            <div="row">
+                                                <h2 class="m-t-xxs">Your HSA balance is: <small>$1,000.00</small></h2>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-9 col-md-9">
-                            <div class="panel panel-white">
-                                <div class="panel-heading">
-                                    <h1 class="panel-title">Overall Year To Date - Progress</h1>
+                             <div class="panel panel-white">
+                                <div class="panel-body">
+                                        <div class="tab-content col-xs-6 col-md-12 col-lg-12">
+                                            <div role="tabpanel" class="tab-pane active fade in" id="prov1">
+                                                <div class="btn-group">    
+                                                    <button type="button" class="btn btn-default btn-rounded btn-huge active"><i data-icon="a" class="panel-icon icon"></i> Medical</button>   
+                                                    <button type="button" class="btn btn-default btn-rounded btn-huge"><i data-icon="y" class="panel-icon icon"></i> Vision</button>
+                                                    <button type="button" class="btn btn-default btn-rounded btn-huge"><i data-icon="c" class="panel-icon icon"></i> Dental</button>
+                                                </div>
+
+                                                <div class="panel-body">
+                                                    <div class="col-lg-6">
+                                                        <h4 class="panel-title pull-right">Current Expenditures</h4>
+                                                        <div class="panel-body clearfix">
+                                                            <h4>Deductible</h4>
+                                                            <div class="progress">
+                                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                                                                    100%
+                                                                </div>
+                                                            </div>
+                                                            <h4>Deductible - Prescriptions</h4>
+                                                            <div class="progress">
+                                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                                                                    100%
+                                                                </div>
+                                                            </div>
+                                                            <h4>Max Out of Pocket - Personal</h4>
+                                                            <div class="progress">
+                                                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
+                                                                    40%
+                                                                </div>
+                                                            </div>
+                                                            <h4>Max Out of Pocket - Insurance</h4>
+                                                            <div class="progress">
+                                                                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
+                                                                    10%
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <h3 class="panel-title pull-right">Expenditures per month</h3>
+                                                        <div class="panel-body">
+                                                            <div id="morris3"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane fade" id="prov3">
+                                                <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</p>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane fade" id="prov4">
+                                                <p>Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus.</p>
+                                            </div>
+                                            <div class="">
+                                                <p><span class="text-center"><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#">Delete Account</button></span></p>
+                                            </div>
+                                        </div>
                                 </div>
-                                <div class="panel-heading">
-                                    <h2 class="panel-title">Medical</h2>
-                                </div>
-                                <div class="sortable">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="panel">
-                                                <div class="panel-heading">
-                                                    <h5 class="text-success">Out Of Pocket - Personal</h5>
-                                                </div>
-                                                <div class="panel-body">
-                                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                                                        <span class="sr-only">60% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="panel panel-white">
-                                                <div class="panel-heading">
-                                                    <h5 class="text-success">Out Of Pocket - Insurance</h5>
-                                                    <div class="panel-control">
-                                                        <a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Reload" class="panel-reload"><i class="icon-reload"></i></a>
-                                                    </div>
-                                                </div>
-                                                <div class="panel-body">
-                                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                                                        <span class="sr-only">60% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="panel">
-                                                <div class="panel-heading">
-                                                    <h5 class="panel-title text-danger">Deductible</h5>
-                                                </div>
-                                                <div class="panel-body">
-                                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                                                        <span class="sr-only">60% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- Row -->
-                                </div><!-- Sortable -->
-                                <div class="panel-heading">
-                                    <h2 class="panel-title">Dental</h2>
-                                </div>
-                                <div class="sortable">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="panel">
-                                                <div class="panel-heading">
-                                                    <h5 class="text-success">Out Of Pocket - Personal</h5>
-                                                </div>
-                                                <div class="panel-body">
-                                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                                                        <span class="sr-only">60% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="panel panel-white">
-                                                <div class="panel-heading">
-                                                    <h5 class="text-success">Out Of Pocket - Insurance</h5>
-                                                    <div class="panel-control">
-                                                        <a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Reload" class="panel-reload"><i class="icon-reload"></i></a>
-                                                    </div>
-                                                </div>
-                                                <div class="panel-body">
-                                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                                                        <span class="sr-only">60% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="panel">
-                                                <div class="panel-heading">
-                                                    <h5 class="panel-title text-danger">Deductible</h5>
-                                                </div>
-                                                <div class="panel-body">
-                                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                                                        <span class="sr-only">60% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- Row -->
-                                </div><!-- Sortable -->
-                                <div class="panel-heading">
-                                    <h2 class="panel-title">Vision</h2>
-                                </div>
-                                <div class="sortable">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="panel">
-                                                <div class="panel-heading">
-                                                    <h5 class="text-success">Out Of Pocket - Personal</h5>
-                                                </div>
-                                                <div class="panel-body">
-                                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                                                        <span class="sr-only">60% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="panel panel-white">
-                                                <div class="panel-heading">
-                                                    <h5 class="text-success">Out Of Pocket - Insurance</h5>
-                                                    <div class="panel-control">
-                                                        <a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Reload" class="panel-reload"><i class="icon-reload"></i></a>
-                                                    </div>
-                                                </div>
-                                                <div class="panel-body">
-                                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                                                        <span class="sr-only">60% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="panel">
-                                                <div class="panel-heading">
-                                                    <h5 class="panel-title text-danger">Deductible</h5>
-                                                </div>
-                                                <div class="panel-body">
-                                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                                                        <span class="sr-only">60% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- Row -->
-                                </div><!-- Sortable -->
-                                <div class="panel-heading">
-                                    <h2 class="panel-title">Pharmacy</h2>
-                                </div>
-                                <div class="sortable">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="panel">
-                                                <div class="panel-heading">
-                                                    <h5 class="text-success">Out Of Pocket - Personal</h5>
-                                                </div>
-                                                <div class="panel-body">
-                                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                                                        <span class="sr-only">60% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="panel panel-white">
-                                                <div class="panel-heading">
-                                                    <h5 class="text-success">Out Of Pocket - Insurance</h5>
-                                                    <div class="panel-control">
-                                                        <a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Reload" class="panel-reload"><i class="icon-reload"></i></a>
-                                                    </div>
-                                                </div>
-                                                <div class="panel-body">
-                                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                                                        <span class="sr-only">60% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="panel">
-                                                <div class="panel-heading">
-                                                    <h5 class="panel-title text-danger">Deductible</h5>
-                                                </div>
-                                                <div class="panel-body">
-                                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                                                        <span class="sr-only">60% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- Row -->
-                                </div><!-- Sortable -->
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-12">
-                            <div class="panel panel-white">
-                                <div class="panel-body">
-                                    <div class="panel panel-white">
-                                    <div class="panel-heading clearfix">
-                                        <h4 class="panel-title">Pending Claims</h4>
-                                    </div>
-                                    <div class="panel-body">
-                                        <div class="table-responsive">
-                                            <table id="example" class="display table" style="width: 100%; cellspacing: 0;">
-                                                <thead>
-                                                <tr>
-                                                    <th>-</th>
-                                                    <th>-</th>
-                                                    <th>-</th>
-                                                    <th>-</th>
-                                                    <th>-</th>
-                                                    <th>-</th>
-                                                </tr>
-                                                </thead>
-                                                <tfoot>
-                                                <tr>
-                                                    <th>-</th>
-                                                    <th>-</th>
-                                                    <th>-</th>
-                                                    <th>-</th>
-                                                    <th>-</th>
-                                                    <th>-</th>
-                                                </tr>
-                                                </tfoot>
-                                                <tbody>
-                                                <tr>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div><!-- Main Wrapper -->
                 <div class="page-footer">
-                    <p class="no-s">2015 &copy; myHealth by AR Effect, LLC.</p>
+                    <p class="no-s">2015 &copy; HealthBlend by AR Effect, LLC.</p>
                 </div>
             </div><!-- Page Inner -->
         </main><!-- Page Content -->
@@ -639,7 +454,7 @@
         <script src="assets/plugins/morris/raphael.min.js"></script>
         <script src="assets/plugins/morris/morris.min.js"></script>
         <script src="assets/js/modern.min.js"></script>
-        <script src="assets/js/pages/dashboard.js"></script>
+        <script src="assets/js/pages/charts-morris.js"></script>
         
     </body>
 </html>
