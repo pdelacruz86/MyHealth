@@ -1,6 +1,5 @@
 
 
-
 function loadUser(user) {
   var userAlreadyExists = typeof Meteor.users.findOne({ username : user.username }) === 'object';
 
@@ -15,6 +14,8 @@ function InitializeUserProfile(user){
 }
 
 Meteor.startup(function () {
+
+
   var users = YAML.eval(Assets.getText('users.yml'));
 
   //console.log(this)

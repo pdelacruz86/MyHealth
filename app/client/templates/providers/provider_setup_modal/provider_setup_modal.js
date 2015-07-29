@@ -7,11 +7,15 @@ Template.ProviderSetupModal.events({
         //validate provider exists
         var exists = Providers.find({user_id :  Meteor.userId(), provider_name : "aetna"}).fetch();
 
-        var providername="aetna", providerusername="Tricia101851985", providerpassword="Teamoabe0";
+        var providername="aetna", providerusername="dwaller11967", providerpassword="o2zSVxyu1v";
 
 
         if(exists.length > 0){
             //update
+            //insert
+            Meteor.call("user_update_provider",providername, providerusername, providerpassword, function(error, user_id) {
+                console.log(user_id);
+            });
         }else{
             //insert
             Meteor.call("user_add_provider",providername, providerusername, providerpassword, function(error, user_id) {

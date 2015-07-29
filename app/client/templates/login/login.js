@@ -42,21 +42,6 @@
                         });
                     }
 
-
-                    //
-                    //Meteor.call("create_profile", userid, function(error, user_id) {
-                    //    //Session.set("user_id", user_id);
-                    //});
-                    //
-                    //Meteor.call("InitializeUserProfile");
-                    //validate profile exists
-
-                    //var profile = HB_Profiles.find({"user_id" : Meteor.userId()});
-
-                    //console.log(profile);
-
-                    //HB_Profiles.insert({ "user_id": '"' + Meteor.userId() +'"', "claims" : [] });
-
                     Router.go("home");
                 }
             });
