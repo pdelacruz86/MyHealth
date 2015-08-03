@@ -39,7 +39,9 @@ loadProviderData = function  (user_id, providername, claimtype, callback){
             .click('#secureLoginBtn')
             .wait()
             .wait()
+            .wait()
             .goto(mainurl2)
+            .wait()
             .wait()
             .wait()
             .check("#planSponsorIndex")
@@ -79,13 +81,10 @@ loadProviderData = function  (user_id, providername, claimtype, callback){
                         });
 
                         console.log('la data existe ? ' + dataexists);
-
                     }
 
                     if(dataexists){
                     var htmltable = value.table;
-                    console.log(secondurl);
-
                     //console.log(htmltable)
                     //claimErrorTable
                     x(htmltable, 'table#sortTable tbody tr',
@@ -137,9 +136,8 @@ loadProviderData = function  (user_id, providername, claimtype, callback){
 
                     if(dataexists){
                     var htmltable = value.table;
-                    console.log(secondurl);
                     //console.log(htmltable)
-                    x(htmltable, 'tbody tr',
+                    x(htmltable, 'table#sortTable tbody tr',
                         [{
                             date_of_service: 'td:nth-child(1)',
                             member: 'td:nth-child(2)',
@@ -174,7 +172,6 @@ loadProviderData = function  (user_id, providername, claimtype, callback){
                     }else{
                         var htmltable =  value.table ;
 
-
                         x(htmltable, 'table#sortTable')(function(err, table) {
                             console.log(table) // Google
                             if(table == '' || table == undefined){
@@ -190,10 +187,9 @@ loadProviderData = function  (user_id, providername, claimtype, callback){
 
                     if(dataexists){
                         var htmltable =  value.table ;
-                        console.log(secondurl);
 
                         //console.log(htmltable)
-                        x(htmltable, 'tbody tr',
+                        x(htmltable, 'table#sortTable tbody tr',
                             [{
                                 date_of_service: 'td:nth-child(1)',
                                 member: 'td:nth-child(2)',
@@ -212,28 +208,27 @@ loadProviderData = function  (user_id, providername, claimtype, callback){
                     }else
                     {
                         //la data no existe imprimir el table error
-                        callback({ datanoexists : "We have no claims to show." }, {claims: []});
+                        callback( null, {claims: []});
 
                     }
                 }
             })
             .run();
 
-    },20000)
+    },30000)
 }
+
+var LoadClaimsData =  Meteor.wrapAsync(loadProviderData);
 
 
 Meteor.methods({
 
-    Update_user_Claims:  function(){
+    Update_user_Claims_old:  function(){
         console.log('--------------------------------EMPEZO ------------------------------------');
-        var LoadClaimsData =  Meteor.wrapAsync(loadProviderData);
         var myuser_id = this.userId;
 
         var handlerequest = function(user_id, provider, claimtype){
-
            LoadClaimsData(user_id, provider, claimtype, function(err, data){
-
                if(err){
                    console.log('HAY ERRORRRRRRRRRRRRRRRRRR');
                }else{
@@ -242,11 +237,17 @@ Meteor.methods({
 
             });
 
+           //var data =  LoadClaimsData(user_id, provider, claimtype);
         }
 
         Fiber(function(){ handlerequest(myuser_id, "aetna", "medical")}).run();
         Fiber(function(){ handlerequest(myuser_id, "aetna", "dental")}).run();
         Fiber(function(){ handlerequest(myuser_id, "aetna", "pharmacy")}).run();
+
+        //handlerequest(myuser_id, "aetna", "medical");
+        //handlerequest(myuser_id, "aetna", "dental");
+        //handlerequest(myuser_id, "aetna", "pharmacy");
+
     }
 });
 
