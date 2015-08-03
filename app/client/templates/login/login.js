@@ -1,0 +1,67 @@
+    Template['login'].helpers({
+    });
+
+    Template['login'].events({
+        'submit form': function(event){
+            event.preventDefault();
+            var email = $('[name=email]').val();
+            var password = $('[name=password]').val();
+
+            console.log('entro', email, password);
+            Meteor.loginWithPassword(email, password, function(error){
+                if(error){
+                    console.log(error.reason);
+                } else {
+
+                    Router.go("home");
+                }
+            });
+        },
+        'click #createAccount' : function(){
+            event.preventDefault();
+            Router.go("register");
+        },
+        'click .btn-google': function() {
+            return Meteor.loginWithGoogle({
+                requestPermissions: ['email']
+            }, function (error) {
+                if (error) {
+                    return console.log(error.reason);
+                }
+                else{
+
+                    var userid = Meteor.userId();
+
+                    var valid  = HB_Profiles.find({user_id : userid}).count();
+                    debugger;
+                    if(valid == "0"){
+
+                        Meteor.call("create_profile", function(error, user_id) {
+                            console.log(user_id);
+                        });
+                    }
+
+                    Router.go("home");
+                }
+            });
+        },
+        'click .btn-twitter': function() {
+            return Meteor.loginWithTwitter(function(error){
+                if (error) {
+                    return console.log(error.reason);
+                }
+                else{
+                    Router.go("home");
+                }
+            });
+        }
+    });
+
+
+    Template['login'].rendered = function(){
+        $('body').addClass('login-alt');
+    }
+
+    Template.login.destroyed = function(){
+        $('body').removeClass('login-alt');
+    }
