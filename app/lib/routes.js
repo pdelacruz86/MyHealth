@@ -6,3 +6,4 @@ Router.route('providers', {
   action: 'details',
   where: 'client'
 });
+

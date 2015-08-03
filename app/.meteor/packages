@@ -10,7 +10,6 @@ aldeed:collection2
 iron:router
 raix:handlebar-helpers
 matteodem:easy-security
-audit-argument-checks
 fastclick
 zimme:iron-router-active
 manuelschoebel:ms-seo
@@ -36,3 +35,5 @@ accounts-twitter
 http
 pdelacruz:nightmare
 pdelacruz:xray
+planifica:wizard
+mrt:nprogress

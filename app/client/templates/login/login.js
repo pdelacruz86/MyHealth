@@ -29,16 +29,15 @@
                     return console.log(error.reason);
                 }
                 else{
-                    console.log('entro')
 
                     var userid = Meteor.userId();
 
-                    var valid = HB_Profiles.find({userId : userid}).fetch().length;
-
-                    if(valid == 0){
+                    var valid  = HB_Profiles.find({user_id : userid}).count();
+                    debugger;
+                    if(valid == "0"){
 
                         Meteor.call("create_profile", function(error, user_id) {
-                                console.log(user_id);
+                            console.log(user_id);
                         });
                     }
 

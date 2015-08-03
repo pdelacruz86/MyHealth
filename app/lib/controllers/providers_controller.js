@@ -14,7 +14,7 @@ ProvidersController = RouteController.extend({
   },
 
   data: function () {
-     Providers.find({user_id : Meteor.userId})
+     Providers.find({user_id : Meteor.userId()})
   },
 
   details: function () {
