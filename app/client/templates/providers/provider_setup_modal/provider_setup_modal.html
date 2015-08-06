@@ -1,6 +1,19 @@
 <template name="ProviderSetupModal">
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg">Setup providers</button>
-    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+
+    <div class="row col-lg-12 col-md-12">
+        <div class="panel panel-white"> <!-- No Providers Setup -->
+            <div class="well well-lg">
+                <h1>You currently have no providers setup, <small>Would you like to setup one now?
+                    <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target=".bs-example-modal-lg">Let's Do It!</button>
+                </small></h1>
+                <!-- Modal -->
+            </div>
+        </div>
+        <div class="panel panel-white"> <!-- Edit Providers -->
+
+        </div>
+    </div>
+    <div class="modal fade bs-example-modal-lg" id="providersetup" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">

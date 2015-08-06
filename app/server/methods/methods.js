@@ -32,10 +32,9 @@ Meteor.methods({
     //
 
     Providers.insert({user_id : this.userId, provider_name : providername, provider_user_name : providerusername,
-                      provider_password :  providerpassword, valid_credentials: null, createdAt : new Date()
+                      provider_password :  providerpassword, valid_credentials: null, completed_setup : false,
+                      login_type : null, createdAt : new Date()
       });
-
-    console.log('entro');
   },
   user_update_provider: function(providername, providerusername, providerpassword){
 
@@ -46,8 +45,6 @@ Meteor.methods({
 
     Providers.update({user_id : this.userId}, {$set : {provider_name : providername, provider_user_name : providerusername,
       provider_password :  providerpassword}});
-
-    console.log('entro');
   },
   user_update_provider_set_valid_credentials: function(providername, validlogin){
 
@@ -55,33 +52,17 @@ Meteor.methods({
     check(validlogin, Boolean);
 
     Providers.update({user_id : this.userId, provider_name : providername}, {$set : { valid_credentials :  validlogin}});
+  },
+  user_update_provider_set_completed_setup: function(providername, value){
 
-    console.log('entro');
+    Providers.update({user_id : this.userId, provider_name : providername}, {$set : { completed_setup :  value}});
+  },
+  user_update_provider_set_login_type: function(providername, logintype){
+
+    Providers.update({user_id : this.userId, provider_name : providername}, {$set : { login_type :  logintype}});
   },
   user_remove_provider: function(){
 
     Providers.remove({user_id : this.userId});
-  },
-  get_progress : function(currentvalue){
-    this.unblock();
-    check(currentvalue, String);
-
-
-    Meteor._sleepForMs(100); //to simulate longer response sleep for 2 seconds
-    //do something
-    return currentvalue;
-  },
-  testingclaimsquery : function(){
-
-    var x =  HB_Profiles.find(
-        {user_id:  "26uEAN2DBaJRufBe9"});
-
-    var results = HB_Profiles.find({user_id:  "26uEAN2DBaJRufBe9"},
-        {claims : { "$elemMatch" : {  "type" : "Medical" }}}).fetch();
-    console.log(results.length)
-
-    console.log(results);
-
-    return results;
   }
 });

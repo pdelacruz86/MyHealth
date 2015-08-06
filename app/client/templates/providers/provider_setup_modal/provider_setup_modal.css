@@ -3,8 +3,21 @@
 /*****************************************************************************/
 .provider-setup_modal {
 }
-
-
     .modal-lg {
         width: 900px ;
     }
+
+
+    .steps  ul {
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+.steps  ul  li {
+    float: left;
+    margin-bottom: -1px;
+    position: relative;
+    display: block;
+}

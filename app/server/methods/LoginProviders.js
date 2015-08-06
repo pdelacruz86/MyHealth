@@ -58,6 +58,13 @@ Meteor.methods({
 
         if(data.pagetitle === 'Home' || data.pagetitle === 'Choose Your View'){
             result = true;
+            debugger;
+            if(data.pagetitle === 'Home'){
+                Meteor.call("user_update_provider_set_login_type", "aetna", "nooptions");
+            }else{
+                Meteor.call("user_update_provider_set_login_type", "aetna", "options");
+            }
+
             console.log('esta logeado pagina :' + data.pagetitle)
         }
         else{
@@ -65,32 +72,6 @@ Meteor.methods({
         }
 
         return result;
-
-        //var handlerequest = function(user_id, provider){
-        //
-        //LoadClaimsData(myuser_id, "aetna", function(err, data){
-        //
-        //        if(err){
-        //            console.log('HAY ERRORRRRRRRRRRRRRRRRRR' + err.error );
-        //        }else{
-        //            console.log(data.pagetitle);
-        //            if(data.pagetitle === 'Home' || data.pagetitle === 'Choose Your View'){
-        //                result = true;
-        //                console.log('esta logeado pagina :' + data.pagetitle)
-        //            }
-        //            else{
-        //                console.log('error en nombre de usuario o password. buscando en pagina  :' + data.pagetitle)
-        //            }
-        //        }
-        //    });
-
-        //}
-        //
-        // Fiber(
-        //    function(){
-        //         console.log('resultado evento : ' + handlerequest(myuser_id, "aetna"));
-        //    }
-        //).run();
     }
 });
 

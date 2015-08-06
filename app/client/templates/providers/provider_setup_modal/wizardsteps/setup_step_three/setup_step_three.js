@@ -18,8 +18,10 @@ Template.setupStepThree.created = function () {
 };
 
 Template.setupStepThree.rendered = function () {
+    $(".progress-bar-primary").attr("style", "width : 75%");
 
-    $("#step3btn").attr("class", "btn btn-success btn-lg pull-right disabled");
+
+    $("#step3btn").attr("class", "btn btn-default pull-right disabled");
     $("#step3btn").text("loading...");
     $("#step3btn").attr("disabled", "disabled");
 
@@ -32,25 +34,50 @@ Template.setupStepThree.rendered = function () {
     //
     //    })
     //}
+    NProgress.settings.parent = ".loadingtarget";
 
     NProgress.start();
 
-    Meteor.call("Update_user_Claims", 3, "aetna", function(err, data) {
-        console.log('callback')
+    var provider = Providers.findOne({user_id :  Meteor.userId(), provider_name : "aetna"});
 
-        NProgress.done();
+    if(provider.login_type == "options"){
+        Meteor.call("Update_user_Claims_with_options", 3, "aetna", function(err, data) {
+            console.log('callback')
 
-        if (err) {
+            NProgress.done();
 
-        } else {
-            $("#step3btn").attr("class", "btn btn-success btn-lg pull-right");
-            $("#step3btn").text("Next");
-            $("#step3btn").removeAttr("disabled");
+            if (err) {
 
-            $("#step3btn").click();
-        }
+            } else {
+                $("#step3btn").attr("class", "btn btn-default pull-right");
+                $("#step3btn").text("Next");
+                $("#step3btn").removeAttr("disabled");
 
-    });
+                $("#step3btn").click();
+            }
+
+        });
+    }
+    else{
+        Meteor.call("Update_user_Claims", 3, "aetna", function(err, data) {
+            console.log('callback')
+
+            NProgress.done();
+
+            if (err) {
+
+            } else {
+                $("#step3btn").attr("class", "btn btn-default pull-right");
+                $("#step3btn").text("Next");
+                $("#step3btn").removeAttr("disabled");
+
+                $("#step3btn").click();
+            }
+
+        });
+    }
+
+
 };
 
 Template.setupStepThree.destroyed = function () {
