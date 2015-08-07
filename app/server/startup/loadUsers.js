@@ -15,7 +15,6 @@ function InitializeUserProfile(user){
 
 Meteor.startup(function () {
 
-
   var users = YAML.eval(Assets.getText('users.yml'));
 
   //console.log(this)

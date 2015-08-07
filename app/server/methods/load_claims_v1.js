@@ -360,7 +360,7 @@ if (Meteor.isServer) {
                                             status: 'td:nth-child(4)',
                                             drug_name: 'td:nth-child(5)',
                                             prescription_cost: 'td:nth-child(6)',
-                                            paid_by_plan: 'td:nth-child(7)',
+                                            paid_by_plan: 'td:nth-child(7)'
 
                                         }]
                                     )(function (err, data) {
@@ -452,11 +452,55 @@ if (Meteor.isServer) {
     {
         if( data.claims != undefined) {
 
-            data.claims.forEach(function (item) {
-                item.provider = provider;
-                item.type = data.claimtype;
-                HB_Profiles.update({user_id: user}, {$push: {"claims": item}});
-            })
+            if(data.claimtype == 'Medical') {
+                data.claims.forEach(function (item) {
+                    Claims.insert({
+                        user_id: user,
+                        "type": data.claimtype,
+                        "provider": provider,
+                        "date_of_service": new Date(s(item.date_of_service).trim().value()),
+                        "member": item.member,
+                        "facility": item.facility,
+                        "status": item.status,
+                        "claim_amount": Number(s(s.splice(s(item.claim_amount ).trim().value(),0,1,"")).trim().value()) * 100,
+                        "paid_by_plan": Number(s(s.splice(s(item.paid_by_plan ).trim().value(),0,1,"")).trim().value()) * 100
+                    });
+                })
+            }
+
+            if(data.claimtype == 'Dental') {
+                data.claims.forEach(function (item) {
+                    Claims.insert({
+                        user_id: user,
+                        "type": data.claimtype,
+                        "provider": provider,
+                        "date_of_service": new Date(s(item.date_of_service).trim().value()),
+                        "member": item.member,
+                        "facility": item.facility,
+                        "status": item.status,
+                        "claim_amount": Number(s(s.splice(s(item.claim_amount ).trim().value(),0,1,"")).trim().value()) * 100,
+                        "paid_by_plan": Number(s(s.splice(s(item.paid_by_plan ).trim().value(),0,1,"")).trim().value()) * 100
+                    });
+                })
+            }
+
+            if(data.claimtype == 'Pharmacy') {
+                data.claims.forEach(function (item) {
+                    Claims.insert({
+                        user_id: user,
+                        "type": data.claimtype,
+                        "provider": provider,
+                        "date_of_service": new Date(s(item.date_of_service).trim().value()),
+                        "member": item.member,
+                        "serviced_by" : item.serviced_by,
+                        "prescription_number" : item.prescription_number,
+                        "status" : item.status,
+                        "drug_name" : item.drug_name,
+                        "prescription_cost" : Number(s(s.splice(s(item.prescription_cost ).trim().value(),0,1,"")).trim().value()) * 100,
+                        "paid_by_plan" : Number(s(s.splice(s(item.paid_by_plan ).trim().value(),0,1,"")).trim().value()) * 100
+                    });
+                })
+            }
         };
     }
 }
