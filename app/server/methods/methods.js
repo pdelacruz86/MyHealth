@@ -13,14 +13,7 @@ Meteor.methods({
   create_profile: function() {
     console.log("CREATING profile");
 
-    var profileid = HB_Profiles.insert({"user_id": this.userId, "claims" : []});
-  },
-  update_profile_setup_claims: function(claims){
-
-    //set claims = []
-    return HB_Profiles.update({user_id : this.userId} , {$set : { claims : [] }});
-
-    //return "";
+    var profileid = HB_Profiles.insert({"user_id": this.userId});
   },
   user_add_provider: function(providername, providerusername, providerpassword){
 
