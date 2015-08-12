@@ -276,7 +276,7 @@ if (Meteor.isServer) {
                                 table: document.querySelector('html').outerHTML
                             };
                         }, function (value) {
-                            //console.log(value.table);
+                            //medical
                             if (index == 0) {
                                 //validating the data
                                 var dataexists = false;
@@ -310,7 +310,8 @@ if (Meteor.isServer) {
                                             facility: 'td:nth-child(3)',
                                             status: 'td:nth-child(4)',
                                             claim_amount: 'td:nth-child(5)',
-                                            paid_by_plan: 'td:nth-child(6)'
+                                            paid_by_plan: 'td:nth-child(6)',
+                                            claim_detail_href: 'td:nth-child(7) a[href]@href'
 
                                         }]
                                     )(function (err, data) {
@@ -325,6 +326,7 @@ if (Meteor.isServer) {
                                     future.return({datanoexists: "We have no claims to show."}, {claims: []});
                                 }
                             }
+                            //farmacy
                             else if (index == 1) {
                                 //validating the data
                                 var dataexists = false;
@@ -355,12 +357,13 @@ if (Meteor.isServer) {
                                         [{
                                             date_of_service: 'td:nth-child(1)',
                                             member: 'td:nth-child(2)',
-                                            serviced_by: 'td:nth-child(3)',
-                                            prescription_number: 'td:nth-child(3)',
+                                            serviced_by: 'td:nth-child(3)@html',
+                                            prescription_number: 'td:nth-child(3)@html',
                                             status: 'td:nth-child(4)',
                                             drug_name: 'td:nth-child(5)',
                                             prescription_cost: 'td:nth-child(6)',
-                                            paid_by_plan: 'td:nth-child(7)'
+                                            paid_by_plan: 'td:nth-child(7)',
+                                            claim_detail_href : 'td:nth-child(8) a[href]@href'
 
                                         }]
                                     )(function (err, data) {
@@ -375,6 +378,7 @@ if (Meteor.isServer) {
 
                                 }
                             }
+                            //dental
                             else if (index == 2) {
                                 //validating the data
                                 var dataexists = false;
@@ -409,7 +413,8 @@ if (Meteor.isServer) {
                                             facility: 'td:nth-child(3)',
                                             status: 'td:nth-child(4)',
                                             claim_amount: 'td:nth-child(5)',
-                                            paid_by_plan: 'td:nth-child(6)'
+                                            paid_by_plan: 'td:nth-child(6)',
+                                            claim_detail_href : 'td:nth-child(7) a[href]@href'
 
                                         }]
                                     )(function (err, data) {
@@ -454,8 +459,18 @@ if (Meteor.isServer) {
 
             if(data.claimtype == 'Medical') {
                 data.claims.forEach(function (item) {
+                    var claimid = '';
+
+                    if(item.claim_detail_href != undefined){
+                        claimid = s.replaceAll(_.last(item.claim_detail_href.split(',')), '"\\);', '');
+                        claimid = s.replaceAll(claimid, '"', '');
+                    }else{
+                        claimid = 'N/A';
+                    }
+
                     Claims.insert({
                         user_id: user,
+                        claim_id : claimid,
                         "type": data.claimtype,
                         "provider": provider,
                         "date_of_service": new Date(s(item.date_of_service).trim().value()),
@@ -463,15 +478,28 @@ if (Meteor.isServer) {
                         "facility": item.facility,
                         "status": item.status,
                         "claim_amount": Number(s(s.splice(s(item.claim_amount ).trim().value(),0,1,"")).trim().value()) * 100,
-                        "paid_by_plan": Number(s(s.splice(s(item.paid_by_plan ).trim().value(),0,1,"")).trim().value()) * 100
+                        "paid_by_plan": Number(s(s.splice(s(item.paid_by_plan ).trim().value(),0,1,"")).trim().value()) * 100,
+                        claim_detail_href : item.claim_detail_href
                     });
                 })
             }
 
             if(data.claimtype == 'Dental') {
+
                 data.claims.forEach(function (item) {
+
+                    var claimid = '';
+
+                    if(item.claim_detail_href != undefined){
+                        claimid = s.replaceAll(_.last(item.claim_detail_href.split(',')), '"\\);', '');
+                        claimid = s.replaceAll(claimid, '"', '');
+                    }else{
+                        claimid = 'N/A';
+                    }
+
                     Claims.insert({
                         user_id: user,
+                        claim_id : claimid,
                         "type": data.claimtype,
                         "provider": provider,
                         "date_of_service": new Date(s(item.date_of_service).trim().value()),
@@ -479,25 +507,43 @@ if (Meteor.isServer) {
                         "facility": item.facility,
                         "status": item.status,
                         "claim_amount": Number(s(s.splice(s(item.claim_amount ).trim().value(),0,1,"")).trim().value()) * 100,
-                        "paid_by_plan": Number(s(s.splice(s(item.paid_by_plan ).trim().value(),0,1,"")).trim().value()) * 100
+                        "paid_by_plan": Number(s(s.splice(s(item.paid_by_plan ).trim().value(),0,1,"")).trim().value()) * 100,
+                        claim_detail_href : item.claim_detail_href
+
                     });
                 })
             }
 
             if(data.claimtype == 'Pharmacy') {
                 data.claims.forEach(function (item) {
+
+                    var claimiditem = item.claim_detail_href.split('&')[2];
+
+                    var claimid = '';
+                    if(claimiditem != undefined){
+                        claimid = _.last(claimiditem.split('='));
+                    }else{
+                        claimid = 'N/A'
+                    }
+
+
+                    var prescriptionnumber = _.last(item.prescription_number.split('<br>'));
+                    var servicedby = _.first(item.prescription_number.split('<br>'));
+
                     Claims.insert({
                         user_id: user,
+                        claim_id : claimid,
                         "type": data.claimtype,
                         "provider": provider,
                         "date_of_service": new Date(s(item.date_of_service).trim().value()),
                         "member": item.member,
-                        "serviced_by" : item.serviced_by,
-                        "prescription_number" : item.prescription_number,
+                        "serviced_by" : servicedby,
+                        "prescription_number" : prescriptionnumber,
                         "status" : item.status,
                         "drug_name" : item.drug_name,
                         "prescription_cost" : Number(s(s.splice(s(item.prescription_cost ).trim().value(),0,1,"")).trim().value()) * 100,
-                        "paid_by_plan" : Number(s(s.splice(s(item.paid_by_plan ).trim().value(),0,1,"")).trim().value()) * 100
+                        "paid_by_plan" : Number(s(s.splice(s(item.paid_by_plan ).trim().value(),0,1,"")).trim().value()) * 100,
+                        claim_detail_href : item.claim_detail_href
                     });
                 })
             }
