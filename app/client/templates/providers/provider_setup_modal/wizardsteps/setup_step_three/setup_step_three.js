@@ -20,20 +20,10 @@ Template.setupStepThree.created = function () {
 Template.setupStepThree.rendered = function () {
     $(".progress-bar-primary").attr("style", "width : 75%");
 
-
     $("#step3btn").attr("class", "btn btn-default pull-right disabled");
     $("#step3btn").text("loading...");
     $("#step3btn").attr("disabled", "disabled");
 
-
-    //for (var i = 0; i < 100; i++) {
-    //    var sessionvalue = i.toString();
-    //    console.log(i.toString())
-    //    Meteor.call("get_progress", sessionvalue, function(err, data){
-    //        Session.set('progressvalue', data);
-    //
-    //    })
-    //}
     NProgress.settings.parent = ".loadingtarget";
 
     NProgress.start();
@@ -52,6 +42,9 @@ Template.setupStepThree.rendered = function () {
                 $("#step3btn").attr("class", "btn btn-default pull-right");
                 $("#step3btn").text("Next");
                 $("#step3btn").removeAttr("disabled");
+
+                //start loading rates per claim
+                //Meteor.call("loadclaimsrates");
 
                 $("#step3btn").click();
             }
