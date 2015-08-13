@@ -33,5 +33,5 @@ createServiceConfiguration = function(service, clientId, secret) {
 
 /*createServiceConfiguration('facebook', 'Insert your appId here.', 'Insert your secret here.');
 createServiceConfiguration('github', 'Insert your clientId here.', 'Insert your secret here.');*/
-createServiceConfiguration('google', '1056827996847-kbmu0l5an7giujngci9v6q3c12p266a9.apps.googleusercontent.com', '-i8lQ9gQDPsRQjvPSbcYHtxY');
-createServiceConfiguration('twitter', 'YlS2oHOyYP0dpX5h8AgPqT2Di', 'v5N88Vm2P6fJGYAQqlO1uinVp3KK21oymTpOfZy8gnET2J8Zs6');
+createServiceConfiguration('google', process.env["EXT_SERVICE_GOOGLE_CLIENT_ID"], process.env["EXT_SERVICE_GOOGLE_SECRET"]);
+createServiceConfiguration('twitter', process.env["EXT_SERVICE_TWITTER_CLIENT_ID"],process.env["EXT_SERVICE_TWITTER_SECRET"]);

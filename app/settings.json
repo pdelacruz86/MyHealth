@@ -2,5 +2,9 @@
     "orion-cli": {
         "profile": "default",
         "config": "private/orion-config.json"
+    },
+    "kadira": {
+        "appId": "sd8HMnJCQQsj5nsvZ",
+        "appSecret": "3d8819d7-f43b-4384-9533-23113ef3c45f"
     }
 }
