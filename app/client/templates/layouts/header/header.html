@@ -8,25 +8,6 @@
                 <div class="top-menu">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle waves-effect waves-button waves-classic" data-toggle="dropdown"><i class="fa fa-envelope"></i><span class="badge badge-success pull-right">1</span></a>
-                            <ul class="dropdown-menu title-caret dropdown-lg" role="menu">
-                                <li><p class="drop-title">You have 1 new  messages !</p></li>
-                                <li class="dropdown-menu-list slimscroll messages">
-                                    <ul class="list-unstyled">
-                                        <li>
-                                            <a href="#">
-                                                <div class="msg-img"><div class="online on"></div><img class="img-circle" src="assets/images/avatar2.png" alt=""></div>
-                                                <p class="msg-name">Dr. Sandra Smith</p>
-                                                <p class="msg-text">Hey ! Attached you will find your results.</p>
-                                                <p class="msg-time">1 hour ago</p>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="drop-all"><a href="#" class="text-center">All Messages</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
                             <a href="#" class="dropdown-toggle waves-effect waves-button waves-classic" data-toggle="dropdown"><i class="fa fa-bell"></i><span class="badge badge-success pull-right">1</span></a>
                             <ul class="dropdown-menu title-caret dropdown-lg" role="menu">
                                 <li><p class="drop-title">You have 1 pending tasks !</p></li>
@@ -46,15 +27,13 @@
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle waves-effect waves-button waves-classic" data-toggle="dropdown">
-                                <span class="user-name">Abraham Reyes<i class="fa fa-angle-down"></i></span>
-                                <img class="img-circle avatar" src="assets/images/avatar1.png" width="40" height="40" alt="">
+                                <span class="user-name">User Name<i class="fa fa-angle-down"></i></span>
+                                <img class="img-circle avatar" src="/images/avatar1.png" width="40" height="40" alt="">
                             </a>
                             <ul class="dropdown-menu dropdown-list" role="menu">
                                 <li role="presentation"><a href="profile.html"><i class="fa fa-user"></i>Profile</a></li>
-                                <li role="presentation"><a href="inbox.html"><i class="fa fa-envelope"></i>Inbox<span class="badge badge-success pull-right">1</span></a></li>
-                                <li role="presentation" class="divider"></li>
-                                <li role="presentation"><a href="lock-screen.html"><i class="fa fa-lock"></i>Lock screen</a></li>
                                 {{#if currentUser}}
+                                    <li role="presentation" class="divider"></li>
                                     <li role="presentation"><a href="#" id="logout"><i class="fa fa-sign-out m-r-xs"></i>Log out</a></li>
                                 {{/if}}
                             </ul>
@@ -77,22 +56,23 @@
                 <div class="sidebar-profile">
                     <a href="javascript:void(0);" id="profile-menu-link">
                         <div class="sidebar-profile-image">
-                            <img src="assets/images/avatar1.png" class="img-circle img-responsive" alt="">
+                            <img src="/images/avatar1.png" class="img-circle img-responsive" alt="">
                         </div>
                         <div class="sidebar-profile-details">
-                            <span>Abraham Reyes</span>
+                            <span>Users Name</span>
                         </div>
                     </a>
                 </div>
             </div>
             <ul class="menu accordion-menu">
-                <li class="active"><a href="index.html" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-dashboard"></span><p>Dashboard</p></a></li>
+                <li class="active"><a href="home" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-dashboard"></span><p>Overview</p></a></li>
                 <li><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-folder-open"></span><p>Claims</p></a>
                 </li>
                 <li><a href="index.html" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-stats"></span><p>Reports</p></a></li>
                 <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-cog"></span><p>Settings</p><span class="arrow"></span></a>
                     <ul class="sub-menu">
                         <li><a href="#">Profile</a></li>
+                        <li><a href="providers">Providers</a></li>
                         <li><a href="#">Privacy</a></li>
                         <li><a href="#">Help</a></li>
                     </ul>

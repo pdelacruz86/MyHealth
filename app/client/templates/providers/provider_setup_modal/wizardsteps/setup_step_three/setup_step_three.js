@@ -21,9 +21,11 @@ Template.setupStepThree.rendered = function () {
     $(".progress-bar-primary").attr("style", "width : 75%");
 
     $("#step3btn").attr("class", "btn btn-default pull-right disabled");
-    $("#step3btn").text("loading...");
+    $("#step3btn").text("Please wait...");
     $("#step3btn").attr("disabled", "disabled");
 
+    NProgress.configure({ showSpinner: false });
+    
     NProgress.settings.parent = ".loadingtarget";
 
     NProgress.start();

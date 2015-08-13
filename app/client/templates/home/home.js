@@ -58,7 +58,7 @@ Template['home'].rendered = function(){
             c : dentalcount
         })
     }
-
+/*
     Morris.Bar({
         element: 'morris3',
         data: dataarray,
@@ -78,7 +78,7 @@ Template['home'].rendered = function(){
     var medicalcount = Claims.find({type : 'Medical'}).count();
 
     console.log(dentalcount, pharmacycount, medicalcount);
-
+*/
     Morris.Donut({
         element: 'morris4',
         data: [
