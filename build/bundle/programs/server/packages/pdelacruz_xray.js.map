@@ -1,0 +1,1 @@
+{"version":3,"sources":["pdelacruz:xray/xray.js"],"names":[],"mappings":";;;;;;;;;;;;;;;;AAAA,G;AACA,mC;AACA,G;;AAEA,4B","file":"/packages/pdelacruz_xray.js","sourcesContent":["/**\n * Created by pdelacruz on 7/17/15.\n */\n\nXray = Npm.require('x-ray');"]}

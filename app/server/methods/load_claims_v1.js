@@ -53,6 +53,7 @@ if (Meteor.isServer) {
                             };
                         }, function (value) {
                             //console.log(value.table);
+                            //medical
                             if (index == 0) {
                                 //validating the data
                                 var dataexists = false;
@@ -86,7 +87,8 @@ if (Meteor.isServer) {
                                             facility: 'td:nth-child(3)',
                                             status: 'td:nth-child(4)',
                                             claim_amount: 'td:nth-child(5)',
-                                            paid_by_plan: 'td:nth-child(6)'
+                                            paid_by_plan: 'td:nth-child(6)',
+                                            claim_detail_href: 'td:nth-child(7) a[href]@href'
 
                                         }]
                                     )(function (err, data) {
@@ -132,12 +134,13 @@ if (Meteor.isServer) {
                                         [{
                                             date_of_service: 'td:nth-child(1)',
                                             member: 'td:nth-child(2)',
-                                            serviced_by: 'td:nth-child(3)',
-                                            prescription_number: 'td:nth-child(3)',
+                                            serviced_by: 'td:nth-child(3)@html',
+                                            prescription_number: 'td:nth-child(3)@html',
                                             status: 'td:nth-child(4)',
                                             drug_name: 'td:nth-child(5)',
                                             prescription_cost: 'td:nth-child(6)',
                                             paid_by_plan: 'td:nth-child(7)',
+                                            claim_detail_href : 'td:nth-child(8) a[href]@href'
 
                                         }]
                                     )(function (err, data) {
@@ -186,7 +189,8 @@ if (Meteor.isServer) {
                                             facility: 'td:nth-child(3)',
                                             status: 'td:nth-child(4)',
                                             claim_amount: 'td:nth-child(5)',
-                                            paid_by_plan: 'td:nth-child(6)'
+                                            paid_by_plan: 'td:nth-child(6)',
+                                            claim_detail_href : 'td:nth-child(7) a[href]@href'
 
                                         }]
                                     )(function (err, data) {

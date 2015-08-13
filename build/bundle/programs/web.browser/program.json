@@ -1,0 +1,704 @@
+{
+  "format": "web-program-pre1",
+  "manifest": [
+    {
+      "path": "48e17810deae5bd6ff41e48f905261d4e7eef397.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/48e17810deae5bd6ff41e48f905261d4e7eef397.js",
+      "size": 3575646,
+      "hash": "48e17810deae5bd6ff41e48f905261d4e7eef397"
+    },
+    {
+      "path": "410e48d0df0a1e5f7db379b11e9e408a7233c181.css",
+      "where": "client",
+      "type": "css",
+      "cacheable": true,
+      "url": "/410e48d0df0a1e5f7db379b11e9e408a7233c181.css?meteor_css_resource=true",
+      "size": 1659980,
+      "hash": "410e48d0df0a1e5f7db379b11e9e408a7233c181"
+    },
+    {
+      "path": "packages/semantic_ui-css/themes/default/assets/fonts/icons.eot",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/semantic_ui-css/themes/default/assets/fonts/icons.eot",
+      "size": 60767,
+      "hash": "3e63fc9b3de4580f1f3bec0631436f755b80f167"
+    },
+    {
+      "path": "packages/semantic_ui-css/themes/default/assets/fonts/icons.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/semantic_ui-css/themes/default/assets/fonts/icons.svg",
+      "size": 313398,
+      "hash": "26bb1c5ef100a1cd71923f1d5dc29fc797ef4639"
+    },
+    {
+      "path": "packages/semantic_ui-css/themes/default/assets/fonts/icons.ttf",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/semantic_ui-css/themes/default/assets/fonts/icons.ttf",
+      "size": 122092,
+      "hash": "9088143b19979779b2116cef38b661f72d982e19"
+    },
+    {
+      "path": "packages/semantic_ui-css/themes/default/assets/fonts/icons.woff",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/semantic_ui-css/themes/default/assets/fonts/icons.woff",
+      "size": 71508,
+      "hash": "56ce13e71c2150d81bc972940584915181bd6081"
+    },
+    {
+      "path": "packages/semantic_ui-css/themes/default/assets/fonts/icons.woff2",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/semantic_ui-css/themes/default/assets/fonts/icons.woff2",
+      "size": 56780,
+      "hash": "1075231650f579955905bb2f6527148a8e2b4b16"
+    },
+    {
+      "path": "packages/semantic_ui-css/themes/default/assets/images/flags.png",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/semantic_ui-css/themes/default/assets/images/flags.png",
+      "size": 28123,
+      "hash": "4a552ecb123ded5040ddda01d626103cc65db055"
+    },
+    {
+      "path": "packages/twbs_bootstrap/dist/fonts/glyphicons-halflings-regular.eot",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/twbs_bootstrap/dist/fonts/glyphicons-halflings-regular.eot",
+      "size": 20127,
+      "hash": "86b6f62b7853e67d3e635f6512a5a5efc58ea3c3"
+    },
+    {
+      "path": "packages/twbs_bootstrap/dist/fonts/glyphicons-halflings-regular.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/twbs_bootstrap/dist/fonts/glyphicons-halflings-regular.svg",
+      "size": 108738,
+      "hash": "de51a8494180a6db074af2dee2383f0a363c5b08"
+    },
+    {
+      "path": "packages/twbs_bootstrap/dist/fonts/glyphicons-halflings-regular.ttf",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/twbs_bootstrap/dist/fonts/glyphicons-halflings-regular.ttf",
+      "size": 45404,
+      "hash": "44bc1850f570972267b169ae18f1cb06b611ffa2"
+    },
+    {
+      "path": "packages/twbs_bootstrap/dist/fonts/glyphicons-halflings-regular.woff",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/twbs_bootstrap/dist/fonts/glyphicons-halflings-regular.woff",
+      "size": 23424,
+      "hash": "278e49a86e634da6f2a02f3b47dd9d2a8f26210f"
+    },
+    {
+      "path": "packages/twbs_bootstrap/dist/fonts/glyphicons-halflings-regular.woff2",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/twbs_bootstrap/dist/fonts/glyphicons-halflings-regular.woff2",
+      "size": 18028,
+      "hash": "ca35b697d99cae4d1b60f2d60fcd37771987eb07"
+    },
+    {
+      "path": "packages/fortawesome_fontawesome/Font-Awesome/fonts/fontawesome-webfont.eot",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/fortawesome_fontawesome/Font-Awesome/fonts/fontawesome-webfont.eot",
+      "size": 60767,
+      "hash": "3e63fc9b3de4580f1f3bec0631436f755b80f167"
+    },
+    {
+      "path": "packages/fortawesome_fontawesome/Font-Awesome/fonts/fontawesome-webfont.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/fortawesome_fontawesome/Font-Awesome/fonts/fontawesome-webfont.svg",
+      "size": 313398,
+      "hash": "26bb1c5ef100a1cd71923f1d5dc29fc797ef4639"
+    },
+    {
+      "path": "packages/fortawesome_fontawesome/Font-Awesome/fonts/fontawesome-webfont.ttf",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/fortawesome_fontawesome/Font-Awesome/fonts/fontawesome-webfont.ttf",
+      "size": 122092,
+      "hash": "9088143b19979779b2116cef38b661f72d982e19"
+    },
+    {
+      "path": "packages/fortawesome_fontawesome/Font-Awesome/fonts/fontawesome-webfont.woff",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/fortawesome_fontawesome/Font-Awesome/fonts/fontawesome-webfont.woff",
+      "size": 71508,
+      "hash": "56ce13e71c2150d81bc972940584915181bd6081"
+    },
+    {
+      "path": "packages/fortawesome_fontawesome/Font-Awesome/fonts/fontawesome-webfont.woff2",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/fortawesome_fontawesome/Font-Awesome/fonts/fontawesome-webfont.woff2",
+      "size": 56780,
+      "hash": "1075231650f579955905bb2f6527148a8e2b4b16"
+    },
+    {
+      "path": "app/favicon.ico",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/favicon.ico",
+      "size": 5430,
+      "hash": "b6336c2e0f71ddf2e61456941b6a0bc9af698371"
+    },
+    {
+      "path": "app/fonts/basic.icons.eot",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/basic.icons.eot",
+      "size": 40166,
+      "hash": "f5e824186bc1d712d5703c872135ef0e786cabf8"
+    },
+    {
+      "path": "app/fonts/basic.icons.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/basic.icons.svg",
+      "size": 64121,
+      "hash": "144958374a5b188939a4ef8a578ba46ffdc8ba61"
+    },
+    {
+      "path": "app/fonts/basic.icons.ttf",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/basic.icons.ttf",
+      "size": 39924,
+      "hash": "aa384f8e70fe7d54b7ed05ecd2c2ec13a01fad77"
+    },
+    {
+      "path": "app/fonts/basic.icons.woff",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/basic.icons.woff",
+      "size": 24676,
+      "hash": "6ec5c193dd77b2c65af67806c13b83384ff617c9"
+    },
+    {
+      "path": "app/fonts/icons.eot",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/icons.eot",
+      "size": 37405,
+      "hash": "d7e77928069bdd227f291b9a2c9bdd918793e529"
+    },
+    {
+      "path": "app/fonts/icons.otf",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/icons.otf",
+      "size": 61896,
+      "hash": "82a7ff73f96e2f6ef419d2d9fd520b4c93bdae7c"
+    },
+    {
+      "path": "app/fonts/icons.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/icons.svg",
+      "size": 197829,
+      "hash": "8419c95027e27da84c7d7aa4df7f61d1dd04af81"
+    },
+    {
+      "path": "app/fonts/icons.ttf",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/icons.ttf",
+      "size": 79076,
+      "hash": "c019e0e02b24f99ca8eef73cfe3d134e904f323a"
+    },
+    {
+      "path": "app/fonts/icons.woff",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/icons.woff",
+      "size": 43572,
+      "hash": "12f8c193902e99348493ace32e498031bf79b654"
+    },
+    {
+      "path": "app/images/attachment1.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/attachment1.jpg",
+      "size": 454722,
+      "hash": "3ae26da17e1a1d0057e70aacfb789461802d3605"
+    },
+    {
+      "path": "app/images/attachment2.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/attachment2.jpg",
+      "size": 561590,
+      "hash": "ff5050b8eeb447dfcfe5f024b1b84dd738e1ec6e"
+    },
+    {
+      "path": "app/images/avatar1.png",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/avatar1.png",
+      "size": 28779,
+      "hash": "1743974026c3de377a1019974863729320b6bdd1"
+    },
+    {
+      "path": "app/images/avatar2.png",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/avatar2.png",
+      "size": 106024,
+      "hash": "c76bba9203f54393814dbc33555f9b98a01f850c"
+    },
+    {
+      "path": "app/images/avatar3.png",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/avatar3.png",
+      "size": 170414,
+      "hash": "dc6330ecd5a2671e1f902a1c59c242763b146de5"
+    },
+    {
+      "path": "app/images/avatar4.png",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/avatar4.png",
+      "size": 105814,
+      "hash": "127a4bcca07064e767d31c949df050d3b60be355"
+    },
+    {
+      "path": "app/images/avatar5.png",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/avatar5.png",
+      "size": 88789,
+      "hash": "f9563f136cc9a7c4da790505ed6873d29ba6f947"
+    },
+    {
+      "path": "app/images/cd-icon-close.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/cd-icon-close.svg",
+      "size": 756,
+      "hash": "5e7f2d4aeb92646db780b21899619bbe3026e554"
+    },
+    {
+      "path": "app/images/coming-soon.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/coming-soon.jpg",
+      "size": 642928,
+      "hash": "49f0052ae1cae30b7b9cf7e7d7332822147ca64a"
+    },
+    {
+      "path": "app/images/crop.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/crop.jpg",
+      "size": 5518662,
+      "hash": "e5dac0f97b2ffe4748b386348539e32965d80e42"
+    },
+    {
+      "path": "app/images/envato-logo.png",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/envato-logo.png",
+      "size": 10867,
+      "hash": "b7f518debb6f8b9a855b5ab7c319ffe2b9216042"
+    },
+    {
+      "path": "app/images/post-image.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/post-image.jpg",
+      "size": 888354,
+      "hash": "eb0e852f671a8974ee470b78f68a25edfc871d3c"
+    },
+    {
+      "path": "app/images/profile-cover.png",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/profile-cover.png",
+      "size": 1754643,
+      "hash": "80379bad2da96c1450b470c7315d7c4f184cedb2"
+    },
+    {
+      "path": "app/images/reload.GIF",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/reload.GIF",
+      "size": 17490,
+      "hash": "48de52909f36b37efb81c4392ba72027155fac70"
+    },
+    {
+      "path": "app/images/signature.png",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/signature.png",
+      "size": 47242,
+      "hash": "dbaffc7871f03729d888c71aadc7f5a54a2ef13b"
+    },
+    {
+      "path": "app/images/upload.png",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/upload.png",
+      "size": 4118,
+      "hash": "a8b8f233112ef60eaeb4f07b1ee77d781cdeb9e4"
+    },
+    {
+      "path": "app/images/gallery/book01.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/gallery/book01.jpg",
+      "size": 126469,
+      "hash": "1438dde6c5655d09bf95e6b06bcc6282257c2d18"
+    },
+    {
+      "path": "app/images/gallery/book02.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/gallery/book02.jpg",
+      "size": 111257,
+      "hash": "8b839df2e904a61c8369e11c8e90b21e2826ef62"
+    },
+    {
+      "path": "app/images/gallery/book03.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/gallery/book03.jpg",
+      "size": 187302,
+      "hash": "0472a7b58fea95dc774871486aeab1ca38d49ed5"
+    },
+    {
+      "path": "app/images/gallery/book04.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/gallery/book04.jpg",
+      "size": 119157,
+      "hash": "7adcafa6471e2c0243a21938bb497c87bc9c1122"
+    },
+    {
+      "path": "app/images/gallery/book05.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/gallery/book05.jpg",
+      "size": 119824,
+      "hash": "247d5e7b4bcbbea7206b945540bfa867d7991072"
+    },
+    {
+      "path": "app/images/gallery/book06.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/gallery/book06.jpg",
+      "size": 110634,
+      "hash": "4c6c955836e6b283be03432a7b20e754073ca8dd"
+    },
+    {
+      "path": "app/images/gallery/book07.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/gallery/book07.jpg",
+      "size": 224019,
+      "hash": "be110dc71b5e441b05ca38e54b49316ed5b9a054"
+    },
+    {
+      "path": "app/images/gallery/card01.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/gallery/card01.jpg",
+      "size": 153300,
+      "hash": "5e91cd99d1a28f8a34ba86b30300875d04dece1b"
+    },
+    {
+      "path": "app/images/gallery/card02.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/gallery/card02.jpg",
+      "size": 153028,
+      "hash": "c0899c1f194336e55d872c0bc9d680336dd598a2"
+    },
+    {
+      "path": "app/images/gallery/card03.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/gallery/card03.jpg",
+      "size": 139032,
+      "hash": "63b00906f343aa617b5cced40e143bf97f83b28d"
+    },
+    {
+      "path": "app/images/gallery/card04.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/gallery/card04.jpg",
+      "size": 152633,
+      "hash": "d7d5f808e2eada019b2404b77180a3dca9bd43ee"
+    },
+    {
+      "path": "app/images/gallery/card05.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/gallery/card05.jpg",
+      "size": 145583,
+      "hash": "9805741ae1a36e33c22c970b5c254f1b61f4e380"
+    },
+    {
+      "path": "app/images/gallery/card06.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/gallery/card06.jpg",
+      "size": 199038,
+      "hash": "ac90fc009c173faa9e6c4c4c6f39bf3b6a88083d"
+    },
+    {
+      "path": "app/images/gallery/card07.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/gallery/card07.jpg",
+      "size": 138628,
+      "hash": "ff3d49f7e1a82bb1eda944ffc9802cc4ae2f60b5"
+    },
+    {
+      "path": "app/images/gallery/card08.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/gallery/card08.jpg",
+      "size": 185884,
+      "hash": "2f91b7570b40a3a466373158156372e6efa40150"
+    },
+    {
+      "path": "app/images/gallery/card09.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/gallery/card09.jpg",
+      "size": 180918,
+      "hash": "db9db33a0de501ccc502daeb3dcb99ce182586c9"
+    },
+    {
+      "path": "app/images/gallery/card10.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/gallery/card10.jpg",
+      "size": 170862,
+      "hash": "fa2c637f81c0eda7e9e7a69cc4eb9e30377aa41a"
+    },
+    {
+      "path": "app/images/gallery/card11.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/gallery/card11.jpg",
+      "size": 140963,
+      "hash": "c5e3c092b447164c8147b11011b72e5a998757e1"
+    },
+    {
+      "path": "app/images/gallery/card12.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/gallery/card12.jpg",
+      "size": 181577,
+      "hash": "9472a125885f42db831a21c1480ba38ad88f1adf"
+    },
+    {
+      "path": "app/images/gallery/card13.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/gallery/card13.jpg",
+      "size": 202734,
+      "hash": "baa23b4ea5bcc6d788ff8b0da3582353cda3bc1a"
+    },
+    {
+      "path": "app/images/gallery/card14.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/gallery/card14.jpg",
+      "size": 192591,
+      "hash": "bac16765c0c2f6a0ef9b1f0ea0c34ae03a7dc706"
+    },
+    {
+      "path": "app/images/gallery/card15.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/gallery/card15.jpg",
+      "size": 180363,
+      "hash": "579192a940fabe723f750c84ae0da0c4c47bb899"
+    },
+    {
+      "path": "app/images/gallery/card16.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/gallery/card16.jpg",
+      "size": 127073,
+      "hash": "ed219150b9c74966c76652d8eddf9cbd322e8324"
+    },
+    {
+      "path": "app/images/gallery/card17.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/gallery/card17.jpg",
+      "size": 157336,
+      "hash": "ff01372834899bc7139202222d7887bfe8b022b4"
+    },
+    {
+      "path": "app/images/shop/ugmonk-bag-1.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/shop/ugmonk-bag-1.jpg",
+      "size": 63617,
+      "hash": "d557671a16498a41d75275ff376a17fe301f749e"
+    },
+    {
+      "path": "app/images/shop/ugmonk-bag-2.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/shop/ugmonk-bag-2.jpg",
+      "size": 40772,
+      "hash": "731dc634c51a822f1f2ac31aa091cae305b60988"
+    },
+    {
+      "path": "app/images/shop/ugmonk-bag-3.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/shop/ugmonk-bag-3.jpg",
+      "size": 53823,
+      "hash": "39a46f6f252f4fe23bea665d80bf237f5fec9227"
+    },
+    {
+      "path": "app/images/shop/ugmonk-cap-1.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/shop/ugmonk-cap-1.jpg",
+      "size": 62274,
+      "hash": "bb5606a61c06b0fd653c1ce051a9bf692a962611"
+    },
+    {
+      "path": "app/images/shop/ugmonk-cap-2.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/shop/ugmonk-cap-2.jpg",
+      "size": 68716,
+      "hash": "dd61c548f926e2192ee1a1498d1681d2bfd2c884"
+    },
+    {
+      "path": "app/images/shop/ugmonk-cap-3.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/shop/ugmonk-cap-3.jpg",
+      "size": 56287,
+      "hash": "1d64009b1d471fb3e7cecdbbd4686414721938db"
+    },
+    {
+      "path": "app/images/shop/ugmonk-tshirt-1.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/shop/ugmonk-tshirt-1.jpg",
+      "size": 33296,
+      "hash": "973febce2582a0fa145fd1aa7c5aa8a7fa41fe9a"
+    },
+    {
+      "path": "app/images/shop/ugmonk-tshirt-2.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/shop/ugmonk-tshirt-2.jpg",
+      "size": 40578,
+      "hash": "852ac16b032d3e024be79effa96d90047492d7da"
+    },
+    {
+      "path": "app/images/shop/ugmonk-tshirt-3.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/shop/ugmonk-tshirt-3.jpg",
+      "size": 43213,
+      "hash": "e7bc561f4b5117734e37326a597d12e787342990"
+    },
+    {
+      "path": "head.html",
+      "where": "internal",
+      "type": "head",
+      "hash": "e6d067f419437338fe453ad81e689341957f0ac8"
+    }
+  ]
+}
