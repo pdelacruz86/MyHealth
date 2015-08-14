@@ -31,8 +31,11 @@ Template.setupStepThree.rendered = function () {
     NProgress.start();
 
     var provider = Providers.findOne({user_id :  Meteor.userId(), provider_name : "aetna"});
+    console.log('tiene que entrar con ' + provider.login_type);
 
+    debugger;
     if(provider.login_type == "options"){
+        console.log('entro con opciones')
         Meteor.call("Update_user_Claims_with_options", 3, "aetna", function(err, data) {
             console.log('callback')
 
@@ -54,6 +57,8 @@ Template.setupStepThree.rendered = function () {
         });
     }
     else{
+        console.log('entro sin opciones')
+
         Meteor.call("Update_user_Claims", 3, "aetna", function(err, data) {
             console.log('callback')
 

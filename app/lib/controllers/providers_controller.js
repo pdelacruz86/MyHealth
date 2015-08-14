@@ -9,10 +9,9 @@ ProvidersController = RouteController.extend({
     // the subscription handle is added to a reactive list
     // and when all items in this list are ready, this.ready()
     // returns true in any of your route functions.
-    this.subscribe('providers');
+    this.subscribe('providers').wait();
     this.subscribe('hb_profiles');
   },
-
   data: function () {
      Providers.find({user_id : Meteor.userId()})
   },

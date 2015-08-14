@@ -10,7 +10,7 @@ providervalidatecredentials = function  (user_id, providername, callback){
 
     Meteor.setTimeout(function(){
         var options = new nightmare()
-            .goto(mainurl)
+            .goto(mainurl)            .wait()
             .type('input#userNameValue', providerdata.provider_user_name)
             .type('input#passwordValue', providerdata.provider_password)
             .click('#secureLoginBtn')
@@ -60,9 +60,12 @@ Meteor.methods({
             result = true;
             debugger;
             if(data.pagetitle === 'Home'){
-                Meteor.call("user_update_provider_set_login_type", "aetna", "nooptions");
+                console.log('updating nooptions')
+                Meteor.call("user_update_provider_set_login_type",myuser_id, "aetna", "nooptions");
             }else{
-                Meteor.call("user_update_provider_set_login_type", "aetna", "options");
+                console.log('updating options')
+
+                Meteor.call("user_update_provider_set_login_type", myuser_id, "aetna", "options");
             }
 
             console.log('esta logeado pagina :' + data.pagetitle)

@@ -50,9 +50,10 @@ Meteor.methods({
 
     Providers.update({user_id : this.userId, provider_name : providername}, {$set : { completed_setup :  value}});
   },
-  user_update_provider_set_login_type: function(providername, logintype){
+  user_update_provider_set_login_type: function(userid, providername, logintype){
+    console.log('entro al metodo update',this.userId, providername, logintype)
 
-    Providers.update({user_id : this.userId, provider_name : providername}, {$set : { login_type :  logintype}});
+    Providers.update({user_id : userid, provider_name : providername}, {$set : { login_type :  logintype}});
   },
   user_remove_provider: function(){
 
