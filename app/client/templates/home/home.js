@@ -8,7 +8,7 @@ Template.home.events({
 
 
 Template['home'].rendered = function(){
-
+/*
     var dataarray = [];
 
     for (i = 1; i < 8; i++) {
@@ -25,7 +25,7 @@ Template['home'].rendered = function(){
 
 
         var medicalcount = Claims.find({
-            user_id : "26uEAN2DBaJRufBe9" ,
+            //user_id : "26uEAN2DBaJRufBe9" ,
             type : "Medical",
             date_of_service: {
             $gte: new Date(startdate),
@@ -34,8 +34,8 @@ Template['home'].rendered = function(){
         }).count();
 
         var dentalcount = Claims.find({
-            user_id : "26uEAN2DBaJRufBe9" ,
-            type : "Pharmacy",
+            //user_id : "26uEAN2DBaJRufBe9" ,
+            type : "Dental",
             date_of_service: {
                 $gte: new Date(startdate),
                 $lt: new Date(enddate)
@@ -43,7 +43,7 @@ Template['home'].rendered = function(){
         }).count();
 
         var pharmacycount = Claims.find({
-            user_id : "26uEAN2DBaJRufBe9" ,
+            //user_id : "26uEAN2DBaJRufBe9" ,
             type : "Pharmacy",
             date_of_service: {
                 $gte: new Date(startdate),
@@ -58,7 +58,7 @@ Template['home'].rendered = function(){
             c : dentalcount
         })
     }
-/*
+
     Morris.Bar({
         element: 'morris3',
         data: dataarray,
@@ -72,22 +72,25 @@ Template['home'].rendered = function(){
         barColors: ['#6ad6c3','#22BAA0'],
         resize: true
     });
-
-    var dentalcount = Claims.find({type : 'Dental'}).count();
-    var pharmacycount = Claims.find({type : 'Pharmacy'}).count();
-    var medicalcount = Claims.find({type : 'Medical'}).count();
-
-    console.log(dentalcount, pharmacycount, medicalcount);
 */
+
+// Count claims by type
+
+    var dentalCount = Claims.find({type : 'Dental'}).count();
+    var pharmacyCount = Claims.find({type : 'Pharmacy'}).count();
+    var medicalCount = Claims.find({type : 'Medical'}).count();
+
     Morris.Donut({
         element: 'morris4',
         data: [
-            {label: 'Medical', value: medicalcount },
-            {label: 'Dental', value: dentalcount },
-            {label: 'Pharmacy', value: pharmacycount }
+            {label: 'Medical', value: medicalCount },
+            {label: 'Dental', value: dentalCount },
+            {label: 'Pharmacy', value: pharmacyCount }
         ],
         resize: true,
         colors: ['#74e4d1', '#44cbb4', '#119d85','#22BAA0'],
     });
+
+    console.log(dentalCount, pharmacyCount, medicalCount);
 
 }
