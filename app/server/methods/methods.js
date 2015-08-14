@@ -53,7 +53,12 @@ Meteor.methods({
   user_update_provider_set_login_type: function(userid, providername, logintype){
     console.log('entro al metodo update',this.userId, providername, logintype)
 
+    var fence = DDPServer._CurrentWriteFence.get();
+    var write = fence.beginWrite();
+
     Providers.update({user_id : userid, provider_name : providername}, {$set : { login_type :  logintype}});
+
+    write.committed();
   },
   user_remove_provider: function(){
 

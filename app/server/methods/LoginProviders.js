@@ -61,7 +61,7 @@ Meteor.methods({
             debugger;
             if(data.pagetitle === 'Home'){
                 console.log('updating nooptions')
-                Meteor.call("user_update_provider_set_login_type",myuser_id, "aetna", "nooptions");
+                Meteor.call("user_update_provider_set_login_type", myuser_id, "aetna", "nooptions");
             }else{
                 console.log('updating options')
 
