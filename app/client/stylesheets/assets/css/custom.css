@@ -101,3 +101,21 @@ th {
     /* margin-bottom: 100px; */
     padding-top: 40px;
 }
+.menu.accordion-menu ul {
+    background: rgba(70, 70, 70, 0.44);
+    color: #fff;
+}
+
+a {
+    color: #2282BA;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #2282BA;
+}
+
+.btn-default:hover {
+    background-color: #FFFFFF;
+    border: 1px solid #e5e5e5;
+}
