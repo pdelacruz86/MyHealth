@@ -13,6 +13,8 @@ function InitializeUserProfile(user){
   //HB_Profiles.insert({"user_id": })
 }
 
+
+
 Meteor.startup(function () {
 
   var users = YAML.eval(Assets.getText('users.yml'));
@@ -22,6 +24,5 @@ Meteor.startup(function () {
   for (key in users) if (users.hasOwnProperty(key)) {
     loadUser(users[key]);
   }
-
 
 });

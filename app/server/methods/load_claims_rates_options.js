@@ -9,10 +9,13 @@ loadclaimsdetailsData = function  (user_id, providername, claimtype, claimID, ca
 
     //console.log(user_id, providername);
 
+   claimID = s(claimID).trim().value();
+
         var providerdata = Providers.findOne({user_id :  user_id, provider_name: providername});
 
 
     var secondurl = '';
+    var element = '';
 
     var mainurl = process.env["PROVIDERS_URL_AETNA_LOGIN"];
     var mainurl2 = process.env["PROVIDERS_URL_AETNA_LOGIN_2"];
@@ -39,79 +42,41 @@ loadclaimsdetailsData = function  (user_id, providername, claimtype, claimID, ca
             .type('input#userNameValue', providerdata.provider_user_name)
             .type('input#passwordValue', providerdata.provider_password)
             .click('#secureLoginBtn')
-            .wait(20000)
+            .wait()
             .check("#planSponsorIndex")
             .click("#go-button label")
             .wait()
-            .wait(25000)
             .goto(secondurl)
             .wait()
-            .wait()
-            .wait()
-            //.click('#sortTable a[href*="' +  claimID + '"]')
-            .click('#sortTable a[href*="E335L2T3B"]')
-            .wait()
-            .wait()
-            .wait()
-            .url(function(url){
-                console.log(url);
+            .url(function(){
+                 element = '#sortTable a[href*="' + claimID + '"]';
+                console.log(element)
+
             })
+            .click('#sortTable a[href*="' + claimID + '"]')
+            .wait()
             .evaluate(function () {
                 return {
-                    table: document.querySelector('html').outerHTML
+                    table: document.querySelector('#claimSummary').outerHTML
                 };
             },
             function (value) {
                 //console.log(value.table);
-                console.log('entrooooooooo');
+                //console.log('entrooooooooo');
                 if(claimtype == 'Medical') {
-                    //validating the data
-                    var dataexists = false;
-
-                    if(value == null){
+                    if (value == null) {
                         //var htmltable =  value.errorTable ;
-                        console.log('Error pagina -- no html');
-                    }else{
-                        var htmltable =  value.table ;
+                        callback({error :"no hay dataa"}, null);
 
-
-                        x(htmltable, 'table#sortTable')(function(err, table) {
-                            if(table == '' || table == undefined){
-                                console.log('No clinical DATA');
-                            }else {
-                                dataexists = true;
-                            }
-                        });
-
-                        console.log('la data existe ? ' + dataexists);
-                    }
-
-                    if(dataexists){
+                    } else {
+                        //validating the data
                         var htmltable = value.table;
-                        //console.log(htmltable)
-                        //claimErrorTable
-                        x(htmltable, 'table#sortTable tbody tr',
-                            [{
-                                date_of_service: 'td:nth-child(1)',
-                                member: 'td:nth-child(2)',
-                                facility: 'td:nth-child(3)',
-                                status: 'td:nth-child(4)',
-                                claim_amount: 'td:nth-child(5)',
-                                paid_by_plan: 'td:nth-child(6)'
 
-                            }]
-                        )(function (err, data) {
-
-                            // console.log(data);
-                            console.log('entro final medical');
-                            callback(null, {claims: data});
-                        })
-                    }
-                    else
-                    {
-                        //la data no existe imprimir el table error
-                        callback({ datanoexists : "We have no claims to show." }, {claims: []});
-
+                        x(htmltable, '#claimSummaryContent .rowData',
+                            [{amountLabel: 'div.amountLabel'}])
+                        (function (err, data) {
+                            callback(null, {providerrate: data[2]});
+                        });
                     }
                 }
                 else if(claimtype == 'Pharmacy') {
@@ -166,17 +131,20 @@ loadclaimsdetailsData = function  (user_id, providername, claimtype, claimID, ca
                     }
                 }
                 else if(claimtype == 'Dental') {
-                    console.log('entrooooooooo dental');
+                    if (value == null) {
+                        //var htmltable =  value.errorTable ;
+                        callback({error :"no hay dataa"}, null);
 
-                    //validating the data
-                    var htmltable = value.table;
+                    } else {
+                        //validating the data
+                        var htmltable = value.table;
 
-                    x(htmltable, '#claimSummaryContent .rowData',
-                        [ { amountLabel : 'div.amountLabel'}])
-                    (function(err, data) {
-                        console.log('entro final dental' + data[2]);
-                        callback(null, {providerrate: data[2]});
-                    });
+                        x(htmltable, '#claimSummaryContent .rowData',
+                            [{amountLabel: 'div.amountLabel'}])
+                        (function (err, data) {
+                            callback(null, {providerrate: data[2]});
+                        });
+                    }
                 }
             })
             .run();
@@ -192,16 +160,18 @@ Meteor.methods({
 
         var myuser_id = this.userId;
 
-        var claimlist =  Claims.find({type : "Dental", provider_rate : null});
+        var claimlist =  Claims.find({type : "Medical", provider_rate : null, status : "  Completed  "});
 
         //console.log(claimlist.fetch())
 
         var handlerequest = function(user_id, provider, claimtype, claimid){
             LoadClaimsRatesData(user_id, provider, claimtype, claimid, function(err, data){
                 if(err){
-                    console.log('HAY ERRORRRRRRRRRRRRRRRRRR');
+                    //console.log('HAY ERRORRRRRRRRRRRRRRRRRR');
+                    console.log(err)
                 }else{
                     //loadClaims(user_id, provider, claimtype, data);
+                    console.log(JSON.stringify(data.providerrate.amountLabel), claimid);
                 }
 
             });
@@ -210,7 +180,7 @@ Meteor.methods({
 
 
         claimlist.forEach(function(value){
-            Fiber(function(){ handlerequest(myuser_id, "aetna", "Dental", 'value.claim_id')}).run();
+            Fiber(function(){ handlerequest(myuser_id, "aetna", "Medical", value.claim_id)}).run();
         })
 
 
@@ -233,12 +203,12 @@ function loadClaimsRate(user,provider, claimtype,  data)
 
 Meteor.startup(function () {
 
-    var claimlist =  Claims.find({type : "Dental", provider_rate : null});
-
-    //console.log(claimlist.fetch());
-
-    claimlist.forEach(function(value){
-        console.log(value.claim_id)
-
-    })
+    //var claimlist =  Claims.find({type : "Dental", provider_rate : null});
+    //
+    ////console.log(claimlist.fetch());
+    //
+    //claimlist.forEach(function(value){
+    //    console.log(value.claim_id)
+    //
+    //})
 });
