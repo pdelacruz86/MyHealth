@@ -15,8 +15,6 @@ providervalidatecredentials = function  (user_id, providername, callback){
             .type('input#passwordValue', providerdata.provider_password)
             .click('#secureLoginBtn')
             .wait()
-            .wait()
-            .wait()
             .evaluate(function () {
                 return {
                     table: document.querySelector('html').outerHTML
@@ -47,9 +45,8 @@ var LoadClaimsData =  Meteor.wrapAsync(providervalidatecredentials);
 
 
 Meteor.methods({
-
     providers_validate_credentials:  function(){
-        console.log('--------------------------------EMPEZO LOGIN ------------------------------------');
+        console.log('--------------------------------LOGIN STARTED------------------------------------');
         var myuser_id = this.userId;
 
         var result = false;
