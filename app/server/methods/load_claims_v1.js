@@ -454,13 +454,13 @@ if (Meteor.isServer) {
 
                     Claims.insert({
                         user_id: user,
-                        claim_id : claimid,
+                        claim_id : s(claimid).trim().value(),
                         "type": data.claimtype,
                         "provider": provider,
                         "date_of_service": new Date(s(item.date_of_service).trim().value()),
                         "member": item.member,
                         "facility": item.facility,
-                        "status": item.status,
+                        "status": s(item.status).trim().value(),
                         "claim_amount": Number(s(s.splice(s(item.claim_amount ).trim().value(),0,1,"")).trim().value()) * 100,
                         "paid_by_plan": Number(s(s.splice(s(item.paid_by_plan ).trim().value(),0,1,"")).trim().value()) * 100,
                         provider_rate : null,
@@ -482,13 +482,13 @@ if (Meteor.isServer) {
                     }
                     Claims.insert({
                         user_id: user,
-                        claim_id : claimid,
+                        claim_id : s(claimid).trim().value(),
                         "type": data.claimtype,
                         "provider": provider,
                         "date_of_service": new Date(s(item.date_of_service).trim().value()),
                         "member": item.member,
                         "facility": item.facility,
-                        "status": item.status,
+                        "status": s(item.status).trim().value(),
                         "claim_amount": Number(s(s.splice(s(item.claim_amount ).trim().value(),0,1,"")).trim().value()) * 100,
                         "paid_by_plan": Number(s(s.splice(s(item.paid_by_plan ).trim().value(),0,1,"")).trim().value()) * 100,
                         provider_rate : null,
@@ -513,17 +513,18 @@ if (Meteor.isServer) {
                     var servicedby = _.first(item.prescription_number.split('<br>'));
                     Claims.insert({
                         user_id: user,
-                        claim_id : claimid,
+                        claim_id : s(claimid).trim().value(),
                         "type": data.claimtype,
                         "provider": provider,
                         "date_of_service": new Date(s(item.date_of_service).trim().value()),
                         "member": item.member,
                         "serviced_by" : servicedby,
                         "prescription_number" : prescriptionnumber,
-                        "status" : item.status,
+                        "status" : s(item.status).trim().value(),
                         "drug_name" : item.drug_name,
                         "prescription_cost" : Number(s(s.splice(s(item.prescription_cost ).trim().value(),0,1,"")).trim().value()) * 100,
                         "paid_by_plan" : Number(s(s.splice(s(item.paid_by_plan ).trim().value(),0,1,"")).trim().value()) * 100,
+                        claim_detail_href : item.claim_detail_href,
                         provider_rate : null,
                         personal_rate : null,
                         EOB : null

@@ -150,6 +150,38 @@ Template['home'].rendered = function(){
         formatter: function(y,data){return '$' + y}
     });*/
 
-    console.log(dentalCount, pharmacyCount, medicalCount);
+    //console.log(dentalCount, pharmacyCount, medicalCount);
+
+    //var x =Xray();
+//console.log(System);
+//
+//  //console.log(appUppercase('testing'));
+//
+//    Meteor.setTimeout(function () {
+//    //    console.log(http);
+//    //    console.log(new nightmare().goto('https://e.csilaboratories.com/login').run());
+//
+//        HTTP.get("https://e.csilaboratories.com/login", function(value){
+//            console.log(value);
+//        })
+//
+//    }, 5000);
+    //testing scraping
+    //var options = new nightmare()
+    //    .goto('https://e.csilaboratories.com/login')
+    //    .wait()
+    //    .url(function(url){
+    //        console.log(url);
+    //    })
+    //    .evaluate(function () {
+    //        return {
+    //            htmldata: document.querySelector('html').outerHTML
+    //        };
+    //    },function (value) {
+    //        var htmltable = value.htmldata;
+    //        console.log(htmltable);
+    //    })
+    //    .run();
+
 
 }

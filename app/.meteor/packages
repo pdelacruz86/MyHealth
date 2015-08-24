@@ -33,10 +33,13 @@ accounts-google
 service-configuration
 accounts-twitter
 http
-pdelacruz:nightmare
-pdelacruz:xray
 mrt:nprogress
 pdelacruz:wizard
 underscorestring:underscore.string
 momentjs:moment
 meteorhacks:kadira
+pdelacruz:xray
+systemjs:systemjs
+pdelacruz:nightmare
+vsivsi:job-collection
+percolate:synced-cron

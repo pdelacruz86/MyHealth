@@ -10,7 +10,7 @@ var nightmare, path;
 
 ///////////////////////////////////////////////////////////////////////////////
 //                                                                           //
-// packages/pdelacruz:nightmare/nightmare.js                                 //
+// packages/pdelacruz:nightmare/systemjs.js                                 //
 //                                                                           //
 ///////////////////////////////////////////////////////////////////////////////
                                                                              //

@@ -67,6 +67,7 @@ mobile-status-bar@1.0.3
 momentjs:moment@2.8.4
 mongo@1.1.0
 mongo-livedata@1.0.8
+mrt:later@1.6.1
 mrt:modernizr-meteor@2.6.2
 mrt:nprogress@0.2.0
 natestrauser:animate-css@3.2.6
@@ -79,6 +80,7 @@ ordered-dict@1.0.3
 pdelacruz:nightmare@0.1.0
 pdelacruz:wizard@0.0.1
 pdelacruz:xray@0.1.0
+percolate:synced-cron@1.2.1
 raix:handlebar-helpers@0.2.4
 random@1.0.3
 reactive-dict@1.1.0
@@ -94,6 +96,7 @@ siyfion:snap@0.4.1_1
 spacebars@1.0.6
 spacebars-compiler@1.0.6
 srp@1.0.3
+systemjs:systemjs@0.18.4
 templating@1.1.1
 tracker@1.0.7
 twbs:bootstrap@3.3.5
@@ -103,6 +106,7 @@ ui@1.0.6
 underscore@1.0.3
 underscorestring:underscore.string@3.0.3_1
 url@1.0.4
+vsivsi:job-collection@1.2.2
 webapp@1.2.0
 webapp-hashing@1.0.3
 zimme:iron-router-active@1.0.4
