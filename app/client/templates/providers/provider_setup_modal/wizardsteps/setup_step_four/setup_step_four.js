@@ -20,7 +20,9 @@ Template.setupStepFour.rendered = function () {
 	$(".progress-bar-primary").attr("style", "width : 100%");
 		if(!$("#providersetup").is(':visible'))
 		{
-		  Meteor.call("user_update_provider_set_completed_setup", "aetna", true);
+			Meteor.call("user_update_provider_set_completed_setup", "aetna", true);
+			Meteor.call("load_claims_rates_no_options");
+
 		}
 };
 

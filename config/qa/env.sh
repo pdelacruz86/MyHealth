@@ -13,6 +13,7 @@ export PROVIDERS_URL_AETNA_MEDICAL="https://member.aetna.com/memberSecure/featur
 export PROVIDERS_URL_AETNA_PHARMACY="https://member.aetna.com/memberSecure/featureRouter/claims/medical?cmidx=All&product=PHARMACY&ajaxCall=true&fromDate=2008-01-01"
 export PROVIDERS_URL_AETNA_DENTAL="https://member.aetna.com/memberSecure/featureRouter/claims/medical?cmidx=All&product=DEN&ajaxCall=true&fromDate=2008-01-01"
 
+export PROVIDERS_URL_MEDICAL_PLAN_DETAILS = "https://member.aetna.com/memberSecure/featureRouter/balances?product=medical&typecode=M"
 
 
 export EXT_SERVICE_GOOGLE_CLIENT_ID="1056827996847-kbmu0l5an7giujngci9v6q3c12p266a9.apps.googleusercontent.com";

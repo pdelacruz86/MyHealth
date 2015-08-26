@@ -22,7 +22,8 @@ if (Meteor.isServer) {
             var mainurl2 = process.env["PROVIDERS_URL_AETNA_LOGIN_2"];
             var urlmedical = process.env["PROVIDERS_URL_AETNA_MEDICAL"];
             var urlfarmacy = process.env["PROVIDERS_URL_AETNA_PHARMACY"];
-            var urldental = process.env["PROVIDERS_URL_AETNA_DENTAL"];;
+            var urldental = process.env["PROVIDERS_URL_AETNA_DENTAL"];
+                var urlplandetails = "https://member.aetna.com/memberSecure/featureRouter/balances?product=medical&typecode=M";
             var secondurl = '';
 
             var x = Xray();
@@ -36,7 +37,10 @@ if (Meteor.isServer) {
             else if (index == 2) {
                 secondurl = urldental;
             }
-            //console.log('--------------------------------Going to Main URL--------------------------------------------');
+            else if (index == 3) {
+                secondurl = urlplandetails;
+            }
+
             Meteor.setTimeout(function () {
             var options = new nightmare()
                 .goto(mainurl)
@@ -45,10 +49,6 @@ if (Meteor.isServer) {
                 .type('input#passwordValue', providerdata.provider_password)
                 .click('#secureLoginBtn')
                 .wait()
-            //console.log('--------------------------------Clicked: #secureLoginBtn-------------------------------------');
-                //.wait("#claimSearchSubmitButton")
-                //.wait(20000)
-            //console.log('--------------------------------Going to Second URL------------------------------------------');
                 .goto(secondurl)
                 .wait()
                 .evaluate(function () {
@@ -155,7 +155,9 @@ if (Meteor.isServer) {
                         }
                     }
                     else if (index == 2) {
-                        //validating the data
+                            console.log('entro evaluate');
+
+                            //validating the data
                         var dataexists = false;
 
                         if (value == null) {
@@ -201,6 +203,41 @@ if (Meteor.isServer) {
 
                         }
                     }
+                    else if (index == 3){
+                            var htmltable =  value.table ;
+                            console.log('entro evaluate');
+
+                            var alldata = [];
+                            var members = [];
+
+
+                            x(htmltable, '#selectPullDown0',
+                                ['option']
+                            )(function (err, data) {
+                                members = data;
+                            })
+
+                            for(i = 0; i < members.length; i ++){
+                                var selector = '.fundTable' + i  + ' tbody tr.normalSection';
+                                var selectormember = 'ul#selectPullDown0_prim li a[index="' + i + '"]';
+                                // console.log(selector)
+                                x(htmltable, {
+                                        member : 'ul#selectPullDown0_prim li a[index="' + i + '"]',
+                                        plan_details:
+                                            x(selector, [{
+                                                plan_features: 'td:nth-child(1)',
+                                                limit: 'td:nth-child(2)',
+                                                applied: 'td:nth-child(3)',
+                                                remainder: 'td:nth-child(4)'
+                                            }])
+                                    }
+                                )(function (err, table) {
+                                    alldata.push(table);
+                                });
+                            }
+
+                            future.return({plan_summary: alldata});
+                        }
                 })
                 .run();
 
@@ -211,15 +248,29 @@ if (Meteor.isServer) {
             // iterate sequentially over the tasks to resolve them
             var results = _.map(futures, function (future, index) {
                 // waiting until the future has return
+                console.log("====================================================================");
+
                 var result = future.wait();
                 //console.log("result from task", index, "is", result);
+                console.log(result.plan_summary)
+                console.log("====================================================================")
 
-                loadClaims(myuser_id, "aetna", result)
+                if(result.plan_summary == undefined)
+                {
+                    loadClaims(myuser_id, "aetna", result)
+                }
+                else
+                {
+                    loadPlanDetails(myuser_id, result.plan_summary)
+                }
                 // accumulate results
                 return result;
             });
+
+            //var plandetailsresult = Meteor.call("load_plan_details_no_options", "aetna");
+
             //
-            console.log(results.claims);
+            //console.log(plandetailsresult);
             return results;
 
         },
@@ -532,5 +583,68 @@ if (Meteor.isServer) {
                 })
             }
         };
+    }
+
+    function loadPlanDetails(user, data){
+        data.forEach(function(item){
+
+            item.plan_details.forEach(function(value){
+                //plan features========================================================
+                value.plan_features = s.replaceAll(value.plan_features, '\\n', '');
+
+                //limits========================================================
+
+                var limit = s.replaceAll(value.limit, '\\n', '');
+                limit = s.replaceAll(limit, ',', '');
+
+                if(s.include(limit, '$')){
+                    limit = Number(s(s.splice(s(limit).trim().value(),0,1,"")).trim().value()) * 100;
+                }else{
+                    limit = Number(limit) * 100;
+                }
+
+                value.limit = limit;
+
+                //applied========================================================
+
+                var applied = s.replaceAll(value.applied, '\\n', '');
+                applied = s.replaceAll(applied, ',', '');
+                applied = s.replaceAll(applied, 'Activity Details', '');
+
+
+                if(s.include(applied, '$')){
+                    applied = Number(s(s.splice(s(applied).trim().value(),0,1,"")).trim().value()) * 100;
+                }else{
+                    applied = Number(applied) * 100;
+                }
+
+                value.applied = applied;
+
+                //remainder ========================================================
+
+                var remainder = s.replaceAll(value.remainder, '\\n', '');
+                remainder = s.replaceAll(remainder, ',', '');
+                remainder = s.replaceAll(remainder, 'Activity Details', '');
+
+
+                if(s.include(remainder, '$')){
+                    remainder = Number(s(s.splice(s(remainder).trim().value(),0,1,"")).trim().value()) * 100;
+                }else{
+                    remainder = Number(remainder) * 100;
+                }
+
+                value.remainder = remainder;
+
+                console.log(value)
+            });
+
+            //insert member get the id
+            var memberid =  Members.insert(
+                {
+                    user_id : user,
+                    member_name: item.member,
+                    plan_details : item.plan_details
+                })
+        });
     }
 }

@@ -36,7 +36,7 @@ Template.setupStepThree.rendered = function () {
     debugger;
     if(provider.login_type == "options"){
         console.log('entro con opciones')
-        Meteor.call("Update_user_Claims_with_options", 3, "aetna", function(err, data) {
+        Meteor.call("Update_user_Claims_with_options", 4, "aetna", function(err, data) {
             console.log('callback')
 
             NProgress.done();
@@ -59,7 +59,7 @@ Template.setupStepThree.rendered = function () {
     else{
         console.log('entro sin opciones')
 
-        Meteor.call("Update_user_Claims", 3, "aetna", function(err, data) {
+        Meteor.call("Update_user_Claims", 4, "aetna", function(err, data) {
             console.log('callback')
 
             NProgress.done();
