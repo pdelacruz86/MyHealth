@@ -248,12 +248,8 @@ if (Meteor.isServer) {
             // iterate sequentially over the tasks to resolve them
             var results = _.map(futures, function (future, index) {
                 // waiting until the future has return
-                console.log("====================================================================");
 
                 var result = future.wait();
-                //console.log("result from task", index, "is", result);
-                console.log(result.plan_summary)
-                console.log("====================================================================")
 
                 if(result.plan_summary == undefined)
                 {
@@ -267,10 +263,6 @@ if (Meteor.isServer) {
                 return result;
             });
 
-            //var plandetailsresult = Meteor.call("load_plan_details_no_options", "aetna");
-
-            //
-            //console.log(plandetailsresult);
             return results;
 
         },
@@ -291,7 +283,8 @@ if (Meteor.isServer) {
                 var mainurl2 = process.env["PROVIDERS_URL_AETNA_LOGIN_2"];
                 var urlmedical = process.env["PROVIDERS_URL_AETNA_MEDICAL"];
                 var urlfarmacy = process.env["PROVIDERS_URL_AETNA_PHARMACY"];
-                var urldental = process.env["PROVIDERS_URL_AETNA_DENTAL"];;
+                var urldental = process.env["PROVIDERS_URL_AETNA_DENTAL"];
+                var urlplandetails = "https://member.aetna.com/memberSecure/featureRouter/balances?product=medical&typecode=M";
                 var secondurl = '';
 
                 var x = Xray();
@@ -304,6 +297,8 @@ if (Meteor.isServer) {
                 }
                 else if (index == 2) {
                     secondurl = urldental;
+                } else if (index == 3) {
+                    secondurl = urlplandetails;
                 }
 
                 Meteor.setTimeout(function () {
@@ -463,6 +458,42 @@ if (Meteor.isServer) {
 
                                 }
                             }
+                            //loading plan details
+                            else if (index == 3){
+                                var htmltable =  value.table ;
+                                console.log('entro evaluate');
+
+                                var alldata = [];
+                                var members = [];
+
+
+                                x(htmltable, '#selectPullDown0',
+                                    ['option']
+                                )(function (err, data) {
+                                    members = data;
+                                })
+
+                                for(i = 0; i < members.length; i ++){
+                                    var selector = '.fundTable' + i  + ' tbody tr.normalSection';
+                                    var selectormember = 'ul#selectPullDown0_prim li a[index="' + i + '"]';
+                                    // console.log(selector)
+                                    x(htmltable, {
+                                            member : 'ul#selectPullDown0_prim li a[index="' + i + '"]',
+                                            plan_details:
+                                                x(selector, [{
+                                                    plan_features: 'td:nth-child(1)',
+                                                    limit: 'td:nth-child(2)',
+                                                    applied: 'td:nth-child(3)',
+                                                    remainder: 'td:nth-child(4)'
+                                                }])
+                                        }
+                                    )(function (err, table) {
+                                        alldata.push(table);
+                                    });
+                                }
+
+                                future.return({plan_summary: alldata});
+                            }
                         })
                         .run();
 
@@ -476,7 +507,14 @@ if (Meteor.isServer) {
                 var result = future.wait();
                 //console.log("result from task", index, "is", result);
 
-                loadClaims(myuser_id, "aetna", result)
+                if(result.plan_summary == undefined)
+                {
+                    loadClaims(myuser_id, "aetna", result)
+                }
+                else
+                {
+                    loadPlanDetails(myuser_id, result.plan_summary)
+                }
                 // accumulate results
                 return result;
             });
@@ -635,7 +673,7 @@ if (Meteor.isServer) {
 
                 value.remainder = remainder;
 
-                console.log(value)
+                //console.log(value)
             });
 
             //insert member get the id

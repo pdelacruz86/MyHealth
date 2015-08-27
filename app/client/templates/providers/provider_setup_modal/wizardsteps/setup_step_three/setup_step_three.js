@@ -44,6 +44,8 @@ Template.setupStepThree.rendered = function () {
             if (err) {
 
             } else {
+                Meteor.call("load_claims_rates_no_options");
+
                 $("#step3btn").attr("class", "btn btn-default pull-right");
                 $("#step3btn").text("Next");
                 $("#step3btn").removeAttr("disabled");
@@ -67,6 +69,8 @@ Template.setupStepThree.rendered = function () {
             if (err) {
 
             } else {
+                Meteor.call("load_claims_rates_no_options");
+
                 $("#step3btn").attr("class", "btn btn-default pull-right");
                 $("#step3btn").text("Next");
                 $("#step3btn").removeAttr("disabled");

@@ -21,8 +21,6 @@ Template.setupStepFour.rendered = function () {
 		if(!$("#providersetup").is(':visible'))
 		{
 			Meteor.call("user_update_provider_set_completed_setup", "aetna", true);
-			Meteor.call("load_claims_rates_no_options");
-
 		}
 };
 
