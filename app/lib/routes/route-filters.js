@@ -26,6 +26,7 @@ userAuthenticated = function() {
 Router.onBeforeAction(checkUserLoggedIn, {
     except: ['login', 'register']
 });
+
 Router.onBeforeAction(userAuthenticated, {
     only: ['login', 'register']
 });

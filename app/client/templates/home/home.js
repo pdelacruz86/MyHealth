@@ -115,20 +115,20 @@ Template['home'].rendered = function(){
         resize: true
     });
 
-    Morris.Line({
+    Morris.Area({
         element: 'morris3',
         data: [
-            {month: '2015-01', a: 40, b: 785},
-            {month: '2015-02', a: 150, b: 1570},
-            {month: '2015-03', a: 190, b: 2355},
-            {month: '2015-04', a: 290, b: 3140},
-            {month: '2015-05', a: 330, b: 3925},
-            {month: '2015-06', a: 380, b: 4710},
-            {month: '2015-07', a: 420, b: 5495}
+            {month: '2015-01', a: 40, b: 785, c: 100},
+            {month: '2015-02', a: 150, b: 1570, c: 280},
+            {month: '2015-03', a: 190, b: 2355, c: 310},
+            {month: '2015-04', a: 290, b: 3140, c: 480},
+            {month: '2015-05', a: 330, b: 3925, c: 580},
+            {month: '2015-06', a: 380, b: 4710, c: 780},
+            {month: '2015-07', a: 420, b: 5495, c: 880}
         ],
         xkey: 'month',
         ykeys: ['a', 'b'],
-        labels: ['Member Savings','Insurance Cost'],
+        labels: ['Member Rate','Insurance Cost','Claim Amount'],
         xLabels: 'month',
         hideHover: 'auto',
         lineColors: ['rgb(34, 130, 186)', 'rgb(89, 169, 216)'],
