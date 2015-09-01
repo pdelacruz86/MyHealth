@@ -547,7 +547,7 @@ if (Meteor.isServer) {
                         "type": data.claimtype,
                         "provider": provider,
                         "date_of_service": new Date(s(item.date_of_service).trim().value()),
-                        "member": item.member,
+                        "member": s.clean(item.member),
                         "facility": item.facility,
                         "status": s(item.status).trim().value(),
                         "claim_amount": Number(s(s.splice(s(item.claim_amount ).trim().value(),0,1,"")).trim().value()) * 100,
@@ -575,7 +575,7 @@ if (Meteor.isServer) {
                         "type": data.claimtype,
                         "provider": provider,
                         "date_of_service": new Date(s(item.date_of_service).trim().value()),
-                        "member": item.member,
+                        "member": s.clean(item.member),
                         "facility": item.facility,
                         "status": s(item.status).trim().value(),
                         "claim_amount": Number(s(s.splice(s(item.claim_amount ).trim().value(),0,1,"")).trim().value()) * 100,
@@ -606,7 +606,7 @@ if (Meteor.isServer) {
                         "type": data.claimtype,
                         "provider": provider,
                         "date_of_service": new Date(s(item.date_of_service).trim().value()),
-                        "member": item.member,
+                        "member": s.clean(item.member),
                         "serviced_by" : servicedby,
                         "prescription_number" : prescriptionnumber,
                         "status" : s(item.status).trim().value(),
@@ -629,7 +629,7 @@ if (Meteor.isServer) {
             item.plan_details.forEach(function(value){
                 //plan features========================================================
                 value.plan_features = s.replaceAll(value.plan_features, '\\n', '');
-
+                value.plan_features = s.clean(value.plan_features);
                 //limits========================================================
 
                 var limit = s.replaceAll(value.limit, '\\n', '');
@@ -680,7 +680,7 @@ if (Meteor.isServer) {
             var memberid =  Members.insert(
                 {
                     user_id : user,
-                    member_name: item.member,
+                    member_name: s.clean(item.member),
                     plan_details : item.plan_details
                 })
         });

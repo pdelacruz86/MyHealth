@@ -11,3 +11,7 @@ Meteor.publish('providers', function () {
 Meteor.publish('claims', function (/* args */) {
   return Claims.find({user_id : this.userId});
 });
+
+Meteor.publish('members', function (/* args */) {
+  return Members.find({user_id : this.userId});
+});

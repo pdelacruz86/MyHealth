@@ -4,10 +4,11 @@ HomeController = RouteController.extend({
   subscriptions: function() {
     this.subscribe('hb_profiles');
     this.subscribe('claims');
+    this.subscribe('members');
   },
 
   waitOn: function(){
-    return [Meteor.subscribe('claims')];
+    return [Meteor.subscribe('claims'), Meteor.subscribe('members')];
   },
 
   data: function () {

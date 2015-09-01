@@ -1,8 +1,25 @@
-Template.home.helpers({
+//https://github.com/raix/Meteor-handlebar-helpers#raixhandlebar-helpers-
 
+Template.home.helpers({
+    //Get the family member in the Members list
+    memberFamilyItem : function(){
+        return Members.findOne({member_name : "Family"});
+    },
+    //get all members from a user.
+    memberList: function() {
+        return Members.find();
+    },
+    selectedMember : function(){
+      return $('.selectedmember').val();
+    }
 });
 
 Template.home.events({
+    'change #familyselect' : function(evt){
+        evt.preventDefault();
+        var selected = $('#familyselect').find(":selected")
+        console.log("Changed", selected)
+}
 
 });
 
@@ -76,44 +93,60 @@ Template['home'].rendered = function(){
 
 /* Count claims by type */
 
-    var dentalCount = Claims.find({type : 'Dental'}).count();
-    var pharmacyCount = Claims.find({type : 'Pharmacy'}).count();
-    var medicalCount = Claims.find({type : 'Medical'}).count();
-    var visionCount = Claims.find({type : 'Vision'}).count();
-    var total = dentalCount+pharmacyCount+medicalCount+visionCount;
+    var dentalCount = 0;//Claims.find({type : 'Dental'}).count();
+    var pharmacyCount = 0;//Claims.find({type : 'Pharmacy'}).count();
+    var medicalCount = 0;//Claims.find({type : 'Medical'}).count();
+    var visionCount = 0;//Claims.find({type : 'Vision'}).count();
 
-    Morris.Donut({
-        element: 'morris4',
-        data: [
-            {label: 'All', value: total },
-            {label: 'Medical', value: medicalCount },
-            {label: 'Pharmacy', value: pharmacyCount },
-            {label: 'Dental', value: dentalCount },
-            {label: 'Vision', value: visionCount }
-        ],
-        resize: true,
-        colors: ['rgb(34, 130, 186)', 'rgb(44, 154, 218)', 'rgb(89, 169, 216)','rgb(113, 180, 220)','rgb(146, 194, 222)'],
-    });
+    var dentalclaimvalue = 0, pharmacyclaimvalue = 0, medicalclaimvalue = 0;
 
-        Morris.Bar({
-        element: 'morris2',
-        data: [
-            { member: 'All', a: 370.13, b: 11500.00 },
-            { member: 'You', a: 0, b: 5750.00 },
-            { member: 'Abraham', a: 126.6, b: 5750.00  },
-            { member: 'Annabel', a: 43.53, b: 5750.00  },
-            { member: 'Thomas', a: 200, b: 5750.00  }
-        ],
-        xkey: 'member',
-        ykeys: ['a', 'b'],
-        labels: ['Contribution', 'Deductible'],
-        barRatio: 0.4,
-        xLabelAngle: 35,
-        hideHover: 'auto',
-        stacked: true,
-        barColors: ['rgba(34, 152, 186, 0.69)','rgb(34, 130, 186)'],
-        resize: true
-    });
+   //medicalCount = Meteor.call("dashboard/get_claim_chart_data", "Medical")
+   // console.log(medicalCount);
+   //
+   // dentalCount = Meteor.call("dashboard/get_claim_chart_data", "Dental");
+    Meteor.call("dashboard/get_claim_chart_data", "Pharmacy", function(err, data)
+    {
+        var pharmacydata = _.find(data, function(item){
+            return item._id.type.type == "Pharmacy"
+        });
+
+        var medicaldata = _.find(data, function(item){
+            return item._id.type.type == "Medical"
+        });
+
+        var dentaldata = _.find(data, function(item){
+            return item._id.type.type == "Dental"
+        });
+
+        if(dentaldata != undefined){
+            dentalclaimvalue = dentaldata.totalClaimRate;
+            dentalCount = dentaldata.count;
+        }
+        if(pharmacydata != undefined) {
+            pharmacyclaimvalue = pharmacydata.totalClaimRate;
+            pharmacyCount = pharmacydata.count;
+        }
+        if(medicaldata != undefined) {
+            medicalclaimvalue = medicaldata.totalClaimRate;
+            medicalCount = medicaldata.count;
+        }
+        var total = medicalclaimvalue+pharmacyclaimvalue+dentalclaimvalue;
+
+        Morris.Donut({
+            element: 'morris4',
+            data: [
+                {label: 'All', value: total },
+                {label: 'Medical', value: medicalclaimvalue },
+                {label: 'Pharmacy', value: pharmacyclaimvalue },
+                {label: 'Dental', value: dentalclaimvalue }
+                //, {label: 'Vision', value: visionCount }
+            ],
+            formatter : function (y, data) { return '$' + y.toFixed(2) },
+            resize: true,
+            colors: ['rgb(34, 130, 186)', 'rgb(44, 154, 218)', 'rgb(89, 169, 216)','rgb(113, 180, 220)','rgb(146, 194, 222)'],
+        });
+
+    })
 
     Morris.Area({
         element: 'morris3',
@@ -135,53 +168,4 @@ Template['home'].rendered = function(){
         //goals: [8000],
         resize: true,
     });
-    /*
-    Morris.Donut({
-        element: 'morris4',
-        data: [
-            {label: 'All Claims', value: 370.13},
-            {label: 'Medical', value: 243.53},
-            {label: 'Pharmacy', value: 126.6 },
-            {label: 'Dental', value: 0 },
-            {label: 'Vision', value: 0 }
-        ],
-        resize: true,
-        colors: ['rgb(34, 130, 186)', 'rgb(44, 154, 218)', 'rgb(89, 169, 216)','rgb(113, 180, 220)','rgb(146, 194, 222)'],
-        formatter: function(y,data){return '$' + y}
-    });*/
-
-    //console.log(dentalCount, pharmacyCount, medicalCount);
-
-    //var x =Xray();
-//console.log(System);
-//
-//  //console.log(appUppercase('testing'));
-//
-//    Meteor.setTimeout(function () {
-//    //    console.log(http);
-//    //    console.log(new nightmare().goto('https://e.csilaboratories.com/login').run());
-//
-//        HTTP.get("https://e.csilaboratories.com/login", function(value){
-//            console.log(value);
-//        })
-//
-//    }, 5000);
-    //testing scraping
-    //var options = new nightmare()
-    //    .goto('https://e.csilaboratories.com/login')
-    //    .wait()
-    //    .url(function(url){
-    //        console.log(url);
-    //    })
-    //    .evaluate(function () {
-    //        return {
-    //            htmldata: document.querySelector('html').outerHTML
-    //        };
-    //    },function (value) {
-    //        var htmltable = value.htmldata;
-    //        console.log(htmltable);
-    //    })
-    //    .run();
-
-
 }
