@@ -8,7 +8,8 @@ Meteor.methods({
     "dashboard/get_claim_chart_data" : function(){
 
       var data = Claims.aggregate([
-                { $match : { user_id : this.userId, provider_rate : { $ne : NaN } }},
+                { $match : { user_id : this.userId, provider_rate : { $ne : NaN },
+                    status : "Completed" }},
                 {
                     $group : {
                         _id : { type: { type: "$type" }},
@@ -23,7 +24,8 @@ Meteor.methods({
     "dashboard/get_current_expenditures_chart_data" : function(){
 
         var data = Claims.aggregate([
-            { $match : { user_id : this.userId, provider_rate : { $ne : NaN } }},
+            { $match : { user_id : this.userId, provider_rate : { $ne : NaN },
+                status : "Completed" }},
             {
                 $group : {
                     _id : { member : { member : "$member"}},
@@ -36,5 +38,10 @@ Meteor.methods({
         console.log(data);
 
         return data;
+    },
+    "dashboard/update_profile_setup_plan_performance_data" : function(planperformance){
+
+
+        HB_Profiles.update({ user_id : this.userId}, {$set : { plan_performance_data : planperformance }});
     }
 })
