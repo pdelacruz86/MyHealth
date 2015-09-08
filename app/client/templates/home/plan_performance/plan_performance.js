@@ -43,6 +43,11 @@ Template.PlanPerformance.created = function () {
 
 Template.PlanPerformance.rendered = function () {
 
+    var member_id = Template.home.__helpers.get("selectedMember")();
+
+    var member = Members.findOne({_id : member_id});
+
+
  var dataarray = [];
 
     var profile = HB_Profiles.findOne();
@@ -102,39 +107,52 @@ Template.PlanPerformance.rendered = function () {
             suminsurancecost = suminsurancecost + insurancecost;
 
             //console.log(amounttopaybyperiod, insurancecost, suminsurancecost);
+            var claimsbyedate = {};
 
-            var claimsbyedate = Claims.find({
+
+        if(member.member_name == "Family"){
+             claimsbyedate = Claims.find({
                 status :  "Completed",
                 provider_rate : { $ne : NaN },
                 claim_amount : { $ne : NaN },
-                 date_of_service: {
-                 $gte: new Date(startdate),
-                 $lt: new Date(enddate)
-             }
-             }).fetch();
+                date_of_service: {
+                    $gte: new Date(startdate),
+                    $lt: new Date(enddate)
+                }
+            }).fetch();
 
-                var sumproviderrate = 0;
-                var sumclaimamount = 0 ;
+        }else{
+             claimsbyedate = Claims.find({
+                 member : member.member_name,
+                status :  "Completed",
+                provider_rate : { $ne : NaN },
+                claim_amount : { $ne : NaN },
+                date_of_service: {
+                    $gte: new Date(startdate),
+                    $lt: new Date(enddate)
+                }
+            }).fetch();
 
-                _.each(claimsbyedate, function(claim){
-                    if(claim.type == "Pharmacy"){
-                        sumclaimamount += (claim.prescription_cost / 100);
+        }
 
-                    }else{
-                        sumclaimamount += (claim.claim_amount / 100);
-                    }
+        var sumproviderrate = 0;
+        var sumclaimamount = 0 ;
 
-                    sumproviderrate += (claim.provider_rate / 100);
-                })
+        _.each(claimsbyedate, function(claim){
+            if(claim.type == "Pharmacy"){
+                sumclaimamount += (claim.prescription_cost / 100);
 
-                memberrate = memberrate + sumproviderrate;
-                claimamount = claimamount + sumclaimamount;
+            }else{
+                sumclaimamount += (claim.claim_amount / 100);
+            }
+
+            sumproviderrate += (claim.provider_rate / 100);
+        })
+
+        memberrate = memberrate + sumproviderrate;
+        claimamount = claimamount + sumclaimamount;
 
         var savings = claimamount - memberrate;
-
-             console.log("start date" + startdate, "enddate" + enddate, "claim amount A: "+  sumclaimamount,
-                 "member rate B: " + sumproviderrate, "result A :"  + claimamount, "result B :" + memberrate,
-                 "savings : " + savings.toFixed(2) );
 
          dataarray.push({
              month : moment(currentdate).format('YYYY-MM'),

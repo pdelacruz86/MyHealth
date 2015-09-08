@@ -10,17 +10,42 @@ Template.home.helpers({
         return Members.find();
     },
     selectedMember : function(){
-      return $('.selectedmember').val();
+      return Session.get("selectedMember");
+    },
+    providerRateLoadCompleted : function(){
+        return Claims.find({provider_rate : null}).count() == 0;
+    },
+    ableToShowGraph : function(){
+        var count = Claims.find({provider_rate : { $ne : null}}).count();
+
+        return count > 43;
     }
 });
 
 Template.home.events({
-    'change #familyselect' : function(evt){
+    'change #familyselect' : function(evt) {
         evt.preventDefault();
-        var selected = $('#familyselect').find(":selected")
-        console.log("Changed", selected)
-}
+        $("#familyselect option").attr("class", "")
 
+        var selected = $('#familyselect').find(":selected").attr("class", "selectedmember");
+
+        $('#morris3').html('');
+        $('#morris4').html('');
+        $('dv#dvClaims').html('');
+        $('dv#dvPlanPerformance').html('');
+        //$('dv#dvEOB').html('');
+
+        Session.set("selectedMember",  $('#familyselect').find(":selected").val());
+
+        var instance = UI.renderWithData(Template.ClaimsChart);
+        UI.insert(instance, $('dvClaims'));
+
+        var instance2 = UI.renderWithData(Template.PlanPerformance);
+        UI.insert(instance2, $('dvPlanPerformance'));
+
+        //var instance3 = UI.renderWithData(Template.ExaplanationsOfBenefits);
+        //UI.insert(instance3, $('dvEOB'));
+    }
 });
 
 
@@ -93,59 +118,6 @@ Template['home'].rendered = function(){
 
 /* Count claims by type */
 
-    var dentalCount = 0;//Claims.find({type : 'Dental'}).count();
-    var pharmacyCount = 0;//Claims.find({type : 'Pharmacy'}).count();
-    var medicalCount = 0;//Claims.find({type : 'Medical'}).count();
-    var visionCount = 0;//Claims.find({type : 'Vision'}).count();
-
-    var dentalclaimvalue = 0, pharmacyclaimvalue = 0, medicalclaimvalue = 0;
-
-   //medicalCount = Meteor.call("dashboard/get_claim_chart_data", "Medical")
-   // console.log(medicalCount);
-   //
-   // dentalCount = Meteor.call("dashboard/get_claim_chart_data", "Dental");
-    Meteor.call("dashboard/get_claim_chart_data", "Pharmacy", function(err, data)
-    {
-        var pharmacydata = _.find(data, function(item){
-            return item._id.type.type == "Pharmacy"
-        });
-
-        var medicaldata = _.find(data, function(item){
-            return item._id.type.type == "Medical"
-        });
-
-        var dentaldata = _.find(data, function(item){
-            return item._id.type.type == "Dental"
-        });
-
-        if(dentaldata != undefined){
-            dentalclaimvalue = dentaldata.totalClaimRate;
-            dentalCount = dentaldata.count;
-        }
-        if(pharmacydata != undefined) {
-            pharmacyclaimvalue = pharmacydata.totalClaimRate;
-            pharmacyCount = pharmacydata.count;
-        }
-        if(medicaldata != undefined) {
-            medicalclaimvalue = medicaldata.totalClaimRate;
-            medicalCount = medicaldata.count;
-        }
-        var total = medicalclaimvalue+pharmacyclaimvalue+dentalclaimvalue;
-
-        Morris.Donut({
-            element: 'morris4',
-            data: [
-                {label: 'All', value: total },
-                {label: 'Medical', value: medicalclaimvalue },
-                {label: 'Pharmacy', value: pharmacyclaimvalue },
-                {label: 'Dental', value: dentalclaimvalue }
-                //, {label: 'Vision', value: visionCount }
-            ],
-            formatter : function (y, data) { return '$' + y.toFixed(2) },
-            resize: true,
-            colors: ['rgb(34, 130, 186)', 'rgb(44, 154, 218)', 'rgb(89, 169, 216)','rgb(113, 180, 220)','rgb(146, 194, 222)'],
-        });
-
-    })
-
+    var familymember = Members.findOne({member_name : "Family"});
+    Session.set("selectedMember", familymember._id);
 }

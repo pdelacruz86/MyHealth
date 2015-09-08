@@ -14,7 +14,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                {{#each deductibleBreakdownList }}
+                {{#each deductibleBreakdownMainList }}
                     <tr>
                         <th scope="row">{{plan_features}}</th>
                         <td>${{limit}} </td>
@@ -25,7 +25,7 @@
                 </tbody>
             </table>
         </div>
-      {{#if $eq selectedMember "Family"}}
+      <!--{{#if deductibleBreakdownSecondList}}-->
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
             <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingOne">
@@ -48,42 +48,14 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <th scope="row">Annual Routine Eye Exam Visit Maximum</th>
-                                    <td>1</td>
-                                    <td>0</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Annual Inpatient Skilled Nursing Facility Days</th>
-                                    <td>60</td>
-                                    <td>0</td>
-                                    <td>60</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Annual Home Health Care Visits</th>
-                                    <td>60</td>
-                                    <td>0</td>
-                                    <td>60</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Annual Physical and Occupational Therapy Visits</th>
-                                    <td>20</td>
-                                    <td>0</td>
-                                    <td>20</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Annual Speech Therapy Visits</th>
-                                    <td>20</td>
-                                    <td>0</td>
-                                    <td>20</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Annual Spinal Manipulation Therapy Visits</th>
-                                    <td>20</td>
-                                    <td>0</td>
-                                    <td>20</td>
-                                </tr>
+                                {{#each deductibleBreakdownSecondList }}
+                                    <tr>
+                                        <th scope="row">{{plan_features}}</th>
+                                        <td>${{limit}} </td>
+                                        <td>${{applied}}</td>
+                                        <td>${{remainder}}</td>
+                                    </tr>
+                                {{/each}}
                                 </tbody>
                             </table>
                         </div>
@@ -91,6 +63,6 @@
                 </div>
             </div>
         </div>
-        {{/if}}
+        <!--{{/if}}-->
     </div>
 </template>

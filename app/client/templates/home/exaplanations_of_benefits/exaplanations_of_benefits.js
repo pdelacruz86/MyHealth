@@ -27,19 +27,62 @@ Template.ExaplanationsOfBenefits.helpers({
 
         return (value.limit / 100).toFixed(2);
     },
-    deductibleBreakdownList: function(){
-        //family data
-        var familyitem =  Members.findOne({ member_name :  "Family" });
+    deductibleBreakdownMainList: function(){
+        var member_id = '';//Template.home.__helpers.get("selectedMember")();
+
+        if(Session.get("selectedMember") != null){
+            member_id = Session.get("selectedMember");
+        }
+        else{
+            //family data
+            var familyitem =  Members.findOne({ member_name :  "Family" });
+            member_id = familyitem._id;
+        }
 
         //var familymember =  Members.findOne({ _id :  $('.selectedmember').val() });
-        var familymember =  Members.findOne({ _id :  familyitem._id });
+        var familymember =  Members.findOne({ _id :  member_id });
+        //console.log(familymember)
+        var newlist= [];
 
         _.each(familymember.plan_details, function(item){
             item.limit = (item.limit / 100).toFixed(2);
             item.applied = (item.applied / 100).toFixed(2);
             item.remainder = (item.remainder / 100).toFixed(2);
-        })
-        return familymember.plan_details;
+
+            if(s.include(item.plan_features, "Network")){
+                newlist.push(item);
+            }
+        });
+
+        return newlist;
+    },
+    deductibleBreakdownSecondList: function(){
+        var member_id = '';//Template.home.__helpers.get("selectedMember")();
+
+        if(Session.get("selectedMember") != null){
+            member_id = Session.get("selectedMember");
+        }
+        else{
+            //family data
+            var familyitem =  Members.findOne({ member_name :  "Family" });
+            member_id = familyitem._id;
+        }
+
+        var familymember =  Members.findOne({ _id :  member_id });
+
+        var newlist= [];
+
+        _.each(familymember.plan_details, function(item){
+            item.limit = (item.limit / 100).toFixed(2);
+            item.applied = (item.applied / 100).toFixed(2);
+            item.remainder = (item.remainder / 100).toFixed(2);
+
+            if(!s.include(item.plan_features, "Network")){
+                newlist.push(item);
+            }
+        });
+
+        return newlist;
     },
     planfeatures : function(){
 

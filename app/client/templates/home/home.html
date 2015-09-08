@@ -29,14 +29,25 @@
             </div>
         </div>
         <div class="panel panel-body panel-white col-lg-12 col-md-12">
-            <div class="col-lg-6 col-md-8">
+            <div class="col-lg-6 col-md-8" id="dvPlanPerformance">
+                {{#if $eq providerRateLoadCompleted false}}
+                   {{> LoadingProviderData}}
+                {{/if}}
+
                 {{> PlanPerformance}}
             </div>
-            <div class="col-lg-6 panel-body clearfix">
+            <div id="dvClaims" class="col-lg-6 panel-body clearfix">
+
                 <p class="text-center lead">You've filed <a href="#">20</a> claims this year.</p>
-                <div id="morris4"></div>
+                {{#if $eq providerRateLoadCompleted false}}
+                    {{> LoadingProviderData}}
+                {{/if}}
+
+                {{#if ableToShowGraph}}
+                    {{> ClaimsChart}}
+                {{/if}}
             </div>
-            <div class="col-lg-6 col-md-12">
+            <div class="col-lg-6 col-md-12" id="dvEOB">
                {{> ExaplanationsOfBenefits}}
             </div>
             <div class="col-lg-6 col-md-12">

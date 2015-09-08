@@ -20,7 +20,6 @@ Template.CurrentExpenditures.rendered = function () {
 
 
     Meteor.call("dashboard/get_current_expenditures_chart_data", function(err, data){
-        console.log(data);
 
         var members = Members.find({}).fetch();
         var bardata = [];
