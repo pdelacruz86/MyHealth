@@ -15,7 +15,7 @@ Template.ExaplanationsOfBenefits.helpers({
             return s.clean(item.plan_features) == s.clean(" In Network Annual Deductible Includes Pharmacy   ");
         });
 
-        return (value.limit / 100).toFixed(2);
+        return  s.numberFormat((value.limit / 100),2, ".", ",");
         //Members.find()
     },
     EOBFamilyValue : function(){
@@ -25,7 +25,7 @@ Template.ExaplanationsOfBenefits.helpers({
             return s.clean(item.plan_features) == s.clean(" In Network Annual Deductible Includes Pharmacy   ");
         });
 
-        return (value.limit / 100).toFixed(2);
+        return s.numberFormat((value.limit / 100),2, ".", ",");
     },
     deductibleBreakdownMainList: function(){
         var member_id = '';//Template.home.__helpers.get("selectedMember")();
@@ -45,9 +45,9 @@ Template.ExaplanationsOfBenefits.helpers({
         var newlist= [];
 
         _.each(familymember.plan_details, function(item){
-            item.limit = (item.limit / 100).toFixed(2);
-            item.applied = (item.applied / 100).toFixed(2);
-            item.remainder = (item.remainder / 100).toFixed(2);
+            item.limit = s.numberFormat((item.limit / 100),2, ".", ",");
+            item.applied = s.numberFormat((item.applied / 100),2, ".", ",");
+            item.remainder = s.numberFormat((item.remainder / 100),2, ".", ",");
 
             if(s.include(item.plan_features, "Network")){
                 newlist.push(item);

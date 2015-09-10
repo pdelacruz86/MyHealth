@@ -30,62 +30,64 @@ var login = function(username, password, logintype){
     };
 };
 
-var getrates = function(claimtype, url, data) {
+var getrates = function(meteorinstance, userid, data) {
     return function(nightmare) {
-
-        if (claimtype == "Pharmacy")
-        {
-            data.forEach(function(item){
-                nightmare
-                    .goto('https://member.aetna.com' + item.claim_detail_href)
-                    .wait()
-                    .url(function(url){console.log(url)})
-                    .evaluate(function () {
-                        return {
-                            table: document.querySelector('#claimSummary').outerHTML
-                        };
-                    },
-                    function (value) {
-                        if (value == null) {
-                            //var htmltable =  value.errorTable ;
-                            //callback({error :"no hay dataa"}, null);
-
-                        } else {
-                            //validating the data
-                            var htmltable = value.table;
-
-                            x(htmltable, '#claimSummaryContent .rowData',
-                                [{amountLabel: 'div.amountLabel'}])
-                            (function (err, data) {
-                                var newdata = {
-                                    claim_id : item.claim_id,
-                                    provider_rate : data[2].amountLabel
-                                };
-                                provider_rate_data.push(newdata);
-                            });
-                        }
-                    })
-            })
-
-        }
-        else
-        {
             var rates = [];
 
+        Fiber(function(){ console.log('testging :',  MeteorInstance.Claims.find({}).count()) }).run();
+
+
             data.forEach(function(item){
-                // console.log(item.claim_id)
-                nightmare
-                    .goto(url)
-                    .wait()
-                    .click('#sortTable a[href*="' + item.claim_id + '"]')
-                    .wait()
-                    .evaluate(function () {
-                        return {
-                            table: document.querySelector('#claimSummary').outerHTML
-                        };
-                    },
-                    function (value) {
-                        console.log('entro evaluate')
+                if(item.type == "Pharmacy"){
+                    nightmare
+                        .goto('https://member.aetna.com' + item.claim_detail_href)
+                        .wait()
+                        //.url(function(url){console.log(url)})
+                        .evaluate(function () {
+                            return {
+                                table: document.querySelector('#claimSummary').outerHTML
+                            };
+                        },
+                        function (value) {
+                            console.log('entro evaluate pharmacy ' + moment()._d)
+
+                            if (value == null) {
+                                //var htmltable =  value.errorTable ;
+                                //callback({error :"no hay dataa"}, null);
+
+                            } else {
+                                //validating the data
+                                var htmltable = value.table;
+
+                                x(htmltable, '#claimSummaryContent .rowData',
+                                    [{amountLabel: 'div.amountLabel'}])
+                                (function (err, data) {
+                                    var newdata = {
+                                        claim_id : item.claim_id,
+                                        provider_rate : data[2].amountLabel
+                                    };
+                                    provider_rate_data.push(newdata);
+                                    loadClaimsRateNoOptionsPerRow(userid, newdata);
+
+                                });
+                            }
+                        })
+                }
+                else
+                if (item.type == "Medical"){
+                    // console.log(item.claim_id)
+                    nightmare
+                        .goto(urlmedical)
+                        .wait()
+                        .click('#sortTable a[href*="' + item.claim_id + '"]')
+                        .wait()
+                        .evaluate(function () {
+                            return {
+                                table: document.querySelector('#claimSummary').outerHTML
+                            };
+                        },
+                        function (value) {
+                            console.log('entro evaluate medical ' + moment()._d)
                             if (value == null) {
                                 //var htmltable =  value.errorTable ;
                                 // callback({error :"no hay dataa"}, null);
@@ -99,18 +101,58 @@ var getrates = function(claimtype, url, data) {
                                 (function (err, data) {
                                     // console.log(data[2])
                                     var newdata = {
-                                        claim_id : item.claim_id,
-                                        provider_rate : data[2].amountLabel
+                                        claim_id: item.claim_id,
+                                        provider_rate: data[2].amountLabel
                                     };
 
                                     provider_rate_data.push(newdata);
+
+                                    loadClaimsRateNoOptionsPerRow(userid, newdata);
+
                                     // callback(null, {providerrate: data[2]});
                                 });
                             }
-                    })
+                        })
+                }
+                if (item.type == "Dental"){
+                    // console.log(item.claim_id)
+                    nightmare
+                        .goto(urldental)
+                        .wait()
+                        .click('#sortTable a[href*="' + item.claim_id + '"]')
+                        .wait()
+                        .evaluate(function () {
+                            return {
+                                table: document.querySelector('#claimSummary').outerHTML
+                            };
+                        },
+                        function (value) {
+                            console.log('entro evaluate dental ' + moment()._d)
+                            if (value == null) {
+                                //var htmltable =  value.errorTable ;
+                                // callback({error :"no hay dataa"}, null);
 
+                            } else {
+                                //validating the data
+                                var htmltable = value.table;
+
+                                x(htmltable, '#claimSummaryContent .rowData',
+                                    [{amountLabel: 'div.amountLabel'}])
+                                (function (err, data) {
+                                    // console.log(data[2])
+                                    var newdata = {
+                                        claim_id: item.claim_id,
+                                        provider_rate: data[2].amountLabel
+                                    };
+
+                                    provider_rate_data.push(newdata);
+                                    loadClaimsRateNoOptionsPerRow(userid, newdata);
+                                    // callback(null, {providerrate: data[2]});
+                                });
+                            }
+                        })
+                }
             })
-        }
     };
 };
 
@@ -120,36 +162,35 @@ Meteor.methods({
         console.log('--------------------------------EMPEZO Carga provider rates------------------------------------');
 
         var myuser_id = this.userId;
-
-
+        var self = this;
 
         SyncedCron.add({
             name: 'Load claims details (provider rate)',
             schedule: function(parser) {
                 // parser is a later.parse object
-                return parser.text('every 2 minutes');
+                return parser.text('every 1 minutes');
             },
             job: function() {
                 var future = new Future();
 
-            var medicalclaimlist = Claims.find({user_id : myuser_id, type : "Medical", provider_rate : null, status : "Completed"}, {skip: 0, limit: 15});
-            var pharmacyclaimlist = Claims.find({user_id : myuser_id, type: "Pharmacy", provider_rate : null, status : "Completed"}, {skip: 0, limit: 15});
-            var dentalclaimlist = Claims.find({user_id : myuser_id, type : "Dental", provider_rate : null, status : "Completed"}, {skip: 0, limit: 15});
+            var claimlist = Claims.find({user_id : myuser_id, provider_rate : null, status : "Completed"}, {skip: 0, limit: 25});
+            //var pharmacyclaimlist = Claims.find({user_id : myuser_id, type: "Pharmacy", provider_rate : null, status : "Completed"}, {skip: 0, limit: 15});
+            //var dentalclaimlist = Claims.find({user_id : myuser_id, type : "Dental", provider_rate : null, status : "Completed"}, {skip: 0, limit: 15});
 
                 //console.log('claims count : ' + claimlist.count())
 
                 //console.log(claimlist.fetch());
 
-                if(medicalclaimlist.count() == 0 && pharmacyclaimlist.count() == 0 && dentalclaimlist.count() == 0){
+                if(claimlist.count() == 0){
                     SyncedCron.stop();
                 }else {
                     var providerdata = Providers.findOne({user_id :  myuser_id, provider_name: "aetna"});
 
                     new nightmare()
                         .use(login(providerdata.provider_user_name, providerdata.provider_password, providerdata.login_type))
-                        .use(getrates("Medical", urlmedical, medicalclaimlist.fetch()))
-                        .use(getrates("Pharmacy", urlpharmacy, pharmacyclaimlist.fetch()))
-                        .use(getrates("Dental", urldental, dentalclaimlist.fetch()))
+                        .use(getrates(self, myuser_id, claimlist.fetch()))
+                        //.use(getrates("Pharmacy", urlpharmacy, pharmacyclaimlist.fetch()))
+                        //.use(getrates("Dental", urldental, dentalclaimlist.fetch()))
                         .url(function(){
                             future.return({rates: provider_rate_data});
                         })
@@ -158,9 +199,9 @@ Meteor.methods({
 
                     var result = future.wait();
 
-                    loadClaimsRateNoOptions(myuser_id, result);
+                    //loadClaimsRateNoOptions(myuser_id, result);
 
-                    console.log(result);
+                    //console.log(result);
 
                 }
             }
@@ -186,7 +227,23 @@ function loadClaimsRateNoOptions(user,  data)
     })
 }
 
+function loadClaimsRateNoOptionsPerRow(user,  item)
+{
+    var value = Number(s(s.splice(s(item.provider_rate).trim().value(),0,1,"")).trim().value()) * 100;
+    console.log('entro a actualizar : ', user, item, value);
+
+    Fiber(function(){
+        Claims.update({user_id : user, claim_id: item.claim_id}, {$set :{ provider_rate : value }});
+        console.log('actualizo')
+       }).run();
+}
+
+MeteorInstance = {};
 Meteor.startup(function () {
+    //console.log(this.Claims.find({}).count());
+    MeteorInstance = this;
+    //console.log(MeteorInstance.Claims.find({}).fetch());
+
     //SyncedCron.add({
     //    name: 'Load claims details (provider rate)',
     //    schedule: function(parser) {

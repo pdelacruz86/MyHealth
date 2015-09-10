@@ -147,6 +147,8 @@ Template.ProviderSetupModal.steps = function() {
             $('#providersetup1').hide();
             $('.modal-backdrop').hide();
 
+            Meteor.call("user_update_provider_set_completed_setup", "aetna", true);
+
             Router.go("home");
 
             this.clearData();

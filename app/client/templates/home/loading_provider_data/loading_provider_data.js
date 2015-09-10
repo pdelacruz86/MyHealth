@@ -25,12 +25,12 @@ Template.LoadingProviderData.rendered = function () {
 
     progres1.start();
 
-    var progres2 = NProgress;
-    progres2.configure({ showSpinner: false });
-
-    progres2.settings.parent = "div#dvClaims";
-
-    progres2.start();
+    //var progres2 = NProgress;
+    //progres2.configure({ showSpinner: false });
+    //
+    //progres2.settings.parent = "div#dvClaims";
+    //
+    //progres2.start();
 };
 
 Template.LoadingProviderData.destroyed = function () {

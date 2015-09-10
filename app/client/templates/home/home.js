@@ -18,7 +18,7 @@ Template.home.helpers({
     ableToShowGraph : function(){
         var count = Claims.find({provider_rate : { $ne : null}}).count();
 
-        return count > 43;
+        return count > 0;
     }
 });
 
