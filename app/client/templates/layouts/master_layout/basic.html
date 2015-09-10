@@ -3,18 +3,19 @@
     <main class="page-content content-wrap">
         {{> header}}
         <div class="page-inner">
+            {{#if currentUser}}
             <div class="page-title">
                 {{> yield "pagetitle"}}
-
                 <div class="page-breadcrumb">
                     <ol class="breadcrumb">
-                        <li><a href="#">home</a></li>
+                        <!--<li><a href="#">home</a></li>-->
                         {{> yield "breadcrumbs"}}
                     </ol>
                 </div>
             </div>
+            {{/if}}
             <div id="main-wrapper">
-                    {{> yield}}
+                {{> yield}}
             </div><!-- Main Wrapper -->
             <div class="page-footer">
                 {{> footer}}
@@ -22,6 +23,7 @@
             </div>
         </div><!-- Page Inner -->
     </main>
+    {{#if currentUser}}
     <nav class="cd-nav-container" id="cd-nav">
         <header>
             <h3>Navigation</h3>
@@ -78,5 +80,6 @@
             </li>
         </ul>
     </nav>
+    {{/if}}
     <div class="cd-overlay"></div>
 </template>
