@@ -1,6 +1,8 @@
 /* Write your custom CSS here */
 .page-content {
     background: #000000;
+    height: 100%;
+    overflow-y: hidden;
 }
 .navbar .logo-box {
     background: rgb(251, 251, 251);
@@ -40,6 +42,8 @@
     padding: 0 0 50px;
     background: rgb(255, 255, 255);
     position: relative;
+    min-height: 100%;
+    overflow-y: scroll;
 }
 
 .sidebar-header {

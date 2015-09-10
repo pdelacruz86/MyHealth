@@ -2,8 +2,9 @@
     <div class="navbar">
         <div class="navbar-inner">
             <div class="logo-box">
-                <a href="index.html" class="logo-text"><span>HealthBlend</span></a>
+                <a href="/" class="logo-text"><span>HealthBlend</span></a>
             </div><!-- Logo Box -->
+            {{#if currentUser}}
             <div class="topmenu-outer">
                 <div class="top-menu">
                     <ul class="nav navbar-nav navbar-right">
@@ -32,24 +33,22 @@
                             </a>
                             <ul class="dropdown-menu dropdown-list" role="menu">
                                 <li role="presentation"><a href="#"><i class="fa fa-user"></i>Profile</a></li>
-                                {{#if currentUser}}
                                     <li role="presentation" class="divider"></li>
                                     <li role="presentation"><a href="#" id="logout"><i class="fa fa-sign-out m-r-xs"></i>Log out</a></li>
-                                {{/if}}
                             </ul>
                         </li>
-                        {{#if currentUser}}
                             <li>
                                 <a href="#" id="logout" class="log-out waves-effect waves-button waves-classic">
                                     <span><i class="fa fa-sign-out m-r-xs"></i>Log out</span>
                                 </a>
-                            </li>
-                        {{/if}}
+                            </li> 
                     </ul><!-- Nav -->
                 </div><!-- Top Menu -->
             </div>
+            {{/if}}
         </div>
     </div><!-- Navbar -->
+    {{#if currentUser}}
     <div class="page-sidebar sidebar">
         <div class="page-sidebar-inner slimscroll">
             <div class="sidebar-header">
@@ -80,5 +79,6 @@
             </ul>
         </div><!-- Page Sidebar Inner -->
     </div><!-- Page Sidebar -->
+    {{/if}}
 </template>
 
