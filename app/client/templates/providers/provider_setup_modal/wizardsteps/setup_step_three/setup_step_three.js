@@ -33,54 +33,24 @@ Template.setupStepThree.rendered = function () {
     var provider = Providers.findOne({user_id :  Meteor.userId(), provider_name : "aetna"});
     console.log('tiene que entrar con ' + provider.login_type);
 
-    debugger;
-    if(provider.login_type == "options"){
-        console.log('entro con opciones')
-        Meteor.call("Update_user_Claims_with_options", 4, "aetna", function(err, data) {
-            console.log('callback')
+    Meteor.call("Update_user_Claims", "aetna", function(err, data) {
+        console.log('callback');
 
-            NProgress.done();
+        NProgress.done();
 
-            if (err) {
+        if (err) {
 
-            } else {
-                Meteor.call("load_claims_rates_no_options");
+        } else {
+            Meteor.call("load_claims_rates_no_options");
 
-                $("#step3btn").attr("class", "btn btn-default pull-right");
-                $("#step3btn").text("Next");
-                $("#step3btn").removeAttr("disabled");
+            $("#step3btn").attr("class", "btn btn-default pull-right");
+            $("#step3btn").text("Next");
+            $("#step3btn").removeAttr("disabled");
 
-                //start loading rates per claim
-                //Meteor.call("loadclaimsrates");
+            $("#step3btn").click();
+        }
 
-                $("#step3btn").click();
-            }
-
-        });
-    }
-    else{
-        console.log('entro sin opciones')
-
-        Meteor.call("Update_user_Claims", 4, "aetna", function(err, data) {
-            console.log('callback')
-
-            NProgress.done();
-
-            if (err) {
-
-            } else {
-                Meteor.call("load_claims_rates_no_options");
-
-                $("#step3btn").attr("class", "btn btn-default pull-right");
-                $("#step3btn").text("Next");
-                $("#step3btn").removeAttr("disabled");
-
-                $("#step3btn").click();
-            }
-
-        });
-    }
-
+    });
 
 };
 

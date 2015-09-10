@@ -34,7 +34,7 @@ var getrates = function(meteorinstance, userid, data) {
     return function(nightmare) {
             var rates = [];
 
-        Fiber(function(){ console.log('testging :',  MeteorInstance.Claims.find({}).count()) }).run();
+        Fiber(function(){ console.log('claims to load :',  MeteorInstance.Claims.find({}).count()) }).run();
 
 
             data.forEach(function(item){
@@ -64,7 +64,8 @@ var getrates = function(meteorinstance, userid, data) {
                                 (function (err, data) {
                                     var newdata = {
                                         claim_id : item.claim_id,
-                                        provider_rate : data[2].amountLabel
+                                        provider_rate : data[2].amountLabel,
+                                        claim_amount : data[1].amountLabel
                                     };
                                     provider_rate_data.push(newdata);
                                     loadClaimsRateNoOptionsPerRow(userid, newdata);
@@ -229,13 +230,24 @@ function loadClaimsRateNoOptions(user,  data)
 
 function loadClaimsRateNoOptionsPerRow(user,  item)
 {
+    if(item.claim_amount != undefined){
+        console.log('loading claims _amount')
+
+        var claimvalue = Number(s(s.splice(s(item.claim_amount).trim().value(),0,1,"")).trim().value()) * 100;
+
+        Fiber(function(){
+            Claims.update({user_id : user, claim_id: item.claim_id}, {$set :{ prescription_cost : claimvalue }});
+            console.log('actualizo')
+        }).run();
+    }
+
     var value = Number(s(s.splice(s(item.provider_rate).trim().value(),0,1,"")).trim().value()) * 100;
     console.log('entro a actualizar : ', user, item, value);
 
     Fiber(function(){
         Claims.update({user_id : user, claim_id: item.claim_id}, {$set :{ provider_rate : value }});
         console.log('actualizo')
-       }).run();
+           }).run();
 }
 
 MeteorInstance = {};
