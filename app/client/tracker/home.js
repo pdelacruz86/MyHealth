@@ -24,7 +24,7 @@ var loadClaimChart = function loadClaimChart(){
     // console.log(medicalCount);
     //
     // dentalCount = Meteor.call("dashboard/get_claim_chart_data", "Dental");
-debugger;
+
     if(member != undefined && member != {}){
         Meteor.call("dashboard/get_claim_chart_data", member.member_name, function (err, data) {
         var pharmacydata = _.find(data, function (item) {
