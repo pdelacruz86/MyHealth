@@ -15,9 +15,12 @@ Template.home.helpers({
     providerRateLoadCompleted : function(){
         return Claims.find({provider_rate : null}).count() == 0;
     },
-    ableToShowGraph : function(){
+    partialDataLoad : function(){
         var count = Claims.find({provider_rate : { $ne : null}}).count();
-
+        return count > 0;
+    },
+    claimsDataLoad : function(){
+        var count = Claims.find().count();
         return count > 0;
     }
 });

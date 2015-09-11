@@ -46,7 +46,7 @@ Template.ProviderSetupModal.steps = function() {
         onSubmit: function(data, mergedData) {
 
             $("#step2btn").attr("class", "btn btn-default pull-right disabled");
-            $("#step2btn").text("loading...");
+            $("#step2btn").text("Validating credentials");
             $("#step2btn").attr("disabled", "disabled");
 
             var self = this;
@@ -58,7 +58,7 @@ Template.ProviderSetupModal.steps = function() {
             if(username == '' || password == ''){
                 $("#step2btn").attr("class", "btn btn-default pull-right disabled");
                 $("#step2btn").attr("disabled", "disabled");
-                $("#step2btn").text("next");
+                $("#step2btn").text("Next");
 
             }else{
 

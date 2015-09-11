@@ -1,7 +1,7 @@
 /*****************************************************************************/
-/* PlanPerformance: Event Handlers */
+/* CostOfInsurance: Event Handlers */
 /*****************************************************************************/
-Template.PlanPerformance.events({
+Template.CostOfInsurance.events({
     "click #linkSetupGraph" : function(evt){
         evt.preventDefault();
 
@@ -26,22 +26,22 @@ Template.PlanPerformance.events({
 });
 
 /*****************************************************************************/
-/* PlanPerformance: Helpers */
+/* CostOfInsurance: Helpers */
 /*****************************************************************************/
-Template.PlanPerformance.helpers({
+Template.CostOfInsurance.helpers({
     HasPlanPerformance : function(){
         return HB_Profiles.find({plan_performance_data : { $ne : null }}).count() > 0;
     }
 });
 
 /*****************************************************************************/
-/* PlanPerformance: Lifecycle Hooks */
+/* CostOfInsurance: Lifecycle Hooks */
 /*****************************************************************************/
-Template.PlanPerformance.created = function () {
+Template.CostOfInsurance.created = function () {
 
 };
 
-Template.PlanPerformance.rendered = function () {
+Template.CostOfInsurance.rendered = function () {
     //var count = Claims.find({provider_rate : { $ne : null}}).count();
     //
     ////if( count > 43) {
@@ -180,5 +180,5 @@ Template.PlanPerformance.rendered = function () {
     ////}
 };
 
-Template.PlanPerformance.destroyed = function () {
+Template.CostOfInsurance.destroyed = function () {
 };

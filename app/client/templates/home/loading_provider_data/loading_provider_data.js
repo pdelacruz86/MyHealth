@@ -18,19 +18,11 @@ Template.LoadingProviderData.created = function () {
 
 Template.LoadingProviderData.rendered = function () {
 
-    var progres1 = NProgress;
+    /*var progres1 = NProgress;
     progres1.configure({ showSpinner: true });
-
     progres1.settings.parent = ".loadingtarget";
-
-    progres1.start();
-
-    //var progres2 = NProgress;
-    //progres2.configure({ showSpinner: false });
-    //
-    //progres2.settings.parent = "div#dvClaims";
-    //
-    //progres2.start();
+    progres1.configure({ template: '<div class="bar" role="bar"><div class="peg"></div></div><div class="spinner" role="spinner"><div class="spinner-icon"></div></div>' });
+    progres1.start();*/
 };
 
 Template.LoadingProviderData.destroyed = function () {

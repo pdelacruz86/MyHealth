@@ -3,14 +3,21 @@
     {{#contentFor "pagetitle"}}
         <h3>Overview</h3>
     {{/contentFor}}
+
     {{#contentFor "breadcrumbs"}}
         <li class="active">Overview</li>
     {{/contentFor}}
 
     <div class="panel panel-white col-lg-12 col-md-12">
         <div class="col-lg-12">
+            {{#if $eq providerRateLoadCompleted false}}
+               {{> LoadingProviderData}}
+            {{/if}}
+        </div>
+        {{#if claimsDataLoad }}
+        <div class="col-lg-12">
             <div class="col-lg-6">
-                <h2>Your Plan Performance<small>, updated an hour ago.</small></h2>
+                <h2>Your Plan Performance<small></small></h2>
             </div>
             <div class="col-lg-6 text-right">
                 <h2><small><label class="form-inline">Filter your view:
@@ -28,31 +35,38 @@
                 </small></h2>
             </div>
         </div>
-        <div class="panel panel-body panel-white col-lg-12 col-md-12">
-            <div class="col-lg-6 col-md-8" id="dvPlanPerformance">
-                {{#if $eq providerRateLoadCompleted false}}
-                   {{> LoadingProviderData}}
+        {{/if}}
+        <div class="panel-body panel-white col-lg-12 col-md-12">
+        {{#if claimsDataLoad }}
+                {{#if partialDataLoad}}
+                <div class="col-lg-6 col-md-8" id="dvPlanPerformance">
+                    <h4 class="panel-title pull-left">Cost of Insurance vs. Realized Value <small> Since Jan 2015. Learn more</small></h4>
+                    <hr>
+                    <div class="col-lg-12 panel-body clearfix">
+                        <div>
+                            {{> CostOfInsurance}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-8" id="dvClaims">                
+                    <h4 class="panel-title pull-left">Amount of claims filed<small> Since Jan 2015. Learn More</small></h4>
+                    <hr>
+                    <div class="col-lg-12 panel-body clearfix">
+                        <div>
+                            {{> ClaimsChart}}
+                        </div>
+                    </div>
+                </div>
                 {{/if}}
-
-                {{> PlanPerformance}}
-            </div>
-            <div id="dvClaims" class="col-lg-6 panel-body clearfix">
-
-                <p class="text-center lead">You've filed <a href="#">20</a> claims this year.</p>
-                {{#if $eq providerRateLoadCompleted false}}
-                    {{> LoadingProviderData}}
-                {{/if}}
-
-                {{#if ableToShowGraph}}
-                    {{> ClaimsChart}}
-                {{/if}}
-            </div>
             <div class="col-lg-6 col-md-12" id="dvEOB">
-               {{> ExaplanationsOfBenefits}}
+                {{> ExaplanationsOfBenefits}}
             </div>
             <div class="col-lg-6 col-md-12">
                 {{> CurrentExpenditures}}
             </div>
+            {{else}}
+                {{> noData}}
+            {{/if}}
         </div>
     </div>
 </template>

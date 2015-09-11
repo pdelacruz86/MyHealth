@@ -1,15 +1,10 @@
-<template name="PlanPerformance">
+<template name="CostOfInsurance">
     {{#if HasPlanPerformance}}
-        <h4>
-            Cost of Insurance vs. Realized Value <small>Learn more</small></h4>
         <div id="morris3"></div>
     {{else}}
         <a href="#" id="linkSetupGraph" class="btn btn-success btn-block">Click here to setup this graph.</a>
 
         <div id="setupGraphPanel" class="panel panel-white" style="display : none">
-            <div class="panel-heading clearfix">
-                <h4 class="panel-title">Basic Form</h4>
-            </div>
             <div class="panel-body">
                 <form>
                     <div class="form-group">
@@ -37,8 +32,5 @@
                 </form>
             </div>
         </div>
-
     {{/if}}
-
-
 </template>
