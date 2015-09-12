@@ -1,83 +1,14 @@
 <template name="ProviderDetails">
     <div class="cd-pricing-container">
-        <div class="col-md-12 cd-pricing-switcher">
-            <p class="fieldset pull-left">
-                <input type="radio" class="no-uniform" name="duration-1" value="monthly" id="monthly-1" checked="">
-                <label for="monthly-1">Aetna</label>
-                <input type="radio" class="no-uniform" name="duration-1" value="yearly" id="yearly-1">
-                <label for="yearly-1">Other</label>
-                <span class="cd-switch"></span>
-            </p>
+        <div class="col-md-12">
+            <h1>Aetna<small> Primary provider</small></h1>
         </div>
         <ul class="cd-pricing-list cd-bounce-invert">
             <li>
                 <ul class="cd-pricing-wrapper">
                     <li data-type="monthly" class="is-visible is-ended">
-                        <header class="cd-pricing-header">
-                            <h2>Pharmacy</h2>
-                            <div class="cd-price">
-                                <span class="cd-currency">$</span>
-                                <span class="cd-value">0</span>
-                                <span class="cd-duration">mo</span>
-                            </div>
-                        </header>
-                        <div class="cd-pricing-body">
-
-                        </div>
                         <footer class="cd-pricing-footer">
-                            <a class="cd-select" href="#">Reload data</a>
-                        </footer>
-                    </li>
-                    <li data-type="yearly" class="is-hidden is-ended">
-                        <header class="cd-pricing-header">
-                            <h2>Pharmacy</h2>
-                            <div class="cd-price">
-                                <span class="cd-currency">$</span>
-                                <span class="cd-value">0</span>
-                                <span class="cd-duration">yr</span>
-                            </div>
-                        </header>
-                        <div class="cd-pricing-body">
-
-                        </div>
-                        <footer class="cd-pricing-footer">
-                            <a class="cd-select" href="#">Reload data</a>
-                        </footer>
-                    </li>
-                </ul>
-            </li>
-            <li class="cd-popular">
-                <ul class="cd-pricing-wrapper">
-                    <li data-type="monthly" class="is-visible is-ended">
-                        <header class="cd-pricing-header">
-                            <h2>Medical</h2>
-                            <div class="cd-price">
-                                <span class="cd-currency">$</span>
-                                <span class="cd-value">0</span>
-                                <span class="cd-duration">mo</span>
-                            </div>
-                        </header>
-                        <div class="cd-pricing-body">
-
-                        </div>
-                        <footer class="cd-pricing-footer">
-                            <a class="cd-select" href="#">Reload data</a>
-                        </footer>
-                    </li>
-                    <li data-type="yearly" class="is-hidden is-ended">
-                        <header class="cd-pricing-header">
-                            <h2>Medical</h2>
-                            <div class="cd-price">
-                                <span class="cd-currency">$</span>
-                                <span class="cd-value">0</span>
-                                <span class="cd-duration">yr</span>
-                            </div>
-                        </header>
-                        <div class="cd-pricing-body">
-
-                        </div>
-                        <footer class="cd-pricing-footer">
-                            <a class="cd-select" href="#">Reload data</a>
+                            <a id="reload-button" class="cd-select" href="#">Reload data</a>
                         </footer>
                     </li>
                 </ul>
@@ -85,40 +16,18 @@
             <li>
                 <ul class="cd-pricing-wrapper">
                     <li data-type="monthly" class="is-visible is-ended">
-                        <header class="cd-pricing-header">
-                            <h2>Dental</h2>
-                            <div class="cd-price">
-                                <span class="cd-currency">$</span>
-                                <span class="cd-value">0</span>
-                                <span class="cd-duration">mo</span>
-                            </div>
-                        </header>
-                        <div class="cd-pricing-body">
-
-                        </div>
                         <footer class="cd-pricing-footer">
-                            <a class="cd-select" href="#">Reload data</a>
-                        </footer>
-                    </li>
-                    <li data-type="yearly" class="is-hidden is-ended">
-                        <header class="cd-pricing-header">
-                            <h2>Dental</h2>
-                            <div class="cd-price">
-                                <span class="cd-currency">$</span>
-                                <span class="cd-value">0</span>
-                                <span class="cd-duration">yr</span>
-                            </div>
-                        </header>
-                        <div class="cd-pricing-body">
-
-                        </div>
-                        <footer class="cd-pricing-footer">
-                            <a class="cd-select" href="#">Reload data</a>
+                            <a id="refresh-button" class="cd-select" href="#">Refresh data</a>
                         </footer>
                     </li>
                 </ul>
             </li>
         </ul>
+        <div class="text-center">
+            <button type="button" class="btn btn-danger btn-lg">Delete provider</button>
+            <button type="button" class="btn btn-default btn-lg">Edit provider</button>
+        </div>
+        <hr>
     </div>
 
 </template>
