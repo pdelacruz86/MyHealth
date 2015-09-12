@@ -43,8 +43,12 @@
         {{#if claimsDataLoad }}
                 {{#if partialDataLoad}}
                 <div class="col-lg-6 col-md-8" id="dvPlanPerformance">
-                    <h4 class="panel-title pull-left">Cost of Insurance vs. Realized Value <small> Since Jan 2015. Learn more</small></h4>
+                    <h4 class="panel-title pull-left">
+                        Cost of Insurance vs. Realized Value <small> Since Jan 2015. Learn more</small></h4>
                     <hr>
+                    {{#if $eq providerRateLoadCompleted false}}
+                       <img src="/images/Spinner.gif">
+                    {{/if}}
                     <div class="col-lg-12 panel-body clearfix">
                         <div>
                             {{> CostOfInsurance}}
@@ -52,8 +56,12 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-8" id="dvClaims">                
-                    <h4 class="panel-title pull-left">Amount of claims filed<small> Since Jan 2015. Learn More</small></h4>
+                    <h4 class="panel-title pull-left">
+                        Amount of claims filed<small> Since Jan 2015. Learn More</small></h4>
                     <hr>
+                    {{#if $eq providerRateLoadCompleted false}}
+                       <img src="/images/Spinner.gif">
+                    {{/if}}
                     <div class="col-lg-12 panel-body clearfix">
                         <div>
                             {{> ClaimsChart}}

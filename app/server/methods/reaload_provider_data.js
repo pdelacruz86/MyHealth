@@ -297,6 +297,7 @@ Meteor.methods({
 
 
             var result = future.wait();
+            return result;
 
             //if(result.status == "Done"){
             //    console.log("termino reload")

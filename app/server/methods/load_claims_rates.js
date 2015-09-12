@@ -200,6 +200,8 @@ Meteor.methods({
 
                     var result = future.wait();
 
+                    return result;
+
                     //loadClaimsRateNoOptions(myuser_id, result);
 
                     //console.log(result);

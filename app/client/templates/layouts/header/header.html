@@ -29,7 +29,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle waves-effect waves-button waves-classic" data-toggle="dropdown">
                                 <span class="user-name">{{userIdentity}}<i class="fa fa-angle-down"></i></span>
-                                <img class="img-circle avatar" src="{{userPicture}}" width="40" height="40" alt="">
+                                <img class="img-circle avatar" src="{{# if $neq userPicture '' }}{{userPicture}}{{else}}/images/Avatar.png{{/if}}" width="40" height="40" alt="">
                             </a>
                             <ul class="dropdown-menu dropdown-list" role="menu">
                                 <li role="presentation"><a href="#"><i class="fa fa-user"></i>Profile</a></li>
@@ -55,7 +55,7 @@
                 <div class="sidebar-profile">
                     <a href="javascript:void(0);" id="profile-menu-link">
                         <div class="sidebar-profile-image">
-                            <img src="{{userPicture}}" class="img-circle img-responsive" alt="">
+                            <img src="{{# if $neq userPicture '' }}{{userPicture}}{{else}}/images/Avatar.png{{/if}}" class="img-circle img-responsive" alt="">
                         </div>
                         <div class="sidebar-profile-details">
                             <span>{{userIdentity}}</span>

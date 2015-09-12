@@ -1,5 +1,3 @@
-
-
 Router.route('providers', {
   name: 'providers',
   controller: 'ProvidersController',
@@ -7,3 +5,9 @@ Router.route('providers', {
   where: 'client'
 });
 
+Router.route('profile', {
+  name: 'profile',
+  controller: 'ProfileController',
+  action: '',
+  where: 'client'
+});
