@@ -6,11 +6,21 @@ var Future = Npm.require("fibers/future");
 
 Meteor.methods({
     "dashboard/get_claim_chart_data" : function(membername){
-        console.log(membername)
+        var startdate = moment().startOf('year')._d;
+        var enddate = moment()._d;
+
         if(membername== "Family"){
             var data = Claims.aggregate([
-                { $match : { user_id : this.userId, provider_rate : { $ne : NaN },
-                    status : "Completed" }},
+                { $match : {
+                    user_id : this.userId,
+                    provider_rate : { $ne : NaN },
+                    status : "Completed",
+                    date_of_service: {
+                        $gte: new Date(startdate),
+                        $lt: new Date(enddate)
+                        }
+                    }
+                },
                 {
                     $group : {
                         _id : { type: { type: "$type" }},
@@ -20,12 +30,23 @@ Meteor.methods({
                 }
             ]);
 
+            console.log(data);
+
             return data;
 
         }else{
             var data = Claims.aggregate([
-                { $match : { user_id : this.userId, provider_rate : { $ne : NaN },
-                    status : "Completed", member : membername }},
+                { $match : {
+                    user_id : this.userId,
+                    provider_rate : { $ne : NaN },
+                    status : "Completed",
+                    member : membername,
+                    date_of_service: {
+                        $gte: new Date(startdate),
+                        $lt: new Date(enddate)
+                        }
+                    }
+                },
                 {
                     $group : {
                         _id : { type: { type: "$type" }},
@@ -41,10 +62,21 @@ Meteor.methods({
 
     },
     "dashboard/get_current_expenditures_chart_data" : function(){
+        var startdate = moment().startOf('year')._d;
+        var enddate = moment()._d;
 
         var data = Claims.aggregate([
-            { $match : { user_id : this.userId, provider_rate : { $ne : NaN },
-                status : "Completed" }},
+            {
+                $match: {
+                    user_id: this.userId,
+                    provider_rate: {$ne: NaN},
+                    status: "Completed",
+                    date_of_service: {
+                        $gte: new Date(startdate),
+                        $lt: new Date(enddate)
+                    }
+                }
+            },
             {
                 $group : {
                     _id : { member : { member : "$member"}},
@@ -53,7 +85,7 @@ Meteor.methods({
                 }
             }
         ]);
-
+console.log(data);
         return data;
     },
     "dashboard/update_profile_setup_plan_performance_data" : function(planperformance){

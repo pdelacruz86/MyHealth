@@ -120,7 +120,23 @@ Template['home'].rendered = function(){
 
 
 /* Count claims by type */
+    //setting up the profile
+    var userid = Meteor.userId();
 
+    var valid  = HB_Profiles.find({user_id : userid}).count();
+
+    console.log('profile count', valid, "user id", userid);
+
+    if(valid == 0){
+        Meteor.call("create_profile", function(error, user_id) {
+            console.log(user_id);
+        });
+    }
+
+    //setting up the members
     var familymember = Members.findOne({member_name : "Family"});
     Session.set("selectedMember", familymember._id);
+
+    //setting up range date time filters
+    $('#daterange').daterangepicker();
 }

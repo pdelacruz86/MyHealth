@@ -29,18 +29,6 @@
                     return console.log(error.reason);
                 }
                 else{
-
-                    var userid = Meteor.userId();
-
-                    var valid  = HB_Profiles.find({user_id : userid}).count();
-                    debugger;
-                    if(valid == "0"){
-
-                        Meteor.call("create_profile", function(error, user_id) {
-                            console.log(user_id);
-                        });
-                    }
-
                     Router.go("home");
                 }
             });

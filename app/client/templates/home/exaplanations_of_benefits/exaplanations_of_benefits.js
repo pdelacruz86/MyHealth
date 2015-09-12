@@ -84,8 +84,33 @@ Template.ExaplanationsOfBenefits.helpers({
 
         return newlist;
     },
-    planfeatures : function(){
+    showSecondList : function(){
+        var member_id = '';//Template.home.__helpers.get("selectedMember")();
 
+        if(Session.get("selectedMember") != null){
+            member_id = Session.get("selectedMember");
+        }
+        else{
+            //family data
+            var familyitem =  Members.findOne({ member_name :  "Family" });
+            member_id = familyitem._id;
+        }
+
+        var familymember =  Members.findOne({ _id :  member_id });
+
+        var newlist= [];
+
+        _.each(familymember.plan_details, function(item){
+            item.limit = (item.limit / 100).toFixed(2);
+            item.applied = (item.applied / 100).toFixed(2);
+            item.remainder = (item.remainder / 100).toFixed(2);
+
+            if(!s.include(item.plan_features, "Network")){
+                newlist.push(item);
+            }
+        });
+
+        return newlist.length > 0;
     }
 });
 
