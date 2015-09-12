@@ -3,7 +3,7 @@
  */
 
 
-var loadClaimChart = function loadClaimChart(){
+var loadClaimChart = function loadClaimChart(dates){
 
     var member_id = Template.home.__helpers.get("selectedMember")();
 
@@ -21,7 +21,7 @@ var loadClaimChart = function loadClaimChart(){
     var dentalclaimvalue = 0, pharmacyclaimvalue = 0, medicalclaimvalue = 0;
 
     if(member != undefined && member != {}){
-        Meteor.call("dashboard/get_claim_chart_data", member.member_name, function (err, data) {
+        Meteor.call("dashboard/get_claim_chart_data", member.member_name, dates, function (err, data) {
         var pharmacydata = _.find(data, function (item) {
             return item._id.type.type == "Pharmacy"
         });
@@ -213,12 +213,75 @@ loadPlanPerformanceChart = function loadPlanPerformanceChart(){
     }
 }
 
+var loadCurrentExpendituresChart= function loadCurrentExpendituresChart(dates){
+    var selecteddates = Session.get("selectedDates");
+
+    Meteor.call("dashboard/get_current_expenditures_chart_data", selecteddates, function(err, data){
+
+        var members = Members.find({}).fetch();
+        var bardata = [];
+
+        _.each(members, function(item){
+
+            var member  = item.membe_name;
+            var deductiblevalue = 0;
+            var contributionvalue = 0;
+
+            var deductibleitem = _.find(item.plan_details, function(deducvalue){
+                return s.clean(deducvalue.plan_features) == s.clean("In Network Annual Deductible Includes Pharmacy");
+            });
+
+            deductiblevalue = (deductibleitem.limit / 100).toFixed(2);
+
+            var contributionitem = _.find(data, function(contrivalue){
+                return contrivalue._id.member.member == item.member_name;
+            });
+
+            if(contributionitem != undefined){
+                contributionvalue = contributionitem.totalClaimRate
+            }else{
+                if(item.member_name == "Family"){
+                    _.each(data, function(item2){
+                        contributionvalue = contributionvalue + item2.totalClaimRate;
+                    })
+
+                }
+            }
+            contributionvalue = (contributionvalue).toFixed(2)
+
+            bardata.push( { member: item.member_name, a: contributionvalue, b: deductiblevalue })
+        });
+
+        $('#morris2').html('');
+
+        Morris.Bar({
+            element: 'morris2',
+            data: bardata,
+            xkey: 'member',
+            ykeys: ['a', 'b'],
+            labels: ['Contribution', 'Deductible'],
+            barRatio: 0.4,
+            xLabelAngle: 35,
+            hideHover: 'auto',
+            stacked: true,
+            barColors: ['rgba(34, 152, 186, 0.69)','rgb(34, 130, 186)'],
+            resize: true
+        });
+
+
+    })
+
+}
 
 Tracker.autorun(function(c){
     var collection1 = Claims.find({ provider_rate : null, status : "Completed"}).count();
+    var selecteddates = Session.get("selectedDates");
 
-    loadClaimChart();
+    console.log(selecteddates);
+
+    loadClaimChart(selecteddates);
     loadPlanPerformanceChart();
+    loadCurrentExpendituresChart(selecteddates);
 
     console.log('tracker autorun')
 });

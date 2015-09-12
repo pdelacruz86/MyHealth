@@ -17,9 +17,9 @@ Template.CurrentExpenditures.created = function () {
 };
 
 Template.CurrentExpenditures.rendered = function () {
+console.log('current expenditures', selecteddates)
 
-
-    Meteor.call("dashboard/get_current_expenditures_chart_data", function(err, data){
+    Meteor.call("dashboard/get_current_expenditures_chart_data", selecteddates, function(err, data){
 
         var members = Members.find({}).fetch();
         var bardata = [];

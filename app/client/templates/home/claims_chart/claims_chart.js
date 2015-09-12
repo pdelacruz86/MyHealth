@@ -8,6 +8,28 @@ Template.ClaimsChart.events({
 /* ClaimsChart: Helpers */
 /*****************************************************************************/
 Template.ClaimsChart.helpers({
+    claimcount : function(){
+
+        var dates = Session.get("selectedDates");
+
+        var startdate = '';
+        var enddate = '';
+
+        if(dates == undefined){
+             startdate = moment().startOf('year')._d;
+              enddate = moment()._d;
+        }
+        else
+        {
+             startdate = dates.startdate;
+             enddate = dates.enddate;
+        }
+
+        return Claims.find({status : "Completed", date_of_service: {
+            $gte: new Date(startdate),
+            $lt: new Date(enddate)
+        }}).count();
+    }
 });
 
 /*****************************************************************************/

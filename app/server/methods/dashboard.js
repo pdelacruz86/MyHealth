@@ -5,9 +5,12 @@ var Fiber = Npm.require('fibers')
 var Future = Npm.require("fibers/future");
 
 Meteor.methods({
-    "dashboard/get_claim_chart_data" : function(membername){
-        var startdate = moment().startOf('year')._d;
-        var enddate = moment()._d;
+    "dashboard/get_claim_chart_data" : function(membername, selecteddates){
+        //var startdate = moment().startOf('year')._d;
+        //var enddate = moment()._d;
+
+        var startdate = selecteddates.startdate;
+        var enddate = selecteddates.enddate;
 
         if(membername== "Family"){
             var data = Claims.aggregate([
@@ -29,8 +32,6 @@ Meteor.methods({
                     }
                 }
             ]);
-
-            console.log(data);
 
             return data;
 
@@ -61,9 +62,13 @@ Meteor.methods({
         }
 
     },
-    "dashboard/get_current_expenditures_chart_data" : function(){
-        var startdate = moment().startOf('year')._d;
-        var enddate = moment()._d;
+    "dashboard/get_current_expenditures_chart_data" : function(selecteddates){
+        //var startdate = moment().startOf('year')._d;
+        //var enddate = moment()._d;
+
+        var startdate = selecteddates.startdate;
+        var enddate = selecteddates.enddate;
+
 
         var data = Claims.aggregate([
             {
@@ -85,7 +90,6 @@ Meteor.methods({
                 }
             }
         ]);
-console.log(data);
         return data;
     },
     "dashboard/update_profile_setup_plan_performance_data" : function(planperformance){
