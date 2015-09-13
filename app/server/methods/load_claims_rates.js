@@ -165,6 +165,8 @@ Meteor.methods({
         var myuser_id = this.userId;
         var self = this;
 
+        SyncedCron.stop()
+
         SyncedCron.add({
             name: 'Load claims details (provider rate)',
             schedule: function(parser) {

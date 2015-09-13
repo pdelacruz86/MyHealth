@@ -61,6 +61,8 @@ Template.CurrentExpenditures.rendered = function () {
             bardata.push( { member: item.member_name, a: contributionvalue, b: deductiblevalue })
         })
 
+        $("#morris2").html('');
+
         Morris.Bar({
             element: 'morris2',
             data: bardata,
