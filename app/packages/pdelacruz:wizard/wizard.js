@@ -85,26 +85,26 @@ Template.wizard.destroyed = function() {
 Template.wizard.events({
   'click .wizardStep.active, click .wizardStep.complete': function() {
 
-    var clickedStep = this.wizard.getStep(this.id);
-    var clickedIndex = _.indexOf(this.wizard._stepsByIndex, clickedStep.id);
-    var activeStep = this.wizard.activeStep();
-    var activeIndex = _.indexOf(this.wizard._stepsByIndex, activeStep.id);
-
-    if (this.wizard.route) {
-      // go to clicked step
-      var rp = _.extend(this.wizard.routeParams, {step: clickedStep.id});
-      Router.go(this.wizard.route, rp);
-      return;
-    }
-
-    // if clicked step number is smaller go prev
-    if (clickedIndex < activeIndex) {
-      this.wizard.previous();
-    }
-    // if clicked step number is bigger go next
-    if (clickedIndex > activeIndex) {
-      this.wizard.next();
-    }
+    //var clickedStep = this.wizard.getStep(this.id);
+    //var clickedIndex = _.indexOf(this.wizard._stepsByIndex, clickedStep.id);
+    //var activeStep = this.wizard.activeStep();
+    //var activeIndex = _.indexOf(this.wizard._stepsByIndex, activeStep.id);
+    //
+    //if (this.wizard.route) {
+    //  // go to clicked step
+    //  var rp = _.extend(this.wizard.routeParams, {step: clickedStep.id});
+    //  Router.go(this.wizard.route, rp);
+    //  return;
+    //}
+    //
+    //// if clicked step number is smaller go prev
+    //if (clickedIndex < activeIndex) {
+    //  this.wizard.previous();
+    //}
+    //// if clicked step number is bigger go next
+    //if (clickedIndex > activeIndex) {
+    //  this.wizard.next();
+    //}
   }
 });
 

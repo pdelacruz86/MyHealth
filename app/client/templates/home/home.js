@@ -22,6 +22,9 @@ Template.home.helpers({
     claimsDataLoad : function(){
         var count = Claims.find().count();
         return count > 0;
+    },
+    HasPlanPerformance : function(){
+        return HB_Profiles.find({plan_performance_data : { $ne : null }}).count() > 0;
     }
 });
 
@@ -48,6 +51,27 @@ Template.home.events({
         //
         //var instance3 = UI.renderWithData(Template.ExaplanationsOfBenefits);
         //UI.insert(instance3, $('dvEOB'));
+    },
+    "click #linkSetupGraph" : function(evt){
+        evt.preventDefault();
+
+        $("#setupGraphPanel").attr("style", "display:block")
+        $("#linkSetupGraph").attr("style", "display:none")
+
+    },
+    "click #submitGraphSetup" : function(evt){
+
+        console.log('entro setup graph');
+        var topay = $("#inputToPay").val();
+        var period = $("#selectPeriod :selected").val();
+        var provider = $("#selectProvider :selected").val();
+
+        var planPerformance = {
+            to_pay: topay,
+            period : period,
+            provider: provider
+        };
+        Meteor.call("dashboard/update_profile_setup_plan_performance_data", planPerformance);
     }
 });
 
