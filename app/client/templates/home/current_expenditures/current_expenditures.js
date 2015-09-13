@@ -17,7 +17,13 @@ Template.CurrentExpenditures.created = function () {
 };
 
 Template.CurrentExpenditures.rendered = function () {
-console.log('current expenditures', selecteddates)
+
+    var selecteddates = Session.get("selectedDates");
+
+    if(selecteddates == undefined){
+        var start = moment().startOf('year'); var end=  moment();
+        selecteddates = {startdate : start._d, enddate : end._d};
+    }
 
     Meteor.call("dashboard/get_current_expenditures_chart_data", selecteddates, function(err, data){
 

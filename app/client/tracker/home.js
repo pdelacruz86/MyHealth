@@ -214,9 +214,8 @@ loadPlanPerformanceChart = function loadPlanPerformanceChart(){
 }
 
 var loadCurrentExpendituresChart= function loadCurrentExpendituresChart(dates){
-    var selecteddates = Session.get("selectedDates");
-
-    Meteor.call("dashboard/get_current_expenditures_chart_data", selecteddates, function(err, data){
+console.log('desde expenditures', dates)
+    Meteor.call("dashboard/get_current_expenditures_chart_data", dates, function(err, data){
 
         var members = Members.find({}).fetch();
         var bardata = [];
@@ -274,15 +273,17 @@ var loadCurrentExpendituresChart= function loadCurrentExpendituresChart(dates){
 }
 
 Tracker.autorun(function(c){
-    var collection1 = Claims.find({ provider_rate : null, status : "Completed"}).count();
+    debugger;
+    var collection1 = Claims.find({provider_rate: null, status: "Completed"}).count();
     var selecteddates = Session.get("selectedDates");
 
-    console.log(selecteddates);
+    if(!c.firstRun) {
+        console.log(selecteddates);
 
-    loadClaimChart(selecteddates);
-    loadPlanPerformanceChart();
-    loadCurrentExpendituresChart(selecteddates);
-
+        loadClaimChart(selecteddates);
+        loadPlanPerformanceChart();
+        loadCurrentExpendituresChart(selecteddates);
+    }
     console.log('tracker autorun')
 });
 

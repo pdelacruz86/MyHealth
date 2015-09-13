@@ -316,7 +316,6 @@ function loadClaims(user,provider,  data)
                     }
 
                     var claim = Claims.findOne({user_id : user, claim_id : s(claimid).trim().value(), status : s(item.status).trim().value()});
-                    console.log("comparing medical : ", claim, claimid, "--", s(item.status).trim().value())
 
                     if(claim == undefined) {
                         Claims.insert({
@@ -350,7 +349,6 @@ function loadClaims(user,provider,  data)
                     }
 
                     var claim = Claims.findOne({user_id : user, claim_id : s(claimid).trim().value(), status : s(item.status).trim().value()});
-                    console.log("comparing Dental : ", claim, claimid, "--", s(item.status).trim().value())
 
                     if(claim == undefined) {
                         Claims.insert({
@@ -387,7 +385,6 @@ function loadClaims(user,provider,  data)
                     var servicedby = _.first(item.prescription_number.split('<br>'));
 
                     var claim = Claims.findOne({user_id : user, prescription_number : prescriptionnumber, status : s(item.status).trim().value()});
-                    console.log("comparing Pharmacy : ", claim, claimid, "--", s(item.status).trim().value(), "--pre", prescriptionnumber)
 
                     if(claim == undefined) {
                         Claims.insert({

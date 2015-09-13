@@ -2,13 +2,22 @@
 /* ProviderDetails: Event Handlers */
 /*****************************************************************************/
 Template.ProviderDetails.events({
-	'click #reload-button': function(){
-		console.log('Entro');
-		event.preventDefault();
+	'click #reload-button': function(evt){
+		evt.preventDefault();
+
+		BlockUI.configure({
+			spinnerStyle: "background-color:#f26",  //this will change the default color of spinner. You can add more styles of course
+			spinnerTemplate: "block_ui_spinner_twin_circles"  //this will change default spinner template
+		});
+
+		BlockUI.block();
+
 		Meteor.call("provider/reload_user_data","aetna",function(error,result){
 			if(error){
 				console.log('Eploto el metodo reload_user_data');
 			} else {
+				BlockUI.unblock();
+
 				Router.go("/");
 
 				Meteor.call("load_claims_rates_no_options",function(error,result){
@@ -20,6 +29,36 @@ Template.ProviderDetails.events({
 				});
 			}
 		});
+	},
+	'click #refresh-button': function(evt){
+		//		https://github.com/channikhabra/meteor-block-ui
+		// http://tobiasahlin.com/spinkit/
+		evt.preventDefault();
+
+		BlockUI.block();
+
+		Meteor.call("provider/refresh_user_data","aetna",function(error,result){
+			if(error){
+				console.log('Eploto el metodo refresh_user_data');
+			} else {
+				BlockUI.unblock();
+				Router.go("/");
+
+				Meteor.call("load_claims_rates_no_options",function(error,result){
+					if(error){
+						console.log('Eploto la carga de el detalle');
+					} else {
+						console.log('Carga de el detalle iniciada');
+					}
+				});
+			}
+		});
+	},
+	'click #delete-button' : function(evt){
+		evt.preventDefault();
+
+		Meteor.call("user_remove_provider");
+
 	}
 });
 

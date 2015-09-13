@@ -32,10 +32,10 @@ Template.home.events({
 
         var selected = $('#familyselect').find(":selected").attr("class", "selectedmember");
 
-        $('#morris3').html('');
+        //$('#morris3').html('');
         $('#morris4').html('');
-        $('dv#dvClaims').html('');
-        $('dv#dvPlanPerformance').html('');
+        //$('dv#dvClaims').html('');
+        //$('dv#dvPlanPerformance').html('');
         //$('dv#dvEOB').html('');
 
         Session.set("selectedMember",  $('#familyselect').find(":selected").val());
@@ -43,9 +43,9 @@ Template.home.events({
         var instance = UI.renderWithData(Template.ClaimsChart);
         UI.insert(instance, $('dvClaims'));
 
-        var instance2 = UI.renderWithData(Template.PlanPerformance);
-        UI.insert(instance2, $('dvPlanPerformance'));
-
+        //var instance2 = UI.renderWithData(Template.PlanPerformance);
+        //UI.insert(instance2, $('dvPlanPerformance'));
+        //
         //var instance3 = UI.renderWithData(Template.ExaplanationsOfBenefits);
         //UI.insert(instance3, $('dvEOB'));
     }
@@ -141,6 +141,7 @@ Template['home'].rendered = function(){
 
 
     function cb(start, end) {
+        debugger;
         $('#daterange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
 
         Session.set("selectedDates", {startdate : start._d, enddate : end._d});

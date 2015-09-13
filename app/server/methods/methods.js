@@ -63,5 +63,7 @@ Meteor.methods({
   user_remove_provider: function(){
 
     Providers.remove({user_id : this.userId});
+    Members.remove({user_id : this.userId});
+    Claims.remove({user_id : this.userId});
   }
 });

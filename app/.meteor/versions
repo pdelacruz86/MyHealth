@@ -19,6 +19,7 @@ browser-policy-common@1.0.3
 browser-policy-content@1.0.4
 browser-policy-framing@1.0.4
 callback-hook@1.0.3
+channikhabra:block-ui@0.2.2
 check@1.0.5
 chuangbo:cookie@1.1.0
 coffeescript@1.0.6
@@ -31,6 +32,7 @@ fastclick@1.0.3
 fortawesome:fontawesome@4.3.0
 geojson-utils@1.0.3
 google@1.1.5
+handlebars@1.0.3
 html-tools@1.0.4
 htmljs@1.0.4
 http@1.1.0
