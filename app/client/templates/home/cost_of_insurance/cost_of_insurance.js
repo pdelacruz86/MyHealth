@@ -2,26 +2,7 @@
 /* CostOfInsurance: Event Handlers */
 /*****************************************************************************/
 Template.CostOfInsurance.events({
-    "click #linkSetupGraph" : function(evt){
-        evt.preventDefault();
 
-        $("#setupGraphPanel").attr("style", "display:block")
-        $("#linkSetupGraph").attr("style", "display:none")
-
-    },
-    "click #submitGraphSetup" : function(evt){
-        var topay = $("#inputToPay").val();
-        var period = $("#selectPeriod :selected").val();
-        var provider = $("#selectProvider :selected").val();
-
-        var planPerformance = {
-            to_pay: topay,
-            period : period,
-            provider: provider
-        };
-
-        Meteor.call("dashboard/update_profile_setup_plan_performance_data", planPerformance);
-    }
 
 });
 
@@ -29,9 +10,7 @@ Template.CostOfInsurance.events({
 /* CostOfInsurance: Helpers */
 /*****************************************************************************/
 Template.CostOfInsurance.helpers({
-    HasPlanPerformance : function(){
-        return HB_Profiles.find({plan_performance_data : { $ne : null }}).count() > 0;
-    }
+
 });
 
 /*****************************************************************************/
