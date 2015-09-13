@@ -6,8 +6,8 @@ Template.ProviderDetails.events({
 		evt.preventDefault();
 
 		BlockUI.configure({
-			spinnerStyle: "background-color:#f26",  //this will change the default color of spinner. You can add more styles of course
-			spinnerTemplate: "block_ui_spinner_twin_circles"  //this will change default spinner template
+			spinnerStyle: "background-color:#fff",  //this will change the default color of spinner. You can add more styles of course
+			spinnerTemplate: "blockUi"  //this will change default spinner template
 		});
 
 		BlockUI.block();
@@ -31,9 +31,15 @@ Template.ProviderDetails.events({
 		});
 	},
 	'click #refresh-button': function(evt){
-		//		https://github.com/channikhabra/meteor-block-ui
+		// https://github.com/channikhabra/meteor-block-ui
 		// http://tobiasahlin.com/spinkit/
+
 		evt.preventDefault();
+
+		BlockUI.configure({
+			spinnerStyle: "background-color:#fff",  //this will change the default color of spinner. You can add more styles of course
+			spinnerTemplate: "blockUi"  //this will change default spinner template
+		});
 
 		BlockUI.block();
 
