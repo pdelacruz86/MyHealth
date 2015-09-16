@@ -1,5 +1,11 @@
 <template name="Loading">
-	<p style="text-align:center"><img src="/images/Loader.gif"></p>
-	<h1 class="text-center">.:Loading:.</h1>
+	{{#contentFor "pagetitle"}}
+        <h3>Loading</h3>
+    {{/contentFor}}
+
+    {{#contentFor "breadcrumbs"}}
+        <li class="active">Hang on tight</li>
+    {{/contentFor}}
+    <p style="text-align:center"><img src="/images/Loader.gif"></p>
 	<p style="text-align:center">Please wait while our robots work on processing your request</p>
 </template>

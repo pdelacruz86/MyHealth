@@ -9,8 +9,8 @@ function loadUser(user) {
 }
 
 function InitializeUserProfile(user){
-  console.log(user);
-  //HB_Profiles.insert({"user_id": })
+  //console.log(user);
+  
 }
 
 

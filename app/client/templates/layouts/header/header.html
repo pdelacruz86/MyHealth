@@ -1,10 +1,10 @@
 <template name="header">
     <div class="navbar">
+        {{#if currentUser}}
         <div class="navbar-inner">
             <div class="logo-box">
                 <a href="/" class="logo-text"><span>HealthBlend</span></a>
             </div><!-- Logo Box -->
-            {{#if currentUser}}
             <div class="topmenu-outer">
                 <div class="top-menu">
                     <ul class="nav navbar-nav navbar-right">
@@ -45,8 +45,8 @@
                     </ul><!-- Nav -->
                 </div><!-- Top Menu -->
             </div>
-            {{/if}}
         </div>
+        {{/if}}
     </div><!-- Navbar -->
     {{#if currentUser}}
     <div class="page-sidebar sidebar">
