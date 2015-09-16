@@ -33,14 +33,14 @@ Template.CurrentExpenditures.rendered = function () {
         _.each(members, function(item){
 
             var member  = item.membe_name;
-            var deductiblevalue = 0;
+            var deductiblevalue = (item.deductible  / 100).toFixed(2);
             var contributionvalue = 0;
 
-            var deductibleitem = _.find(item.plan_details, function(deducvalue){
-                return s.clean(deducvalue.plan_features) == s.clean("In Network Annual Deductible Includes Pharmacy");
-            });
-
-            deductiblevalue = (deductibleitem.limit / 100).toFixed(2);
+            //var deductibleitem = _.find(item.plan_details, function(deducvalue){
+            //    return s.clean(deducvalue.plan_features) == s.clean("In Network Annual Deductible Includes Pharmacy");
+            //});
+            //
+            //deductiblevalue = (deductibleitem.limit / 100).toFixed(2);
 
             var contributionitem = _.find(data, function(contrivalue){
                 return contrivalue._id.member.member == item.member_name;

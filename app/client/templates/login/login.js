@@ -10,7 +10,7 @@
             console.log('entro', email, password);
             Meteor.loginWithPassword(email, password, function(error){
                 if(error){
-                    console.log(error.reason);
+                    toastr.error(error.reason, "Error");
                 } else {
 
                     Router.go("home");
@@ -26,7 +26,7 @@
                 requestPermissions: ['email']
             }, function (error) {
                 if (error) {
-                    return console.log(error.reason);
+                    toastr.error(error.reason, "Error");
                 }
                 else{
                     Router.go("home");
@@ -36,7 +36,7 @@
         'click .btn-twitter': function() {
             return Meteor.loginWithTwitter(function(error){
                 if (error) {
-                    return console.log(error.reason);
+                    toastr.error(error.reason, "Error");
                 }
                 else{
                     Router.go("home");

@@ -21,7 +21,9 @@ Template.home.helpers({
     },
     claimsDataLoad : function(){
         var count = Claims.find().count();
-        return count > 0;
+        var membercount = Members.find().count();
+
+        return count > 0 || membercount > 0;
     },
     HasPlanPerformance : function(){
         return HB_Profiles.find({plan_performance_data : { $ne : null }}).count() > 0;
@@ -144,6 +146,10 @@ Template['home'].rendered = function(){
 
 
 /* Count claims by type */
+
+    if(Providers.find({}).count() == 0){
+        Router.go("providers");
+    }
     //setting up the profile
     var userid = Meteor.userId();
 

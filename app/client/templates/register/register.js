@@ -18,11 +18,8 @@ Template['register'].events({
             password: password
         }, function(error){
             if(error){
-                
-                console.log(error.reason); // Output error if registration fails
-                
+                toastr.error(error.reason, "Error");
             } else {
-
                 console.log('entro')
 
                 var userid = Meteor.userId();

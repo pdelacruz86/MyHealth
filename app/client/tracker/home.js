@@ -214,7 +214,7 @@ loadPlanPerformanceChart = function loadPlanPerformanceChart(){
 }
 
 var loadCurrentExpendituresChart= function loadCurrentExpendituresChart(dates){
-console.log('desde expenditures', dates)
+
     Meteor.call("dashboard/get_current_expenditures_chart_data", dates, function(err, data){
 
         var members = Members.find({}).fetch();
@@ -223,14 +223,14 @@ console.log('desde expenditures', dates)
         _.each(members, function(item){
 
             var member  = item.membe_name;
-            var deductiblevalue = 0;
+            var deductiblevalue = (item.deductible  / 100).toFixed(2);
             var contributionvalue = 0;
 
-            var deductibleitem = _.find(item.plan_details, function(deducvalue){
-                return s.clean(deducvalue.plan_features) == s.clean("In Network Annual Deductible Includes Pharmacy");
-            });
-
-            deductiblevalue = (deductibleitem.limit / 100).toFixed(2);
+            //var deductibleitem = _.find(item.plan_details, function(deducvalue){
+            //    return s.clean(deducvalue.plan_features) == s.clean("In Network Annual Deductible Includes Pharmacy");
+            //});
+            //
+            //deductiblevalue = (deductibleitem.limit / 100).toFixed(2);
 
             var contributionitem = _.find(data, function(contrivalue){
                 return contrivalue._id.member.member == item.member_name;
@@ -249,9 +249,9 @@ console.log('desde expenditures', dates)
             contributionvalue = (contributionvalue).toFixed(2)
 
             bardata.push( { member: item.member_name, a: contributionvalue, b: deductiblevalue })
-        });
+        })
 
-        $('#morris2').html('');
+        $("#morris2").html('');
 
         Morris.Bar({
             element: 'morris2',
@@ -273,7 +273,6 @@ console.log('desde expenditures', dates)
 }
 
 Tracker.autorun(function(c){
-    debugger;
     var collection1 = Claims.find({provider_rate: null, status: "Completed"}).count();
     var selecteddates = Session.get("selectedDates");
 

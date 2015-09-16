@@ -215,7 +215,7 @@ var loadClaimData = function(user, provider, claimtype){
                         })
                     } else {
                         //la data no existe imprimir el table error
-                        future.return({datanoexists: "We found no claims in table#sortTable."}, {claims: []});
+                        console.log({datanoexists: "We found no claims in table#sortTable."}, {claims: []});
 
                     }
                 })
@@ -224,42 +224,61 @@ var loadClaimData = function(user, provider, claimtype){
                 .goto(urlplandetails)
                 .wait()
                 .evaluate(function () {
-                    return {
-                        table: document.querySelector('html').outerHTML
-                    };
-                }, function (value) {
-                    var htmltable =  value.table ;
-                    console.log('entro evaluate');
+                    var allhtml =  document.querySelector('html');
 
-                    var alldata = [];
-                    var members = [];
+                    var members = document.querySelectorAll("#selectPullDown0 option");
+
+                    var membersplan = [];
+                    for(y=0; y < members.length; y++){
+                        var normalsection= allhtml.querySelectorAll('.fundTable' +  y + ' tbody tr.normalSection');
+                        var maindeductible = allhtml.querySelectorAll('.fundTable' +  y + ' tbody tr')[2].querySelectorAll('td')[1].textContent;
 
 
-                    x(htmltable, '#selectPullDown0',
-                        ['option']
-                    )(function (err, data) {
-                        members = data;
-                    })
+                        newarray = [];
+                        for(i = 0; i < normalsection.length; i++){
+                            // var data = {plan_name : }
+                            var dataarray = normalsection[i].querySelectorAll('td');
 
-                    for(i = 0; i < members.length; i ++){
-                        var selector = '.fundTable' + i  + ' tbody tr.normalSection';
-                        var selectormember = 'ul#selectPullDown0_prim li a[index="' + i + '"]';
-                        // console.log(selector)
-                        x(htmltable, {
-                                member : 'ul#selectPullDown0_prim li a[index="' + i + '"]',
-                                plan_details:
-                                    x(selector, [{
-                                        plan_features: 'td:nth-child(1)',
-                                        limit: 'td:nth-child(2)',
-                                        applied: 'td:nth-child(3)',
-                                        remainder: 'td:nth-child(4)'
-                                    }])
+                            var plantype = '';
+                            var plan = dataarray[0].textContent;
+                            var limit = dataarray[1].textContent;
+                            var applied = dataarray[2].textContent;
+                            var remainder = dataarray[3].textContent;
+
+                            //get the subheadersection
+                            var prev = normalsection[i].previousElementSibling
+
+                            while(prev)
+                            {
+                                if(prev.className == "subSectionHeader")
+                                {
+
+                                    var header  = prev.querySelector('td');
+                                    var validheader = header.textContent;
+                                    validheader = validheader.replace(/(\r\n|\n|\r)/gm,"")
+                                    validheader = validheader.replace(/\s/g,"");
+
+                                    if(validheader == ""){
+                                        plantype = ''
+                                    }else
+                                    {
+                                        plantype =  header.textContent;
+                                        break;
+                                    }
+                                }
+
+                                prev = prev.previousElementSibling
                             }
-                        )(function (err, table) {
-                            alldata.push(table);
-                        });
+
+                            newarray.push({plan_header: plantype, plan_name : plan, limit : limit, applied : applied, remainder : remainder});
+                        }
+                        membersplan.push({member : members[y].textContent, deductible :  maindeductible, plan_details : newarray});
                     }
-                    var newdata = {plan_summary: alldata};
+
+                    return  membersplan;
+                }, function (value) {
+
+                    var newdata = {plan_summary: value};
                     console.log('data desde plandetails',newdata);
                     loadPlanDetails(user, newdata)
                     //future.return({plan_summary: alldata});
@@ -416,11 +435,15 @@ function loadPlanDetails(user, data){
     Fiber(function(){
         data.plan_summary.forEach(function(item){
             item.plan_details.forEach(function(value){
-                //plan features========================================================
-                value.plan_features = s.replaceAll(value.plan_features, '\\n', '');
-                value.plan_features = s.clean(value.plan_features);
-                //limits========================================================
+                console.log(item, value)
+                //plan header ========================================================
+                value.plan_header = s.replaceAll(value.plan_header, '\\n', '');
+                value.plan_header = s.clean(value.plan_header);
+                //plan name========================================================
+                value.plan_name = s.replaceAll(value.plan_name, '\\n', '');
+                value.plan_name = s.clean(value.plan_name);
 
+                //limits========================================================
                 var limit = s.replaceAll(value.limit, '\\n', '');
                 limit = s.replaceAll(limit, ',', '');
 
@@ -470,10 +493,25 @@ function loadPlanDetails(user, data){
             var actualmember = Members.findOne({member_name : s.clean(item.member)});
 
             if(actualmember == undefined) {
+                //deductible========================================================
+                var deductible = s.replaceAll(item.deductible, '\\n', '');
+                deductible = s.replaceAll(deductible, ',', '');
+                deductible = s.replaceAll(deductible, 'Activity Details', '');
+
+
+                if(s.include(deductible, '$')){
+                    deductible = Number(s(s.splice(s(deductible).trim().value(),0,1,"")).trim().value()) * 100;
+                }else{
+                    deductible = Number(applied) * 100;
+                }
+
+                item.deductible = deductible;
+
                 var memberid = Members.insert(
                     {
                         user_id: user,
                         member_name: s.clean(item.member),
+                        deductible :  item.deductible,
                         plan_details: item.plan_details
                     })
             }

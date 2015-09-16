@@ -11,21 +11,25 @@ Template.ExaplanationsOfBenefits.helpers({
     EOBDeductible : function(){
         var member =  Members.findOne({ member_name : { $ne : "Family"} });
 
-        var value = _.find(member.plan_details, function(item){
-            return s.clean(item.plan_features) == s.clean(" In Network Annual Deductible Includes Pharmacy   ");
-        });
+        //if(member.count ==1){
+        //
+        //}else {
+        //    var value = _.find(member.plan_details, function (item) {
+        //        return s.clean(item.plan_features) == s.clean(" In Network Annual Deductible Includes Pharmacy   ");
+        //    });
 
-        return  s.numberFormat((value.limit / 100),2, ".", ",");
+            return s.numberFormat((member.deductible / 100), 2, ".", ",");
+        //}
         //Members.find()
     },
     EOBFamilyValue : function(){
         var familymember =  Members.findOne({ member_name :  "Family" });
 
-        var value = _.find(familymember.plan_details, function(item){
-            return s.clean(item.plan_features) == s.clean(" In Network Annual Deductible Includes Pharmacy   ");
-        });
+        //var value = _.find(familymember.plan_details, function(item){
+        //    return s.clean(item.plan_features) == s.clean(" In Network Annual Deductible Includes Pharmacy   ");
+        //});
 
-        return s.numberFormat((value.limit / 100),2, ".", ",");
+        return s.numberFormat((familymember.deductible / 100),2, ".", ",");
     },
     deductibleBreakdownMainList: function(){
         var member_id = '';//Template.home.__helpers.get("selectedMember")();
@@ -49,7 +53,7 @@ Template.ExaplanationsOfBenefits.helpers({
             item.applied = s.numberFormat((item.applied / 100),2, ".", ",");
             item.remainder = s.numberFormat((item.remainder / 100),2, ".", ",");
 
-            if(s.include(item.plan_features, "Network")){
+            if(s.clean(item.plan_header) ==  "Plan Features"){
                 newlist.push(item);
             }
         });
@@ -77,7 +81,7 @@ Template.ExaplanationsOfBenefits.helpers({
             item.applied = (item.applied / 100).toFixed(2);
             item.remainder = (item.remainder / 100).toFixed(2);
 
-            if(!s.include(item.plan_features, "Network")){
+            if(s.clean(item.plan_header) !=  "Plan Features"){
                 newlist.push(item);
             }
         });
@@ -105,7 +109,7 @@ Template.ExaplanationsOfBenefits.helpers({
             item.applied = (item.applied / 100).toFixed(2);
             item.remainder = (item.remainder / 100).toFixed(2);
 
-            if(!s.include(item.plan_features, "Network")){
+            if(s.clean(item.plan_header) !=  "Plan Features"){
                 newlist.push(item);
             }
         });

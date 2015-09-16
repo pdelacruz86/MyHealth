@@ -4,6 +4,7 @@ HomeController = RouteController.extend({
   subscriptions: function() {
     this.subscribe('hb_profiles');
     this.subscribe('claims');
+    this.subscribe('providers');
     this.subscribe('members');
   },
 

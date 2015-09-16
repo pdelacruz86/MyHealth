@@ -55,12 +55,30 @@ Template.ProviderSetupModal.steps = function() {
             var password = $("input#inputProviderPassword").val();
             var confirmpassword = $("input#inputProviderPassword").val();
 
-            if(username == '' || password == ''){
+            if(username == '' && password == ''){
+                toastr.warning("please provide a username and password");
+
                 $("#step2btn").attr("class", "btn btn-default pull-right disabled");
                 $("#step2btn").attr("disabled", "disabled");
                 $("#step2btn").text("Next");
 
-            }else{
+            }else if(username == '' && password != '')
+            {
+                toastr.warning("please provide a username");
+
+                $("#step2btn").attr("class", "btn btn-default pull-right disabled");
+                $("#step2btn").attr("disabled", "disabled");
+                $("#step2btn").text("Next");
+            }
+            else if(username != '' && password == '')
+            {
+                toastr.warning("please provide a password");
+
+                $("#step2btn").attr("class", "btn btn-default pull-right disabled");
+                $("#step2btn").attr("disabled", "disabled");
+                $("#step2btn").text("Next");
+            }
+            else{
 
                 //validate provider exists
                 var exists = Providers.findOne({user_id :  Meteor.userId(), provider_name : "aetna"});
