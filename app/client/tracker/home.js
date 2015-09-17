@@ -13,6 +13,10 @@ var loadClaimChart = function loadClaimChart(dates){
     else
         member = Members.findOne({_id : member_id});
 
+    if(member == {} || member ==undefined){
+        member =  Members.findOne();
+    }
+
     var dentalCount = 0;//Claims.find({type : 'Dental'}).count();
     var pharmacyCount = 0;//Claims.find({type : 'Pharmacy'}).count();
     var medicalCount = 0;//Claims.find({type : 'Medical'}).count();
@@ -81,6 +85,10 @@ loadPlanPerformanceChart = function loadPlanPerformanceChart(){
         member = Members.findOne({member_name: "Family"});
     else
         member = Members.findOne({_id: member_id});
+
+    if(member == {} || member ==undefined){
+        member =  Members.findOne();
+    }
 
     if(member != undefined && member != {}){
 

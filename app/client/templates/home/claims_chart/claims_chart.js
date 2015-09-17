@@ -15,10 +15,15 @@ Template.ClaimsChart.helpers({
         var member_id = Template.home.__helpers.get("selectedMember")();
 
         var member = {};
+
         if (member_id == undefined)
             member = Members.findOne({member_name: "Family"});
         else
             member = Members.findOne({_id: member_id});
+
+        if(member == {} || member ==undefined){
+            member =  Members.findOne();
+        }
 
         var startdate = '';
         var enddate = '';
@@ -32,6 +37,7 @@ Template.ClaimsChart.helpers({
              startdate = dates.startdate;
              enddate = dates.enddate;
         }
+
 
         if (member.member_name == "Family") {
 
@@ -73,6 +79,10 @@ Template.ClaimsChart.rendered = function () {
         member =  Members.findOne({member_name : "Family"});
     else
         member = Members.findOne({_id : member_id});
+
+    if(member == {} || member ==undefined){
+        member =  Members.findOne();
+    }
 
         var dentalCount = 0;//Claims.find({type : 'Dental'}).count();
         var pharmacyCount = 0;//Claims.find({type : 'Pharmacy'}).count();

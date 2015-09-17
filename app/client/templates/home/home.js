@@ -13,10 +13,10 @@ Template.home.helpers({
       return Session.get("selectedMember");
     },
     providerRateLoadCompleted : function(){
-        return Claims.find({provider_rate : null}).count() == 0;
+        return Claims.find({provider_rate : null, status : "Completed"}).count() == 0;
     },
     partialDataLoad : function(){
-        var count = Claims.find({provider_rate : { $ne : null}}).count();
+        var count = Claims.find({provider_rate : { $ne : null}, status : "Completed"}).count();
         return count > 0;
     },
     claimsDataLoad : function(){

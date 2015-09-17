@@ -32,6 +32,10 @@ Template.CostOfInsurance.rendered = function () {
         else
             member = Members.findOne({_id: member_id});
 
+        if(member == {} || member ==undefined){
+            member =  Members.findOne();
+        }
+
         var dataarray = [];
 
         var profile = HB_Profiles.findOne();
