@@ -228,54 +228,93 @@ var loadClaimData = function(user, provider, claimtype){
 
                     var members = document.querySelectorAll("#selectPullDown0 option");
 
+                    var counts = 0;
+
                     var membersplan = [];
                     for(y=0; y < members.length; y++){
                         var normalsection= allhtml.querySelectorAll('.fundTable' +  y + ' tbody tr.normalSection');
-                        var maindeductible = allhtml.querySelectorAll('.fundTable' +  y + ' tbody tr')[2].querySelectorAll('td')[1].textContent;
+                        // var maindeductible = allhtml.querySelectorAll('.fundTable' + y + ' tbody tr')[2].querySelectorAll('td')[1].textContent;
 
+                        var trlength =  allhtml.querySelectorAll('.fundTable' + y + ' tbody tr').length;
+                        var maindeductible = {};
+
+                        var last = allhtml.querySelectorAll('.fundTable' + y + ' tbody tr')[trlength - 1];
+
+                        while(last)
+                        {
+                            if(last.className == "subSectionHeader"){
+                                var header  = last.querySelector('td');
+                                var validheader = header.textContent;
+                                validheader = validheader.replace(/(\r\n|\n|\r)/gm,"");
+                                validheader = validheader.replace(/\s/g,"");
+
+                                if(validheader == "PlanFeatures"){
+                                    maindeductible =  last.nextElementSibling;
+
+                                    var tdheader  = maindeductible.querySelectorAll('td');
+
+                                    if(tdheader.length == 0){
+                                        maindeductible =  maindeductible.nextElementSibling;
+                                    }
+
+                                    maindeductible = maindeductible.querySelectorAll('td')[1].textContent;
+
+                                    break;
+                                }
+                            }
+
+                            last = last.previousElementSibling
+                        }
 
                         newarray = [];
                         for(i = 0; i < normalsection.length; i++){
                             // var data = {plan_name : }
                             var dataarray = normalsection[i].querySelectorAll('td');
 
-                            var plantype = '';
-                            var plan = dataarray[0].textContent;
-                            var limit = dataarray[1].textContent;
-                            var applied = dataarray[2].textContent;
-                            var remainder = dataarray[3].textContent;
+                            if(dataarray.length == 4){
+                                var plantype = '';
+                                var plan = dataarray[0].textContent;
+                                var limit = dataarray[1].textContent;
+                                var applied = dataarray[2].textContent;
+                                var remainder = dataarray[3].textContent;
 
-                            //get the subheadersection
-                            var prev = normalsection[i].previousElementSibling
+                                //get the subheadersection
+                                var prev = normalsection[i].previousElementSibling
 
-                            while(prev)
-                            {
-                                if(prev.className == "subSectionHeader")
+                                while(prev)
                                 {
-
-                                    var header  = prev.querySelector('td');
-                                    var validheader = header.textContent;
-                                    validheader = validheader.replace(/(\r\n|\n|\r)/gm,"")
-                                    validheader = validheader.replace(/\s/g,"");
-
-                                    if(validheader == ""){
-                                        plantype = ''
-                                    }else
+                                    if(prev.className == "subSectionHeader")
                                     {
-                                        plantype =  header.textContent;
-                                        break;
+
+                                        var header  = prev.querySelector('td');
+                                        var validheader = header.textContent;
+                                        validheader = validheader.replace(/(\r\n|\n|\r)/gm,"")
+                                        validheader = validheader.replace(/\s/g,"");
+
+                                        if(validheader == ""){
+                                            plantype = ''
+                                        }else
+                                        {
+                                            plantype =  header.textContent;
+
+                                            break;
+                                        }
                                     }
+
+                                    prev = prev.previousElementSibling
                                 }
 
-                                prev = prev.previousElementSibling
+
+                                newarray.push({plan_header: plantype, plan_name : plan, limit : limit, applied : applied, remainder : remainder});
                             }
 
-                            newarray.push({plan_header: plantype, plan_name : plan, limit : limit, applied : applied, remainder : remainder});
+
                         }
-                        membersplan.push({member : members[y].textContent, deductible :  maindeductible, plan_details : newarray});
+
+                        membersplan.push({member : members[y].textContent, deductible : maindeductible, plan_details : newarray});
                     }
 
-                    return  membersplan;
+                    return membersplan;
                 }, function (value) {
 
                     var newdata = {plan_summary: value};

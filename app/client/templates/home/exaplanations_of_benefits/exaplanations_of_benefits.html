@@ -1,5 +1,12 @@
 <template name="ExaplanationsOfBenefits">
-    <h3 class="panel-title pull-left">Exaplanations of Benefits <small>Deductible: ${{EOBDeductible}} Individual / ${{EOBFamilyValue}} Family</small></h3>
+    <h3 class="panel-title pull-left">Exaplanations of Benefits
+        <small>
+            Deductible: ${{EOBDeductible}} Individual
+           {{#if $neq EOBDeductible ""}} /
+            ${{EOBFamilyValue}} Family
+           {{/if}}
+        </small>
+    </h3>
     <hr>
     <div class="panel-body clearfix">
         <h4>Deductible Breakdown <small>Learn more</small></h4>

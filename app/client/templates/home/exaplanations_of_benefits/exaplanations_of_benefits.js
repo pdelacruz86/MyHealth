@@ -17,8 +17,11 @@ Template.ExaplanationsOfBenefits.helpers({
         //    var value = _.find(member.plan_details, function (item) {
         //        return s.clean(item.plan_features) == s.clean(" In Network Annual Deductible Includes Pharmacy   ");
         //    });
-
-            return s.numberFormat((member.deductible / 100), 2, ".", ",");
+            if(member == undefined){
+                return "";
+            }else{
+                return s.numberFormat((member.deductible / 100), 2, ".", ",");
+            }
         //}
         //Members.find()
     },
@@ -29,7 +32,11 @@ Template.ExaplanationsOfBenefits.helpers({
         //    return s.clean(item.plan_features) == s.clean(" In Network Annual Deductible Includes Pharmacy   ");
         //});
 
-        return s.numberFormat((familymember.deductible / 100),2, ".", ",");
+        if(familymember == undefined){
+            return "";
+        }else{
+            return s.numberFormat((member.deductible / 100), 2, ".", ",");
+        }
     },
     deductibleBreakdownMainList: function(){
         var member_id = '';//Template.home.__helpers.get("selectedMember")();
@@ -40,6 +47,11 @@ Template.ExaplanationsOfBenefits.helpers({
         else{
             //family data
             var familyitem =  Members.findOne({ member_name :  "Family" });
+
+            if(familyitem == undefined){
+                familyitem =  Members.findOne({})
+            }
+
             member_id = familyitem._id;
         }
 
@@ -69,6 +81,11 @@ Template.ExaplanationsOfBenefits.helpers({
         else{
             //family data
             var familyitem =  Members.findOne({ member_name :  "Family" });
+
+            if(familyitem == undefined){
+                familyitem =  Members.findOne({})
+            }
+
             member_id = familyitem._id;
         }
 
@@ -97,6 +114,11 @@ Template.ExaplanationsOfBenefits.helpers({
         else{
             //family data
             var familyitem =  Members.findOne({ member_name :  "Family" });
+
+            if(familyitem == undefined){
+                familyitem =  Members.findOne({})
+            }
+
             member_id = familyitem._id;
         }
 
