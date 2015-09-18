@@ -165,10 +165,16 @@ Template['home'].rendered = function(){
 
     //setting up the members
     var familymember = Members.findOne({member_name : "Family"});
+
+
+    if(familymember == undefined){
+        familymember =  Members.findOne({})
+    }
+
     Session.set("selectedMember", familymember._id);
 
     //setting up range date time filters
-
+    debugger;
 
     function cb(start, end) {
         debugger;
@@ -176,6 +182,7 @@ Template['home'].rendered = function(){
 
         Session.set("selectedDates", {startdate : start._d, enddate : end._d});
     }
+
     cb(moment().startOf('year'), moment());
 
     $('#daterange').daterangepicker({

@@ -48,7 +48,7 @@ var loadClaimData = function(user, provider, claimtype){
                     //console.log(value.table);
                     if (value == null) {
                         //var htmltable =  value.errorTable ;
-                        console.log('No HTML found on ' + secondurl);
+                        console.log('No HTML found on ' + urlmedical);
                     } else {
                         var htmltable = value.table;
                         x(htmltable, 'table#sortTable')(function (err, table) {
@@ -143,7 +143,7 @@ var loadClaimData = function(user, provider, claimtype){
                             }]
                         )(function (err, data) {
                             // console.log(data);
-                            console.log('Wrapping up scraping for '+secondurl);
+                            console.log('Wrapping up scraping for '+urldental);
                             //future.return({claimtype : 'Dental',claims: data});
                             var newdata = {claimtype : 'Dental',claims: data};
 
